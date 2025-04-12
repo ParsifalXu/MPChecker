@@ -1,0 +1,261 @@
+"INFO (lib, sha, issue_sha)",Consistency? 1yes；0no,Note,Human label,LLM output
+"""lib"": ""scikit-learn"",
+        ""sha"": ""395761a76397a560303f00d3db24a50a00ca11ed"",
+        ""issue_sha"": ""395761a76397a560303f00d3db24a50a00ca11ed""",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""131109b0037ec71e4a4f262b888e198d58e38f24"",
+        ""issue_sha"": ""395761a76397a560303f00d3db24a50a00ca11ed"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""483fafe5d1a27446a8f05a0d9bb3762de47b1618"",
+        ""issue_sha"": ""10997c94fd19f999b3d257b137f7722af0bd6fd8"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""10997c94fd19f999b3d257b137f7722af0bd6fd8"",
+        ""issue_sha"": ""10997c94fd19f999b3d257b137f7722af0bd6fd8"",",1,,,
+" ""lib"": ""scikit-learn"",
+        ""sha"": ""767d3555a51a4d9279ca47c9426df8b6418da8ce"",
+        ""issue_sha"": ""8409b877fdf3212cd9ed65c7868202961a777a20"",",0,miss,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""8409b877fdf3212cd9ed65c7868202961a777a20"",
+        ""issue_sha"": ""8409b877fdf3212cd9ed65c7868202961a777a20"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""7e8d3c505baafa45bd94d9e28ee3d35141ff91c4"",
+        ""issue_sha"": ""451f2121eab19dd25c337192a89d8c1582664d89"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""451f2121eab19dd25c337192a89d8c1582664d89"",
+        ""issue_sha"": ""451f2121eab19dd25c337192a89d8c1582664d89"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""07bc459be26c7d83d5c980553a853b136ca19c71"",
+        ""issue_sha"": ""beea7838cc8ec61c78255bd9c8b400997e30db32"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""a0ba256dbe9380b5d2cf9cee133482fc87768267"",
+        ""issue_sha"": ""a0ba256dbe9380b5d2cf9cee133482fc87768267"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""7404a82891ef82c525ec61c76090f12424670a44"",
+        ""issue_sha"": ""7404a82891ef82c525ec61c76090f12424670a44"",",1,different format,"""constraints"": ""(code_init != 'None') ^ (dict_init != 'None')"",","1. 
+   Text Constraint: ""Only used if `code_init` and `dict_init` are not None.""
+   Logical Format: ((code_init != 'None') ^ (dict_init != 'None')) -> (dict_init = 'used') ^ (code_init = 'used')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""1e46db669318fe20458d7cf135f6107e19e90970"",
+        ""issue_sha"": ""1e46db669318fe20458d7cf135f6107e19e90970"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""b5d63e34746ec273c1cbc5992a0477198a22f8be"",
+        ""issue_sha"": ""b5d63e34746ec273c1cbc5992a0477198a22f8be"",",1,different format,"""constraints"": ""(n_nonzero_coefs_ = 'None') ^ (tol = 'None')""","6. Text Constraint: ""n_nonzero_coefs_:int The number of non-zero coefficients in the solution. If `n_nonzero_coefs` is None and `tol` is None this value is either set to 10% of `n_features` or 1, whichever is greater.""
+   Logical Format: ((n_nonzero_coefs = 'None') ^ (tol = 'None')) -> (n_nonzero_coefs_ = max(0.1 * n_features, 1))"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""53fea53c6f44580738feb6d890f55d7de2fe8cc6"",
+        ""issue_sha"": ""53fea53c6f44580738feb6d890f55d7de2fe8cc6"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""5147fd09c6a063188efde444f47bd006fa5f95f0"",
+        ""issue_sha"": ""5147fd09c6a063188efde444f47bd006fa5f95f0"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""b513081c658317eabafd713d6d5d18f7a5a30a73"",
+        ""issue_sha"": ""b513081c658317eabafd713d6d5d18f7a5a30a73"",",1,different format,"""constraints"": ""(affinity = 'nearest_neighbors') -> (n_jobs = 'exist')"",","9. Text Constraint: ""n_jobs:int, default=None The number of parallel jobs to run when `affinity='nearest_neighbors'` or `affinity='precomputed_nearest_neighbors'`. The neighbors search will be done in parallel.""
+   Logical Format: ((affinity = 'nearest_neighbors') || (affinity = 'precomputed_nearest_neighbors')) -> !(n_jobs = 'None')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""b513081c658317eabafd713d6d5d18f7a5a30a73"",
+        ""issue_sha"": ""b513081c658317eabafd713d6d5d18f7a5a30a73"",",1,different format,"""constraints"": ""(affinity = 'precomputed_nearest_neighbors') -> (n_jobs = 'exist')"",","9. Text Constraint: ""n_jobs:int, default=None The number of parallel jobs to run when `affinity='nearest_neighbors'` or `affinity='precomputed_nearest_neighbors'`. The neighbors search will be done in parallel.""
+   Logical Format: ((affinity = 'nearest_neighbors') || (affinity = 'precomputed_nearest_neighbors')) -> !(n_jobs = 'None')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""fdce26a61b5e388ee0871f5cb90ec24afc61c074"",
+        ""issue_sha"": ""fdce26a61b5e388ee0871f5cb90ec24afc61c074"",",1,different format,"""constraints"": ""(criterion = 'k_best') -> (k_best = 'exist')"",","3
+Text Constraint: ""k_best:int, default=10 The amount of samples to add in each iteration. Only used when `criterion='k_best'`.""
+Logical Format: (criterion = 'k_best') -> !(k_best = 'None')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""20509fb2bcfea6c0d8ccd72535a3289f61c08bb0"",
+        ""issue_sha"": ""20509fb2bcfea6c0d8ccd72535a3289f61c08bb0"",",1,extracted in next sha,"""constraints"": ""(add_indicator = 'False') -> (indicator_ = 'None')"",",
+"""lib"": ""scikit-learn"",
+        ""sha"": ""07a9dc93af13849e0521e94981fb5a215500b095"",
+        ""issue_sha"": ""07a9dc93af13849e0521e94981fb5a215500b095"",",0,miss,"""constraints"": ""(add_indicator = 'True') -> (copy = 'False')"",",
+"""lib"": ""scikit-learn"",
+        ""sha"": ""07a9dc93af13849e0521e94981fb5a215500b095"",
+        ""issue_sha"": ""07a9dc93af13849e0521e94981fb5a215500b095"",",1,different format,"""constraints"": ""(strategy = 'constant') -> (fill_value = 'used')"",","1. 
+   Text Constraint: ""When strategy == ""constant"", fill_value is used to replace all occurrences of missing_values. If left to the default, fill_value will be 0 when imputing numerical data and ""missing_value"" for strings or object data types.""
+   Logical Format: (strategy = 'constant') -> !(fill_value = 'None')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""3cde262274a9187fe16c6aeccdcdf9fc433f0fb2"",
+        ""issue_sha"": ""3cde262274a9187fe16c6aeccdcdf9fc433f0fb2""",0,miss,"""constraints"": ""(y >= 0) -> (loss = 'poisson')"",",
+"""lib"": ""scikit-learn"",
+        ""sha"": ""007d11a49f2ad6ffc64aa302565b7b361b1b51b2"",
+        ""issue_sha"": ""007d11a49f2ad6ffc64aa302565b7b361b1b51b2"",",1,different format,"""constraints"": ""(early_stpping = 'True') -> (validation_fraction = 'exist')"",","10. 
+    Text Constraint: ""validation_fraction:float, default=0.1 The proportion of training data to set aside as validation set for early stopping. Must be between 0 and 1. Only used if early_stopping is True.""
+    Logical Format: (early_stopping = False) -> (validation_fraction = 'ignore')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""007d11a49f2ad6ffc64aa302565b7b361b1b51b2"",
+        ""issue_sha"": ""007d11a49f2ad6ffc64aa302565b7b361b1b51b2"",",0,miss,"""constraints"": ""(batch_size = 'auto') -> batch_size=min(200, n_samples)"",",
+"""lib"": ""scikit-learn"",
+        ""sha"": ""007d11a49f2ad6ffc64aa302565b7b361b1b51b2"",
+        ""issue_sha"": ""007d11a49f2ad6ffc64aa302565b7b361b1b51b2"",",1,different format," ""constraints"": ""(solver = 'sgd' || solver = 'adam') -> (learning_rate = 'exist')"",","3. 
+   Text Constraint: ""learning_rate:{'constant', 'invscaling', 'adaptive'}, default='constant' Learning rate schedule for weight updates. Only used when solver='sgd'.""
+   Logical Format: (solver != 'sgd') -> (learning_rate = 'ignore')
+
+4. 
+   Text Constraint: ""learning_rate_init:double, default=0.001 The initial learning rate used. It controls the step-size in updating the weights. Only used when solver='sgd' or 'adam'.""
+   Logical Format: ((solver != 'sgd') ^ (solver != 'adam')) -> (learning_rate_init = 'ignore')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""007d11a49f2ad6ffc64aa302565b7b361b1b51b2"",
+        ""issue_sha"": ""007d11a49f2ad6ffc64aa302565b7b361b1b51b2"",",1,different format,"""constraints"": ""(solver = 'adam') -> (beta_1 = 'exist')"",","11. 
+    Text Constraint: ""beta_1:float, default=0.9 Exponential decay rate for estimates of first moment vector in adam, should be in [0, 1). Only used when solver='adam'.""
+    Logical Format: (solver != 'adam') -> (beta_1 = 'ignore')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""007d11a49f2ad6ffc64aa302565b7b361b1b51b2"",
+        ""issue_sha"": ""007d11a49f2ad6ffc64aa302565b7b361b1b51b2"",",1,different format,"""constraints"": ""(solver = 'adam') -> (epsilon = 'exist')"",","13. 
+    Text Constraint: ""epsilon:float, default=1e-8 Value for numerical stability in adam. Only used when solver='adam'.""
+    Logical Format: (solver != 'adam') -> (epsilon = 'ignore')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""c9d223ccc58e2569b8e67f1d0217dd57a93ec07f"",
+        ""issue_sha"": ""bc91f01e541de34adf084b07d5154db15cab9b58"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""c9d223ccc58e2569b8e67f1d0217dd57a93ec07f"",
+        ""issue_sha"": ""bc91f01e541de34adf084b07d5154db15cab9b58"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""c9d223ccc58e2569b8e67f1d0217dd57a93ec07f"",
+        ""issue_sha"": ""7ed61a24feb4ffde0bee9342acf4a58e3f946a61"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""7fa2e6e2734b590d96e62d5932c648a9c1002f34"",
+        ""issue_sha"": ""7fa2e6e2734b590d96e62d5932c648a9c1002f34"",",0,wrong expression but good in logic?,"""constraints"": ""(assign_labels = 'kmeans') -> (n_init != 'None')"",","
+6. Text Constraint: ""n_init:int, default=10 Number of time the k-means algorithm will be run with different centroid seeds. The final results will be the best output of n_init consecutive runs in terms of inertia. Only used if assign_labels='kmeans'.""
+   Logical Format: (n_init = 'int') -> (default = '10') ^ (assign_labels = 'kmeans') -> !(n_init = 'None')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""49ec6192326fbe13b347abd9cafeed8e78725df7"",
+        ""issue_sha"": ""49ec6192326fbe13b347abd9cafeed8e78725df7"",",1,,,
+" ""lib"": ""scikit-learn"",
+        ""sha"": ""896d4fad106c8f1d745923d544b44a0707103aa2"",
+        ""issue_sha"": ""896d4fad106c8f1d745923d544b44a0707103aa2"",",1,different format,"""constraints"": ""(analyzer = 'word') ^ (token_pattern != 'None')"",
+","6. 
+Text Constraint: ""Override the string tokenization step while preserving the preprocessing and n-grams generation steps. Only applies if ``analyzer == 'word'``.""
+Logical Format: (analyzer = 'word') -> (tokenizer = 'override')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""e7d2a8041bbceb5b11fbb72281a8486ef53347d2"",
+        ""issue_sha"": ""e7d2a8041bbceb5b11fbb72281a8486ef53347d2"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""5c4b1bb23192a137ac22ced229c50d6b69859ac6"",
+        ""issue_sha"": ""5c4b1bb23192a137ac22ced229c50d6b69859ac6"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c"",
+        ""issue_sha"": ""a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c"",",1,different format,"""constraints"": ""(algorithm = 'lasso_cd') -> (max_iter = 'exist')"",","4. Text Constraint: ""Maximum number of iterations to perform if `algorithm='lasso_cd'` or `'lasso_lars'`.""
+   Logical Format: (algorithm = 'lasso_cd' || algorithm = 'lasso_lars') -> !(max_iter = 'None')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c"",
+        ""issue_sha"": ""a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c"",",1,different format,"""constraints"": ""(algorithm = 'lasso_lars') -> (max_iter = 'exist')"",","4. Text Constraint: ""Maximum number of iterations to perform if `algorithm='lasso_cd'` or `'lasso_lars'`.""
+   Logical Format: (algorithm = 'lasso_cd' || algorithm = 'lasso_lars') -> !(max_iter = 'None')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c"",
+        ""issue_sha"": ""a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c"",
+        ""issue_sha"": ""a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c"",",1,,"""constraints"": ""(method = 'threshold') -> (gram = 'None')"",","1. Text Constraint: ""gram can be `None` if method is 'threshold'.""
+   Logical Format: (algorithm = 'threshold') -> (gram = 'None')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""598ed4cbf906e4e39f25c7d4016932cbc0659585"",
+        ""issue_sha"": ""598ed4cbf906e4e39f25c7d4016932cbc0659585"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""598ed4cbf906e4e39f25c7d4016932cbc0659585"",
+        ""issue_sha"": ""598ed4cbf906e4e39f25c7d4016932cbc0659585"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""e4aab357e990e661113e6da97c5c7e939917daf2"",
+        ""issue_sha"": ""e4aab357e990e661113e6da97c5c7e939917daf2"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""e4aab357e990e661113e6da97c5c7e939917daf2"",
+        ""issue_sha"": ""e4aab357e990e661113e6da97c5c7e939917daf2"",",1,different format," ""constraints"": ""(kernel = 'poly') -> (degree = 'exist')"",","2. 
+   Text Constraint: ""degree:int, default=3 Degree for poly kernels. Ignored by other kernels.""
+   Logical Format: (kernel = 'poly') -> !(degree = 'ignore')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""683af6c6b65a7943c7fc28144d4b53e7888c0133"",
+        ""issue_sha"": ""683af6c6b65a7943c7fc28144d4b53e7888c0133"",",1,different format,"""constraints"": ""(cov_init = 'None') -> (emp_cov = 'exist')"",","
+2. Text Constraint: ""The initial guess for the covariance. If None, then the empirical covariance is used.""
+   Logical Format: (cov_init = 'None') -> (emp_cov is used)"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""999f288ef486697e307de0f461033118389013ca"",
+        ""issue_sha"": ""999f288ef486697e307de0f461033118389013ca"",",1,different format,"""constraints"": ""(mode = 'cd') -> (enet_tol = 'exist')"",","
+4. Text Constraint: ""The tolerance for the elastic net solver used to calculate the descent direction. This parameter controls the accuracy of the search direction for a given column update, not of the overall parameter estimate. Only used for mode='cd'. Range is (0, inf].""
+   Logical Format: (mode = 'cd') -> (enet_tol > 0)"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""c115ed715a32a628c77440253a6e3af502e1098d"",
+        ""issue_sha"": ""c115ed715a32a628c77440253a6e3af502e1098d"",",1,different format,"""constraints"": ""(eigen_solver = 'dense') -> (max_iter != 'exist')"",","2. 
+   Text Constraint: ""Maximum number of iterations for 'arpack' method. Not used if eigen_solver=='dense'""
+   Logical Format: (eigen_solver = 'dense') -> (max_iter = 'Not used')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""c115ed715a32a628c77440253a6e3af502e1098d"",
+        ""issue_sha"": ""c115ed715a32a628c77440253a6e3af502e1098d"",",1,different format,"""constraints"": ""(eigen_solver = 'dense') -> (tol != 'exist')"",","1. 
+   Text Constraint: ""Tolerance for 'arpack' method. Not used if eigen_solver=='dense'.""
+   Logical Format: (eigen_solver = 'dense') -> (tol = 'Not used')"
+"""lib"": ""scikit-learn"",
+        ""sha"": ""c115ed715a32a628c77440253a6e3af502e1098d"",
+        ""issue_sha"": ""c115ed715a32a628c77440253a6e3af502e1098d"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""c115ed715a32a628c77440253a6e3af502e1098d"",
+        ""issue_sha"": ""c115ed715a32a628c77440253a6e3af502e1098d"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""b3dca3d025bdc48c2ef07ea1de78082714e10e71"",
+        ""issue_sha"": ""b3dca3d025bdc48c2ef07ea1de78082714e10e71"",",1,different format,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""62ce1bad329c59420e1f72a6e7a2635c9b1df265"",
+        ""issue_sha"": ""62ce1bad329c59420e1f72a6e7a2635c9b1df265"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""5c9957764ac3837967f6769167effed39365c5e7"",
+        ""issue_sha"": ""5c9957764ac3837967f6769167effed39365c5e7""",1,different format,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""dd93e0106162983421975faed17800cb83463680"",
+        ""issue_sha"": ""dd93e0106162983421975faed17800cb83463680"",",1,different format,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""06bf797c0deabe2a2f166d19abbd0c305da4d123"",
+        ""issue_sha"": ""06bf797c0deabe2a2f166d19abbd0c305da4d123"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""06bf797c0deabe2a2f166d19abbd0c305da4d123"",
+        ""issue_sha"": ""06bf797c0deabe2a2f166d19abbd0c305da4d123"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""06bf797c0deabe2a2f166d19abbd0c305da4d123"",
+        ""issue_sha"": ""06bf797c0deabe2a2f166d19abbd0c305da4d123"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""893a4d45595d7bcc30dc56bd450a3cc3d8c920bc"",
+        ""issue_sha"": ""893a4d45595d7bcc30dc56bd450a3cc3d8c920bc"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""893a4d45595d7bcc30dc56bd450a3cc3d8c920bc"",
+        ""issue_sha"": ""893a4d45595d7bcc30dc56bd450a3cc3d8c920bc"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""893a4d45595d7bcc30dc56bd450a3cc3d8c920bc"",
+        ""issue_sha"": ""893a4d45595d7bcc30dc56bd450a3cc3d8c920bc"",",1,,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""a59562d414a8dbd4afb33092daf102c62f9897ad"",
+        ""issue_sha"": ""a59562d414a8dbd4afb33092daf102c62f9897ad"",",1,different format,,
+" ""lib"": ""scikit-learn"",
+        ""sha"": ""7fa117be216c889e34f5f79fd8479c0de2d47337"",
+        ""issue_sha"": ""7fa117be216c889e34f5f79fd8479c0de2d47337"",",1,different format,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""7fa117be216c889e34f5f79fd8479c0de2d47337"",
+        ""issue_sha"": ""7fa117be216c889e34f5f79fd8479c0de2d47337"",",1,different format,,
+"""lib"": ""scikit-learn"",
+        ""sha"": ""fb8721a0cec24b6ea2208ecce4fd9b4eeddfcefc"",
+        ""issue_sha"": ""fb8721a0cec24b6ea2208ecce4fd9b4eeddfcefc"",",1,,(cluster_method = 'dbscan') -> (eps = 'exist'),
+"""lib"": ""numpy"",
+        ""sha"": ""dce08c3e7eacf27ca79db3ddf3962675f7a0ef9e"",
+        ""issue_sha"": ""dce08c3e7eacf27ca79db3ddf3962675f7a0ef9e"",",1,,,
+"""lib"": ""numpy"",
+        ""sha"": ""75dbbea7d7111c151498722c0c2811cee86d34ff"",
+        ""issue_sha"": ""75dbbea7d7111c151498722c0c2811cee86d34ff"",",1,,,
+"""lib"": ""scipy"",
+        ""sha"": ""77a8ec1a473c8f471d162d50b76b0b581bbb557c"",
+        ""issue_sha"": ""77a8ec1a473c8f471d162d50b76b0b581bbb557c"",",1,,,
+"""lib"": ""scipy"",
+        ""sha"": ""acac27527df9c8723647512361c581f714fb473a"",
+        ""issue_sha"": ""acac27527df9c8723647512361c581f714fb473a"",",1,,,
+"""lib"": ""scipy"",
+        ""sha"": ""256d91882262b0534b80f99f9e023eae011567ed"",
+        ""issue_sha"": ""256d91882262b0534b80f99f9e023eae011567ed"",",0,logic wrong,"""constraints"": ""(engine = 'None') -> (seed = 'exist')"",
+","3. Text Constraint: ""seed:{None, int, `numpy.random.Generator`}, optional Used only if `engine` is None. If `seed` is an int or None, a new `numpy.random.Generator` is created using ``np.random.default_rng(seed)``. If `seed` is already a ``Generator`` instance, then the provided instance is used.""
+   Logical Format: (engine = 'None') -> ((seed = 'None' || type(seed) = 'int') -> type(seed) = 'numpy.random.Generator')"
+"""lib"": ""scipy"",
+        ""sha"": ""b80267e9b44169c1ae4ba691bce1e60b66104cbc"",
+        ""issue_sha"": ""b80267e9b44169c1ae4ba691bce1e60b66104cbc"",",1,,,
+"""lib"": ""pandas"",
+        ""sha"": ""214ac73ab7de1a3bcd38dcb2630145f831661530"",
+        ""issue_sha"": ""214ac73ab7de1a3bcd38dcb2630145f831661530""",1,,,
+"""lib"": ""pandas"",
+        ""sha"": ""218ab0930e477337ece6c46d497c14d447352d8a"",
+        ""issue_sha"": ""218ab0930e477337ece6c46d497c14d447352d8a"",",1,,,
+"""lib"": ""pandas"",
+        ""sha"": ""218ab0930e477337ece6c46d497c14d447352d8a"",
+        ""issue_sha"": ""218ab0930e477337ece6c46d497c14d447352d8a"",",1,,"""constraints"": ""!((orient = 'tight' || orient = 'columns') -> (columns != 'None'))"",
+","2. 
+Text Constraint: ""columns:list, default None Column labels to use when ``orient='index'``. Raises a ValueError if used with ``orient='columns'`` or ``orient='tight'``.""
+Logical Format: (orient = 'index') -> !(columns = 'None') ^ (orient = 'columns' || orient = 'tight') -> (columns = 'None')"

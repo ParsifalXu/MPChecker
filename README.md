@@ -67,7 +67,7 @@ python3 main.py --runall      [lib]   # run all operations
 python3 main.py --runallexp   [lib]   # run experiment cases in one command line
 ```
 
-We provide the dataset mentioned in the paper, each of them are collected from real-world popular data science projects. You can find relevant information in the [benchmark.json](./benchmark.json). All the corresponding code can be found in the the directory [./_downloads](./_downloads). The sub-directories starting with `c*-` are the same as `id` in the [benchmark.json](./benchmark.json).
+We provide the dataset mentioned in the paper, each of them are collected from real-world popular data science projects. You can find relevant information in the [benchmark.json](./benchmark.json) (Check it on the Github Repository, [MPChecker-Benchmark](https://github.com/ParsifalXu/MPChecker-Benchmark)). All the corresponding code can be found in the the directory [./_downloads](./_downloads). The sub-directories starting with `c*-` are the same as `id` in the [benchmark.json](./benchmark.json).
 
 If you want to test our tool on other libraries, you need to find file [tools/macros.py](./tools/macros.py) and fill in the library github link in the dictionary `LIB_LINK` and the docstring style in the dictionary `FLAG` (Numpy style use `Parameter`, Google style use `Args`). Keep the library name in both dictionaries consistent with the name in the command line. By `--download` command, our tool will help users to download the repository from github and save it in the directory [./_downloads](./_downloads).
 

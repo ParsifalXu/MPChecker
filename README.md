@@ -1,8 +1,8 @@
 # MPChecker: Multi-Parameter API Documentation Error Checker
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7034128.svg)](link)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15201924.svg)](https://doi.org/10.5281/zenodo.15201924)
 
-The latest version of this repository can be found at: xxx
+The latest version of this repository can be found at: https://github.com/ParsifalXu/MPChecker
 
 MPChecker is a tool for detecting multi-parameter constraint inconsistencies between documentation and the corresponding code for Python data science libraries.
 

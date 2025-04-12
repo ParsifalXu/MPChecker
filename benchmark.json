@@ -1,0 +1,3893 @@
+[
+    {
+        "id": "c1-0",
+        "lib": "scikit-learn",
+        "sha": "395761a76397a560303f00d3db24a50a00ca11ed",
+        "issue_sha": "395761a76397a560303f00d3db24a50a00ca11ed",
+        "issue_type": "logic",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_discretization.py",
+        "docfrom": "KBinsDiscretizer",
+        "class": "KBinsDiscretizer",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "sample_weight",
+            "strategy"
+        ],
+        "constraints": "(strategy = 'uniform') -> (sample_weight = 'None')"
+    },
+    {
+        "id": "c1-1",
+        "lib": "scikit-learn",
+        "sha": "395761a76397a560303f00d3db24a50a00ca11ed",
+        "issue_sha": "395761a76397a560303f00d3db24a50a00ca11ed",
+        "issue_type": "logic",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_discretization.py",
+        "docfrom": "KBinsDiscretizer",
+        "class": "KBinsDiscretizer",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "sample_weight",
+            "strategy"
+        ],
+        "constraints": "(strategy = 'uniform') -> (sample_weight != 'None')"
+    },
+    {
+        "id": "c1-2",
+        "lib": "scikit-learn",
+        "sha": "395761a76397a560303f00d3db24a50a00ca11ed",
+        "issue_sha": "395761a76397a560303f00d3db24a50a00ca11ed",
+        "issue_type": "logic",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_discretization.py",
+        "docfrom": "KBinsDiscretizer",
+        "class": "KBinsDiscretizer",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "sample_weight",
+            "strategy"
+        ],
+        "constraints": "(strateegy = 'uniform') -> (sample_weight = 'None')"
+    },
+    {
+        "id": "c2-0",
+        "lib": "scikit-learn",
+        "sha": "07a9dc93af13849e0521e94981fb5a215500b095",
+        "issue_sha": "07a9dc93af13849e0521e94981fb5a215500b095",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/impute/_base.py",
+        "docfrom": "SimpleImputer",
+        "class": "SimpleImputer",
+        "func": "inverse_transform",
+        "exec_func": "inverse_transform",
+        "params": [
+            "copy",
+            "add_indicator"
+        ],
+        "constraints": "(add_indicator = 'True') -> (copy = 'False')"
+    },
+    {
+        "id": "c2-1",
+        "lib": "scikit-learn",
+        "sha": "07a9dc93af13849e0521e94981fb5a215500b095",
+        "issue_sha": "07a9dc93af13849e0521e94981fb5a215500b095",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/impute/_base.py",
+        "docfrom": "SimpleImputer",
+        "class": "SimpleImputer",
+        "func": "inverse_transform",
+        "exec_func": "inverse_transform",
+        "params": [
+            "copy",
+            "add_indicator"
+        ],
+        "constraints": "(add_indicatoror = 'True') -> (copy = 'False')"
+    },
+    {
+        "id": "c2-2",
+        "lib": "scikit-learn",
+        "sha": "07a9dc93af13849e0521e94981fb5a215500b095",
+        "issue_sha": "07a9dc93af13849e0521e94981fb5a215500b095",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/impute/_base.py",
+        "docfrom": "SimpleImputer",
+        "class": "SimpleImputer",
+        "func": "inverse_transform",
+        "exec_func": "inverse_transform",
+        "params": [
+            "copy",
+            "add_indicator"
+        ],
+        "constraints": "(add_indicator = 'True') -> (copyyy = 'False')"
+    },
+    {
+        "id": "c3-0",
+        "lib": "scikit-learn",
+        "sha": "483fafe5d1a27446a8f05a0d9bb3762de47b1618",
+        "issue_sha": "10997c94fd19f999b3d257b137f7722af0bd6fd8",
+        "issue_type": "logic",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_data.py",
+        "docfrom": "StandardScaler",
+        "class": "StandardScaler",
+        "func": "partial_fit",
+        "exec_func": "partial_fit",
+        "params": [
+            "with_std",
+            "scale_"
+        ],
+        "constraints": "(with_std = False) -> (scale_ = None)"
+    },
+    {
+        "id": "c3-1",
+        "lib": "scikit-learn",
+        "sha": "483fafe5d1a27446a8f05a0d9bb3762de47b1618",
+        "issue_sha": "10997c94fd19f999b3d257b137f7722af0bd6fd8",
+        "issue_type": "logic",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_data.py",
+        "docfrom": "StandardScaler",
+        "class": "StandardScaler",
+        "func": "partial_fit",
+        "exec_func": "partial_fit",
+        "params": [
+            "with_std",
+            "scale_"
+        ],
+        "constraints": "(with_std = True) -> (scale_ = None)"
+    },
+    {
+        "id": "c3-2",
+        "lib": "scikit-learn",
+        "sha": "483fafe5d1a27446a8f05a0d9bb3762de47b1618",
+        "issue_sha": "10997c94fd19f999b3d257b137f7722af0bd6fd8",
+        "issue_type": "logic",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_data.py",
+        "docfrom": "StandardScaler",
+        "class": "StandardScaler",
+        "func": "partial_fit",
+        "exec_func": "partial_fit",
+        "params": [
+            "with_std",
+            "scale_"
+        ],
+        "constraints": "(with_standard = False) -> (scale_ = None)"
+    },
+    {
+        "id": "c4-0",
+        "lib": "scikit-learn",
+        "sha": "10997c94fd19f999b3d257b137f7722af0bd6fd8",
+        "issue_sha": "10997c94fd19f999b3d257b137f7722af0bd6fd8",
+        "issue_type": "logic",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_data.py",
+        "docfrom": "StandardScaler",
+        "class": "StandardScaler",
+        "func": "partial_fit",
+        "exec_func": "partial_fit",
+        "params": [
+            "with_mean",
+            "mean_"
+        ],
+        "constraints": "((with_mean = 'False') ^ (with_std = 'False')) -> (mean_ = 'None')"
+    },
+    {
+        "id": "c4-1",
+        "lib": "scikit-learn",
+        "sha": "10997c94fd19f999b3d257b137f7722af0bd6fd8",
+        "issue_sha": "10997c94fd19f999b3d257b137f7722af0bd6fd8",
+        "issue_type": "logic",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_data.py",
+        "docfrom": "StandardScaler",
+        "class": "StandardScaler",
+        "func": "partial_fit",
+        "exec_func": "partial_fit",
+        "params": [
+            "with_mean",
+            "mean_"
+        ],
+        "constraints": "((with_mean = 'True') ^ (with_std = 'False')) -> (mean_ = 'None')"
+    },
+    {
+        "id": "c4-2",
+        "lib": "scikit-learn",
+        "sha": "10997c94fd19f999b3d257b137f7722af0bd6fd8",
+        "issue_sha": "10997c94fd19f999b3d257b137f7722af0bd6fd8",
+        "issue_type": "logic",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_data.py",
+        "docfrom": "StandardScaler",
+        "class": "StandardScaler",
+        "func": "partial_fit",
+        "exec_func": "partial_fit",
+        "params": [
+            "with_mean",
+            "mean_"
+        ],
+        "constraints": "((with_mean = 'False') ^ (with_std = 'False')) -> (mean_ != 'None')"
+    },
+    {
+        "id": "c5-0",
+        "lib": "scikit-learn",
+        "sha": "767d3555a51a4d9279ca47c9426df8b6418da8ce",
+        "issue_sha": "8409b877fdf3212cd9ed65c7868202961a777a20",
+        "issue_type": "value",
+        "granularity": "class",
+        "filepath": "sklearn/feature_selection/_sequential.py",
+        "docfrom": "SequentialFeatureSelector",
+        "class": "SequentialFeatureSelector",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "direction",
+            "tol"
+        ],
+        "constraints": "(direction = 'backward') -> (tol < 0)"
+    },
+    {
+        "id": "c5-1",
+        "lib": "scikit-learn",
+        "sha": "767d3555a51a4d9279ca47c9426df8b6418da8ce",
+        "issue_sha": "8409b877fdf3212cd9ed65c7868202961a777a20",
+        "issue_type": "value",
+        "granularity": "class",
+        "filepath": "sklearn/feature_selection/_sequential.py",
+        "docfrom": "SequentialFeatureSelector",
+        "class": "SequentialFeatureSelector",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "direction",
+            "tol"
+        ],
+        "constraints": "(direction = 'forward') -> (tol < 0)"
+    },
+    {
+        "id": "c5-2",
+        "lib": "scikit-learn",
+        "sha": "767d3555a51a4d9279ca47c9426df8b6418da8ce",
+        "issue_sha": "8409b877fdf3212cd9ed65c7868202961a777a20",
+        "issue_type": "value",
+        "granularity": "class",
+        "filepath": "sklearn/feature_selection/_sequential.py",
+        "docfrom": "SequentialFeatureSelector",
+        "class": "SequentialFeatureSelector",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "direction",
+            "tol"
+        ],
+        "constraints": "(direction = 'backward') -> (tol > 0)"
+    },
+    {
+        "id": "c6-0",
+        "lib": "scikit-learn",
+        "sha": "8409b877fdf3212cd9ed65c7868202961a777a20",
+        "issue_sha": "8409b877fdf3212cd9ed65c7868202961a777a20",
+        "issue_type": "value",
+        "granularity": "class",
+        "filepath": "sklearn/feature_selection/_sequential.py",
+        "docfrom": "SequentialFeatureSelector",
+        "class": "SequentialFeatureSelector",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "n_features_to_select",
+            "tol"
+        ],
+        "constraints": "(n_features_to_select = 'auto') -> (tol != 'None')"
+    },
+    {
+        "id": "c7-0",
+        "lib": "scikit-learn",
+        "sha": "7e8d3c505baafa45bd94d9e28ee3d35141ff91c4",
+        "issue_sha": "451f2121eab19dd25c337192a89d8c1582664d89",
+        "issue_type": "value",
+        "granularity": "func",
+        "filepath": "sklearn/metrics/_ranking.py",
+        "docfrom": "roc_auc_score",
+        "class": "NA",
+        "func": "roc_auc_score",
+        "exec_func": "_multiclass_roc_auc_score",
+        "params": [
+            "average",
+            "multi_class"
+        ],
+        "constraints": "(multi_class = 'ovo') -> (average = 'None')"
+    },
+    {
+        "id": "c7-1",
+        "lib": "scikit-learn",
+        "sha": "7e8d3c505baafa45bd94d9e28ee3d35141ff91c4",
+        "issue_sha": "451f2121eab19dd25c337192a89d8c1582664d89",
+        "issue_type": "value",
+        "granularity": "func",
+        "filepath": "sklearn/metrics/_ranking.py",
+        "docfrom": "roc_auc_score",
+        "class": "NA",
+        "func": "roc_auc_score",
+        "exec_func": "_multiclass_roc_auc_score",
+        "params": [
+            "average",
+            "sample_weight"
+        ],
+        "constraints": "(multi_class = 'ovo') -> (sample_weight != 'None')"
+    },
+    {
+        "id": "c7-2",
+        "lib": "scikit-learn",
+        "sha": "7e8d3c505baafa45bd94d9e28ee3d35141ff91c4",
+        "issue_sha": "451f2121eab19dd25c337192a89d8c1582664d89",
+        "issue_type": "value",
+        "granularity": "func",
+        "filepath": "sklearn/metrics/_ranking.py",
+        "docfrom": "roc_auc_score",
+        "class": "NA",
+        "func": "roc_auc_score",
+        "exec_func": "_multiclass_roc_auc_score",
+        "params": [
+            "average",
+            "multiple_class"
+        ],
+        "constraints": "(multiple_class = 'ovo') -> (average = 'None')"
+    },
+    {
+        "id": "c8-0",
+        "lib": "scikit-learn",
+        "sha": "451f2121eab19dd25c337192a89d8c1582664d89",
+        "issue_sha": "451f2121eab19dd25c337192a89d8c1582664d89",
+        "issue_type": "value",
+        "granularity": "func",
+        "filepath": "sklearn/metrics/_ranking.py",
+        "docfrom": "roc_auc_score",
+        "class": "NA",
+        "func": "roc_auc_score",
+        "exec_func": "_multiclass_roc_auc_score",
+        "params": [
+            "average",
+            "multi_class"
+        ],
+        "constraints": "(multi_class = 'ovr') -> (average = 'micro')"
+    },
+    {
+        "id": "c8-1",
+        "lib": "scikit-learn",
+        "sha": "451f2121eab19dd25c337192a89d8c1582664d89",
+        "issue_sha": "451f2121eab19dd25c337192a89d8c1582664d89",
+        "issue_type": "value",
+        "granularity": "func",
+        "filepath": "sklearn/metrics/_ranking.py",
+        "docfrom": "roc_auc_score",
+        "class": "NA",
+        "func": "roc_auc_score",
+        "exec_func": "_multiclass_roc_auc_score",
+        "params": [
+            "average",
+            "multiple_class"
+        ],
+        "constraints": "(multiple_class = 'ovr') -> (average = 'micro')"
+    },
+    {
+        "id": "c8-2",
+        "lib": "scikit-learn",
+        "sha": "451f2121eab19dd25c337192a89d8c1582664d89",
+        "issue_sha": "451f2121eab19dd25c337192a89d8c1582664d89",
+        "issue_type": "value",
+        "granularity": "func",
+        "filepath": "sklearn/metrics/_ranking.py",
+        "docfrom": "roc_auc_score",
+        "class": "NA",
+        "func": "roc_auc_score",
+        "exec_func": "_multiclass_roc_auc_score",
+        "params": [
+            "average",
+            "multi_class"
+        ],
+        "constraints": "(multi_class = 'ovo') -> (average = 'None')"
+    },
+    {
+        "id": "c9-0",
+        "lib": "scikit-learn",
+        "sha": "07bc459be26c7d83d5c980553a853b136ca19c71",
+        "issue_sha": "beea7838cc8ec61c78255bd9c8b400997e30db32",
+        "issue_type": "removec",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_ridge.py",
+        "docfrom": "RidgeClassifierCV",
+        "class": "_RidgeGCV",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "store_cv_values",
+            "cv_values_"
+        ],
+        "constraints": "(store_cv_values = 'True') -> (cv_values_ != 'None')"
+    },
+    {
+        "id": "c9-1",
+        "lib": "scikit-learn",
+        "sha": "07bc459be26c7d83d5c980553a853b136ca19c71",
+        "issue_sha": "beea7838cc8ec61c78255bd9c8b400997e30db32",
+        "issue_type": "removec",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_ridge.py",
+        "docfrom": "RidgeClassifierCV",
+        "class": "_RidgeGCV",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "store_cv_values",
+            "cv_values_"
+        ],
+        "constraints": "(store_cv_values = 'False') -> (cv_values_ != 'None')"
+    },
+    {
+        "id": "c9-2",
+        "lib": "scikit-learn",
+        "sha": "07bc459be26c7d83d5c980553a853b136ca19c71",
+        "issue_sha": "beea7838cc8ec61c78255bd9c8b400997e30db32",
+        "issue_type": "removec",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_ridge.py",
+        "docfrom": "RidgeClassifierCV",
+        "class": "_RidgeGCV",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "store_cv_values",
+            "cv_values_"
+        ],
+        "constraints": "(store_cv_value = 'False') -> (cv_values_ = 'None')"
+    },
+    {
+        "id": "c10-0",
+        "lib": "scikit-learn",
+        "sha": "a0ba256dbe9380b5d2cf9cee133482fc87768267",
+        "issue_sha": "a0ba256dbe9380b5d2cf9cee133482fc87768267",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/ensemble/_bagging.py",
+        "docfrom": "BaggingClassifier",
+        "class": "BaseBagging",
+        "func": "_fit",
+        "exec_func": "_fit",
+        "params": [
+            "oob_score",
+            "bootstrap"
+        ],
+        "constraints": "(bootstrap = 'True') -> (oob_score != 'None')"
+    },
+    {
+        "id": "c10-1",
+        "lib": "scikit-learn",
+        "sha": "a0ba256dbe9380b5d2cf9cee133482fc87768267",
+        "issue_sha": "a0ba256dbe9380b5d2cf9cee133482fc87768267",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/ensemble/_bagging.py",
+        "docfrom": "BaggingClassifier",
+        "class": "BaseBagging",
+        "func": "_fit",
+        "exec_func": "_fit",
+        "params": [
+            "oob_score",
+            "bootstrap"
+        ],
+        "constraints": "(bootstrap = 'False') -> (oob_score != 'None')"
+    },
+    {
+        "id": "c10-2",
+        "lib": "scikit-learn",
+        "sha": "a0ba256dbe9380b5d2cf9cee133482fc87768267",
+        "issue_sha": "a0ba256dbe9380b5d2cf9cee133482fc87768267",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/ensemble/_bagging.py",
+        "docfrom": "BaggingClassifier",
+        "class": "BaseBagging",
+        "func": "_fit",
+        "exec_func": "_fit",
+        "params": [
+            "oob_score",
+            "bootstrap"
+        ],
+        "constraints": "(warm_start = 'True') -> (oob_score != 'None')"
+    },
+    {
+        "id": "c11-0",
+        "lib": "scikit-learn",
+        "sha": "7404a82891ef82c525ec61c76090f12424670a44",
+        "issue_sha": "7404a82891ef82c525ec61c76090f12424670a44",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "dict_learning",
+        "class": "NA",
+        "func": "dict_learning",
+        "exec_func": "dict_learning",
+        "params": [
+            "code_init",
+            "dict_init"
+        ],
+        "constraints": "(code_init != 'None') ^ (dict_init != 'None')"
+    },
+    {
+        "id": "c11-1",
+        "lib": "scikit-learn",
+        "sha": "7404a82891ef82c525ec61c76090f12424670a44",
+        "issue_sha": "7404a82891ef82c525ec61c76090f12424670a44",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "dict_learning",
+        "class": "NA",
+        "func": "dict_learning",
+        "exec_func": "dict_learning",
+        "params": [
+            "code_init",
+            "dict_init"
+        ],
+        "constraints": "(code_init = 'None') ^ (dict_init != 'None')"
+    },
+    {
+        "id": "c11-2",
+        "lib": "scikit-learn",
+        "sha": "7404a82891ef82c525ec61c76090f12424670a44",
+        "issue_sha": "7404a82891ef82c525ec61c76090f12424670a44",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "dict_learning",
+        "class": "NA",
+        "func": "dict_learning",
+        "exec_func": "dict_learning",
+        "params": [
+            "code_init",
+            "dict_init"
+        ],
+        "constraints": "(code_init != 'None') ^ (dict_init = 'None')"
+    },
+    {
+        "id": "c12-0",
+        "lib": "scikit-learn",
+        "sha": "1e46db669318fe20458d7cf135f6107e19e90970",
+        "issue_sha": "1e46db669318fe20458d7cf135f6107e19e90970",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_data.py",
+        "docfrom": "StandardScaler",
+        "class": "StandardScaler",
+        "func": "partial_fit",
+        "exec_func": "partial_fit",
+        "params": [
+            "scale_",
+            "with_std"
+        ],
+        "constraints": "(with_std = 'False') -> (scale_ = 'None')"
+    },
+    {
+        "id": "c12-1",
+        "lib": "scikit-learn",
+        "sha": "1e46db669318fe20458d7cf135f6107e19e90970",
+        "issue_sha": "1e46db669318fe20458d7cf135f6107e19e90970",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_data.py",
+        "docfrom": "StandardScaler",
+        "class": "StandardScaler",
+        "func": "partial_fit",
+        "exec_func": "partial_fit",
+        "params": [
+            "scale_",
+            "with_std"
+        ],
+        "constraints": "(with_std = 'False') -> (scale_ = _handle_zeros_in_scale())"
+    },
+    {
+        "id": "c12-2",
+        "lib": "scikit-learn",
+        "sha": "1e46db669318fe20458d7cf135f6107e19e90970",
+        "issue_sha": "1e46db669318fe20458d7cf135f6107e19e90970",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_data.py",
+        "docfrom": "StandardScaler",
+        "class": "StandardScaler",
+        "func": "partial_fit",
+        "exec_func": "partial_fit",
+        "params": [
+            "scale_",
+            "with_std"
+        ],
+        "constraints": "(with_std = 'False') -> (scale_ != 'None')"
+    },
+    {
+        "id": "c13-0",
+        "lib": "scikit-learn",
+        "sha": "b5d63e34746ec273c1cbc5992a0477198a22f8be",
+        "issue_sha": "b5d63e34746ec273c1cbc5992a0477198a22f8be",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_omp.py",
+        "docfrom": "OrthogonalMatchingPursuit",
+        "class": "OrthogonalMatchingPursuit",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "n_nonzero_coefs_",
+            "tol"
+        ],
+        "constraints": "((n_nonzero_coefs_ = 'None') ^ (tol = 'None')) -> (max(int(0.1 * n_features), 1))"
+    },
+    {
+        "id": "c13-1",
+        "lib": "scikit-learn",
+        "sha": "b5d63e34746ec273c1cbc5992a0477198a22f8be",
+        "issue_sha": "b5d63e34746ec273c1cbc5992a0477198a22f8be",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_omp.py",
+        "docfrom": "OrthogonalMatchingPursuit",
+        "class": "OrthogonalMatchingPursuit",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "n_nonzero_coefs_",
+            "tol"
+        ],
+        "constraints": "((n_nonzero_coefs_ != 'None') ^ (tol = 'None')) -> (max(int(0.1 * n_features), 1))"
+    },
+    {
+        "id": "c13-2",
+        "lib": "scikit-learn",
+        "sha": "b5d63e34746ec273c1cbc5992a0477198a22f8be",
+        "issue_sha": "b5d63e34746ec273c1cbc5992a0477198a22f8be",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_omp.py",
+        "docfrom": "OrthogonalMatchingPursuit",
+        "class": "OrthogonalMatchingPursuit",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "n_nonzero_coefs_",
+            "tol"
+        ],
+        "constraints": "((n_nonzero_coefs_ = 'None') ^ (tol = 'None')) -> (min(int(0.1 * n_features), 1))"
+    },
+    {
+        "id": "c14-0",
+        "lib": "scikit-learn",
+        "sha": "53fea53c6f44580738feb6d890f55d7de2fe8cc6",
+        "issue_sha": "53fea53c6f44580738feb6d890f55d7de2fe8cc6",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/impute/_base.py",
+        "docfrom": "MissingIndicator",
+        "class": "MissingIndicator",
+        "func": "transform",
+        "exec_func": "transform",
+        "params": [
+            "error_on_new",
+            "features"
+        ],
+        "constraints": "(features = 'missing-only') -> (error_on_new != 'None')"
+    },
+    {
+        "id": "c14-1",
+        "lib": "scikit-learn",
+        "sha": "53fea53c6f44580738feb6d890f55d7de2fe8cc6",
+        "issue_sha": "53fea53c6f44580738feb6d890f55d7de2fe8cc6",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/impute/_base.py",
+        "docfrom": "MissingIndicator",
+        "class": "MissingIndicator",
+        "func": "transform",
+        "exec_func": "transform",
+        "params": [
+            "error_on_new",
+            "features"
+        ],
+        "constraints": "(features = 'missing-only') -> (error_on_new = 'None')"
+    },
+    {
+        "id": "c14-2",
+        "lib": "scikit-learn",
+        "sha": "53fea53c6f44580738feb6d890f55d7de2fe8cc6",
+        "issue_sha": "53fea53c6f44580738feb6d890f55d7de2fe8cc6",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/impute/_base.py",
+        "docfrom": "MissingIndicator",
+        "class": "MissingIndicator",
+        "func": "transform",
+        "exec_func": "transform",
+        "params": [
+            "error_on_new",
+            "features"
+        ],
+        "constraints": "(features = 'missing-only') -> (errornew != 'None')"
+    },
+    {
+        "id": "c15-0",
+        "lib": "scikit-learn",
+        "sha": "5147fd09c6a063188efde444f47bd006fa5f95f0",
+        "issue_sha": "5147fd09c6a063188efde444f47bd006fa5f95f0",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/linear_model/sag.py",
+        "docfrom": "get_auto_step_size",
+        "class": "NA",
+        "func": "get_auto_step_size",
+        "exec_func": "get_auto_step_size",
+        "params": [
+            "is_saga",
+            "n_samples"
+        ],
+        "constraints": "(is_saga = 'True') -> (n_samples = 'exist')"
+    },
+    {
+        "id": "c15-1",
+        "lib": "scikit-learn",
+        "sha": "5147fd09c6a063188efde444f47bd006fa5f95f0",
+        "issue_sha": "5147fd09c6a063188efde444f47bd006fa5f95f0",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/linear_model/sag.py",
+        "docfrom": "get_auto_step_size",
+        "class": "NA",
+        "func": "get_auto_step_size",
+        "exec_func": "get_auto_step_size",
+        "params": [
+            "is_saga",
+            "n_samples"
+        ],
+        "constraints": "(is_saga = 'False') -> (n_samples = 'exist')"
+    },
+    {
+        "id": "c15-2",
+        "lib": "scikit-learn",
+        "sha": "5147fd09c6a063188efde444f47bd006fa5f95f0",
+        "issue_sha": "5147fd09c6a063188efde444f47bd006fa5f95f0",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/linear_model/sag.py",
+        "docfrom": "get_auto_step_size",
+        "class": "NA",
+        "func": "get_auto_step_size",
+        "exec_func": "get_auto_step_size",
+        "params": [
+            "is_saga",
+            "n_samples"
+        ],
+        "constraints": "(is_saga = 'False') -> (n_samples = None)"
+    },
+    {
+        "id": "c16-0",
+        "lib": "scikit-learn",
+        "sha": "b513081c658317eabafd713d6d5d18f7a5a30a73",
+        "issue_sha": "b513081c658317eabafd713d6d5d18f7a5a30a73",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/_spectral.py",
+        "docfrom": "SpectralClustering",
+        "class": "SpectralClustering",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "affinity",
+            "n_jobs"
+        ],
+        "constraints": "(affinity = 'nearest_neighbors') -> (n_jobs = 'exist')"
+    },
+    {
+        "id": "c16-1",
+        "lib": "scikit-learn",
+        "sha": "b513081c658317eabafd713d6d5d18f7a5a30a73",
+        "issue_sha": "b513081c658317eabafd713d6d5d18f7a5a30a73",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/_spectral.py",
+        "docfrom": "SpectralClustering",
+        "class": "SpectralClustering",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "affinity",
+            "n_jobs"
+        ],
+        "constraints": "(affinity = 'nearest_neighbors') -> (n_jobs != 'exist')"
+    },
+    {
+        "id": "c16-2",
+        "lib": "scikit-learn",
+        "sha": "b513081c658317eabafd713d6d5d18f7a5a30a73",
+        "issue_sha": "b513081c658317eabafd713d6d5d18f7a5a30a73",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/_spectral.py",
+        "docfrom": "SpectralClustering",
+        "class": "SpectralClustering",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "affinity",
+            "n_jobs"
+        ],
+        "constraints": "(affinity = 'nearest_neighbors') -> (m_jobs = 'exist')"
+    },
+    {
+        "id": "c17-0",
+        "lib": "scikit-learn",
+        "sha": "b513081c658317eabafd713d6d5d18f7a5a30a73",
+        "issue_sha": "b513081c658317eabafd713d6d5d18f7a5a30a73",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/_spectral.py",
+        "docfrom": "SpectralClustering",
+        "class": "SpectralClustering",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "affinity",
+            "n_jobs"
+        ],
+        "constraints": "(affinity = 'precomputed_nearest_neighbors') -> (n_jobs = 'exist')"
+    },
+    {
+        "id": "c17-1",
+        "lib": "scikit-learn",
+        "sha": "b513081c658317eabafd713d6d5d18f7a5a30a73",
+        "issue_sha": "b513081c658317eabafd713d6d5d18f7a5a30a73",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/_spectral.py",
+        "docfrom": "SpectralClustering",
+        "class": "SpectralClustering",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "affinity",
+            "n_jobs"
+        ],
+        "constraints": "(affinity = 'precomputed') -> (n_jobs = 'exist')"
+    },
+    {
+        "id": "c17-2",
+        "lib": "scikit-learn",
+        "sha": "b513081c658317eabafd713d6d5d18f7a5a30a73",
+        "issue_sha": "b513081c658317eabafd713d6d5d18f7a5a30a73",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/_spectral.py",
+        "docfrom": "SpectralClustering",
+        "class": "SpectralClustering",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "affinity",
+            "n_jobs"
+        ],
+        "constraints": "(affinity = 'precomputed_nearest_neighbors') -> (m_jobs = 'exist')"
+    },
+    {
+        "id": "c18-0",
+        "lib": "scikit-learn",
+        "sha": "fdce26a61b5e388ee0871f5cb90ec24afc61c074",
+        "issue_sha": "fdce26a61b5e388ee0871f5cb90ec24afc61c074",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/semi_supervised/_self_training.py",
+        "docfrom": "SelfTrainingClassifier",
+        "class": "SelfTrainingClassifier",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "criterion",
+            "k_best"
+        ],
+        "constraints": "(criterion = 'k_best') -> (k_best = 'exist')"
+    },
+    {
+        "id": "c18-1",
+        "lib": "scikit-learn",
+        "sha": "fdce26a61b5e388ee0871f5cb90ec24afc61c074",
+        "issue_sha": "fdce26a61b5e388ee0871f5cb90ec24afc61c074",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/semi_supervised/_self_training.py",
+        "docfrom": "SelfTrainingClassifier",
+        "class": "SelfTrainingClassifier",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "criterion",
+            "k_best"
+        ],
+        "constraints": "(criterion = 'k_best') -> (k_best != 'used')"
+    },
+    {
+        "id": "c18-2",
+        "lib": "scikit-learn",
+        "sha": "fdce26a61b5e388ee0871f5cb90ec24afc61c074",
+        "issue_sha": "fdce26a61b5e388ee0871f5cb90ec24afc61c074",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/semi_supervised/_self_training.py",
+        "docfrom": "SelfTrainingClassifier",
+        "class": "SelfTrainingClassifier",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "criterion",
+            "k_best"
+        ],
+        "constraints": "(criterion = 'others') -> (k_best = 'exist')"
+    },
+    {
+        "id": "c19-0",
+        "lib": "scikit-learn",
+        "sha": "20509fb2bcfea6c0d8ccd72535a3289f61c08bb0",
+        "issue_sha": "20509fb2bcfea6c0d8ccd72535a3289f61c08bb0",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/impute/_iterative.py",
+        "docfrom": "IterativeImputer",
+        "class": "IterativeImputer",
+        "func": "__init__",
+        "exec_func": "__init__",
+        "params": [
+            "add_indicator",
+            "indicator_"
+        ],
+        "constraints": "(add_indicator = 'False') -> (indicator_ = 'None')"
+    },
+    {
+        "id": "c19-1",
+        "lib": "scikit-learn",
+        "sha": "20509fb2bcfea6c0d8ccd72535a3289f61c08bb0",
+        "issue_sha": "20509fb2bcfea6c0d8ccd72535a3289f61c08bb0",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/impute/_iterative.py",
+        "docfrom": "IterativeImputer",
+        "class": "IterativeImputer",
+        "func": "__init__",
+        "exec_func": "__init__",
+        "params": [
+            "add_indicator",
+            "indicator_"
+        ],
+        "constraints": "(add_indicator = 'False') -> (indicator_ != 'None')"
+    },
+    {
+        "id": "c19-2",
+        "lib": "scikit-learn",
+        "sha": "20509fb2bcfea6c0d8ccd72535a3289f61c08bb0",
+        "issue_sha": "20509fb2bcfea6c0d8ccd72535a3289f61c08bb0",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/impute/_iterative.py",
+        "docfrom": "IterativeImputer",
+        "class": "IterativeImputer",
+        "func": "__init__",
+        "exec_func": "__init__",
+        "params": [
+            "add_indicator",
+            "indicator_"
+        ],
+        "constraints": "(add_indicator = 'True') -> (indicator_ = 'None')"
+    },
+    {
+        "id": "c20-0",
+        "lib": "scikit-learn",
+        "sha": "131109b0037ec71e4a4f262b888e198d58e38f24",
+        "issue_sha": "395761a76397a560303f00d3db24a50a00ca11ed",
+        "issue_type": "logic",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_discretization.py",
+        "docfrom": "KBinsDiscretizer",
+        "class": "KBinsDiscretizer",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "sample_weight",
+            "strategy"
+        ],
+        "constraints": "(strategy = 'quantile') -> (sample_weight != 'None')"
+    },
+    {
+        "id": "c20-1",
+        "lib": "scikit-learn",
+        "sha": "131109b0037ec71e4a4f262b888e198d58e38f24",
+        "issue_sha": "395761a76397a560303f00d3db24a50a00ca11ed",
+        "issue_type": "logic",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_discretization.py",
+        "docfrom": "KBinsDiscretizer",
+        "class": "KBinsDiscretizer",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "sample_weight",
+            "strategy"
+        ],
+        "constraints": "(strategy = 'quantile') -> (sample_weight != 'None')"
+    },
+    {
+        "id": "c20-2",
+        "lib": "scikit-learn",
+        "sha": "131109b0037ec71e4a4f262b888e198d58e38f24",
+        "issue_sha": "395761a76397a560303f00d3db24a50a00ca11ed",
+        "issue_type": "logic",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_discretization.py",
+        "docfrom": "KBinsDiscretizer",
+        "class": "KBinsDiscretizer",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "sample_weight",
+            "strategy"
+        ],
+        "constraints": "(strategy = 'quantile') -> (sample_weight != 'None')"
+    },
+    {
+        "id": "c20-1",
+        "lib": "scikit-learn",
+        "sha": "131109b0037ec71e4a4f262b888e198d58e38f24",
+        "issue_sha": "395761a76397a560303f00d3db24a50a00ca11ed",
+        "issue_type": "logic",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_discretization.py",
+        "docfrom": "KBinsDiscretizer",
+        "class": "KBinsDiscretizer",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "sample_weight",
+            "strategy"
+        ],
+        "constraints": "(strategy = 'quantile') -> (sample != 'None')"
+    },
+    {
+        "id": "c20-2",
+        "lib": "scikit-learn",
+        "sha": "131109b0037ec71e4a4f262b888e198d58e38f24",
+        "issue_sha": "395761a76397a560303f00d3db24a50a00ca11ed",
+        "issue_type": "logic",
+        "granularity": "class",
+        "filepath": "sklearn/preprocessing/_discretization.py",
+        "docfrom": "KBinsDiscretizer",
+        "class": "KBinsDiscretizer",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "sample_weight",
+            "strategy"
+        ],
+        "constraints": "(strategies = 'quantile') -> (sample != 'None')"
+    },
+    {
+        "id": "c21-0",
+        "lib": "scikit-learn",
+        "sha": "07a9dc93af13849e0521e94981fb5a215500b095",
+        "issue_sha": "07a9dc93af13849e0521e94981fb5a215500b095",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/impute/_base.py",
+        "docfrom": "SimpleImputer",
+        "class": "SimpleImputer",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "fill_value",
+            "strategy"
+        ],
+        "constraints": "(strategy = 'constant') -> (fill_value = 'used')"
+    },
+    {
+        "id": "c21-1",
+        "lib": "scikit-learn",
+        "sha": "07a9dc93af13849e0521e94981fb5a215500b095",
+        "issue_sha": "07a9dc93af13849e0521e94981fb5a215500b095",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/impute/_base.py",
+        "docfrom": "SimpleImputer",
+        "class": "SimpleImputer",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "fill_value",
+            "strategy"
+        ],
+        "constraints": "(strategy = 'most_frequent') -> (fill_value = 'used')"
+    },
+    {
+        "id": "c21-2",
+        "lib": "scikit-learn",
+        "sha": "07a9dc93af13849e0521e94981fb5a215500b095",
+        "issue_sha": "07a9dc93af13849e0521e94981fb5a215500b095",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/impute/_base.py",
+        "docfrom": "SimpleImputer",
+        "class": "SimpleImputer",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "fill_value",
+            "strategy"
+        ],
+        "constraints": "(strategy = 'constant') -> (fill_value != 'used')"
+    },
+    {
+        "id": "c22-0",
+        "lib": "scikit-learn",
+        "sha": "3cde262274a9187fe16c6aeccdcdf9fc433f0fb2",
+        "issue_sha": "3cde262274a9187fe16c6aeccdcdf9fc433f0fb2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/ensemble/_hist_gradient_boosting/gradient_boosting.py",
+        "docfrom": "HistGradientBoostingRegressor",
+        "class": "HistGradientBoostingRegressor",
+        "func": "_encode_y",
+        "exec_func": "_encode_y",
+        "params": [
+            "loss",
+            "_encode_y"
+        ],
+        "constraints": "(y >= 0) -> (loss = 'poisson')"
+    },
+    {
+        "id": "c22-1",
+        "lib": "scikit-learn",
+        "sha": "3cde262274a9187fe16c6aeccdcdf9fc433f0fb2",
+        "issue_sha": "3cde262274a9187fe16c6aeccdcdf9fc433f0fb2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/ensemble/_hist_gradient_boosting/gradient_boosting.py",
+        "docfrom": "HistGradientBoostingRegressor",
+        "class": "HistGradientBoostingRegressor",
+        "func": "_encode_y",
+        "exec_func": "_encode_y",
+        "params": [
+            "loss",
+            "_encode_y"
+        ],
+        "constraints": "(y < 0) -> (loss = 'poisson')"
+    },
+    {
+        "id": "c22-2",
+        "lib": "scikit-learn",
+        "sha": "3cde262274a9187fe16c6aeccdcdf9fc433f0fb2",
+        "issue_sha": "3cde262274a9187fe16c6aeccdcdf9fc433f0fb2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/ensemble/_hist_gradient_boosting/gradient_boosting.py",
+        "docfrom": "HistGradientBoostingRegressor",
+        "class": "HistGradientBoostingRegressor",
+        "func": "_encode_y",
+        "exec_func": "_encode_y",
+        "params": [
+            "loss",
+            "_encode_y"
+        ],
+        "constraints": "(y >= 0) -> (loss = 'least_squares')"
+    },
+    {
+        "id": "c23-0",
+        "lib": "scikit-learn",
+        "sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/neural_network/_multilayer_perceptron.py",
+        "docfrom": "MLPRegressor",
+        "class": "BaseMultilayerPerceptron",
+        "func": "_fit_stochastic",
+        "exec_func": "_fit_stochastic",
+        "params": [
+            "validation_fraction",
+            "early_stpping"
+        ],
+        "constraints": "(early_stpping = 'True') -> (validation_fraction = 'exist')"
+    },
+    {
+        "id": "c23-1",
+        "lib": "scikit-learn",
+        "sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/neural_network/_multilayer_perceptron.py",
+        "docfrom": "MLPRegressor",
+        "class": "BaseMultilayerPerceptron",
+        "func": "_fit_stochastic",
+        "exec_func": "_fit_stochastic",
+        "params": [
+            "validation_fraction",
+            "early_stpping"
+        ],
+        "constraints": "(early_stpping = 'False') -> (validation_fraction = 'exist')"
+    },
+    {
+        "id": "c23-2",
+        "lib": "scikit-learn",
+        "sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/neural_network/_multilayer_perceptron.py",
+        "docfrom": "MLPRegressor",
+        "class": "BaseMultilayerPerceptron",
+        "func": "_fit_stochastic",
+        "exec_func": "_fit_stochastic",
+        "params": [
+            "validation_fraction",
+            "early_stpping"
+        ],
+        "constraints": "(early_stpping = 'True') -> (validation_fraction != 'exist')"
+    },
+    {
+        "id": "c24-0",
+        "lib": "scikit-learn",
+        "sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/neural_network/_multilayer_perceptron.py",
+        "docfrom": "MLPRegressor",
+        "class": "BaseMultilayerPerceptron",
+        "func": "_fit_stochastic",
+        "exec_func": "_fit_stochastic",
+        "params": [
+            "batch_size",
+            "n_samples"
+        ],
+        "constraints": "(batch_size = 'auto') -> batch_size=min(200, n_samples)"
+    },
+    {
+        "id": "c24-1",
+        "lib": "scikit-learn",
+        "sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/neural_network/_multilayer_perceptron.py",
+        "docfrom": "MLPRegressor",
+        "class": "BaseMultilayerPerceptron",
+        "func": "_fit_stochastic",
+        "exec_func": "_fit_stochastic",
+        "params": [
+            "batch_size",
+            "n_samples"
+        ],
+        "constraints": "(batch_size = 'auto') -> batch_size=max(200, n_samples)"
+    },
+    {
+        "id": "c24-2",
+        "lib": "scikit-learn",
+        "sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/neural_network/_multilayer_perceptron.py",
+        "docfrom": "MLPRegressor",
+        "class": "BaseMultilayerPerceptron",
+        "func": "_fit_stochastic",
+        "exec_func": "_fit_stochastic",
+        "params": [
+            "batch_size",
+            "n_samples"
+        ],
+        "constraints": "(batch_size != 'None') -> batch_size=min(200, n_samples)"
+    },
+    {
+        "id": "c25-0",
+        "lib": "scikit-learn",
+        "sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/neural_network/_multilayer_perceptron.py",
+        "docfrom": "MLPRegressor",
+        "class": "BaseMultilayerPerceptron",
+        "func": "_fit_stochastic",
+        "exec_func": "_fit_stochastic",
+        "params": [
+            "learning_rate",
+            "solver"
+        ],
+        "constraints": "(solver = 'sgd' || solver = 'adam') -> (learning_rate = 'exist')"
+    },
+    {
+        "id": "c25-1",
+        "lib": "scikit-learn",
+        "sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/neural_network/_multilayer_perceptron.py",
+        "docfrom": "MLPRegressor",
+        "class": "BaseMultilayerPerceptron",
+        "func": "_fit_stochastic",
+        "exec_func": "_fit_stochastic",
+        "params": [
+            "learning_rate",
+            "solver"
+        ],
+        "constraints": "(solver = 'sgd' && solver = 'adam') -> (learning_rate = 'exist')"
+    },
+    {
+        "id": "c25-2",
+        "lib": "scikit-learn",
+        "sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/neural_network/_multilayer_perceptron.py",
+        "docfrom": "MLPRegressor",
+        "class": "BaseMultilayerPerceptron",
+        "func": "_fit_stochastic",
+        "exec_func": "_fit_stochastic",
+        "params": [
+            "learning_rate",
+            "solver"
+        ],
+        "constraints": "(solver = 'sgd' || solver = 'adam') -> (learning_rate != 'exist')"
+    },
+    {
+        "id": "c26-0",
+        "lib": "scikit-learn",
+        "sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/neural_network/_multilayer_perceptron.py",
+        "docfrom": "MLPRegressor",
+        "class": "BaseMultilayerPerceptron",
+        "func": "_fit_stochastic",
+        "exec_func": "_fit_stochastic",
+        "params": [
+            "beta_1",
+            "solver"
+        ],
+        "constraints": "(solver = 'adam') -> (beta_1 = 'exist')"
+    },
+    {
+        "id": "c26-1",
+        "lib": "scikit-learn",
+        "sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/neural_network/_multilayer_perceptron.py",
+        "docfrom": "MLPRegressor",
+        "class": "BaseMultilayerPerceptron",
+        "func": "_fit_stochastic",
+        "exec_func": "_fit_stochastic",
+        "params": [
+            "beta_1",
+            "solver"
+        ],
+        "constraints": "(solver != 'adam') -> (beta_1 = 'exist')"
+    },
+    {
+        "id": "c26-2",
+        "lib": "scikit-learn",
+        "sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/neural_network/_multilayer_perceptron.py",
+        "docfrom": "MLPRegressor",
+        "class": "BaseMultilayerPerceptron",
+        "func": "_fit_stochastic",
+        "exec_func": "_fit_stochastic",
+        "params": [
+            "beta_1",
+            "solver"
+        ],
+        "constraints": "(solver = 'adam') -> (alpha = 'exist')"
+    },
+    {
+        "id": "c27-0",
+        "lib": "scikit-learn",
+        "sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/neural_network/_multilayer_perceptron.py",
+        "docfrom": "MLPRegressor",
+        "class": "BaseMultilayerPerceptron",
+        "func": "_fit_stochastic",
+        "exec_func": "_fit_stochastic",
+        "params": [
+            "epsilon",
+            "solver"
+        ],
+        "constraints": "(solver = 'adam') -> (epsilon = 'exist')"
+    },
+    {
+        "id": "c27-1",
+        "lib": "scikit-learn",
+        "sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/neural_network/_multilayer_perceptron.py",
+        "docfrom": "MLPRegressor",
+        "class": "BaseMultilayerPerceptron",
+        "func": "_fit_stochastic",
+        "exec_func": "_fit_stochastic",
+        "params": [
+            "alpha",
+            "solver"
+        ],
+        "constraints": "(solver = 'adam') -> (alpha = 'exist')"
+    },
+    {
+        "id": "c27-2",
+        "lib": "scikit-learn",
+        "sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_sha": "007d11a49f2ad6ffc64aa302565b7b361b1b51b2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/neural_network/_multilayer_perceptron.py",
+        "docfrom": "MLPRegressor",
+        "class": "BaseMultilayerPerceptron",
+        "func": "_fit_stochastic",
+        "exec_func": "_fit_stochastic",
+        "params": [
+            "epsilon",
+            "solver"
+        ],
+        "constraints": "(solver = 'sgd') -> (epsilon = 'exist')"
+    },
+    {
+        "id": "c28-0",
+        "lib": "scikit-learn",
+        "sha": "c9d223ccc58e2569b8e67f1d0217dd57a93ec07f",
+        "issue_sha": "bc91f01e541de34adf084b07d5154db15cab9b58",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "NA",
+        "func": "NA",
+        "exec_func": "_check_solver",
+        "params": [
+            "solver",
+            "penalty"
+        ],
+        "constraints": "(solver = 'liblinear') -> (penalty != 'None')"
+    },
+    {
+        "id": "c28-1",
+        "lib": "scikit-learn",
+        "sha": "c9d223ccc58e2569b8e67f1d0217dd57a93ec07f",
+        "issue_sha": "bc91f01e541de34adf084b07d5154db15cab9b58",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "NA",
+        "func": "NA",
+        "exec_func": "_check_solver",
+        "params": [
+            "solver",
+            "penalty"
+        ],
+        "constraints": "(solver = 'liblinear') -> (penalty = 'None')"
+    },
+    {
+        "id": "c28-2",
+        "lib": "scikit-learn",
+        "sha": "c9d223ccc58e2569b8e67f1d0217dd57a93ec07f",
+        "issue_sha": "bc91f01e541de34adf084b07d5154db15cab9b58",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "NA",
+        "func": "NA",
+        "exec_func": "_check_solver",
+        "params": [
+            "solver",
+            "penalty"
+        ],
+        "constraints": "(solver != 'l2') -> (penalty = 'elasticnet')"
+    },
+    {
+        "id": "c29-0",
+        "lib": "scikit-learn",
+        "sha": "c9d223ccc58e2569b8e67f1d0217dd57a93ec07f",
+        "issue_sha": "bc91f01e541de34adf084b07d5154db15cab9b58",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "NA",
+        "func": "NA",
+        "exec_func": "_check_solver",
+        "params": [
+            "solver",
+            "penalty"
+        ],
+        "constraints": "(solver = 'saga') -> (penalty = 'elasticnet')"
+    },
+    {
+        "id": "c29-1",
+        "lib": "scikit-learn",
+        "sha": "c9d223ccc58e2569b8e67f1d0217dd57a93ec07f",
+        "issue_sha": "bc91f01e541de34adf084b07d5154db15cab9b58",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "NA",
+        "func": "NA",
+        "exec_func": "_check_solver",
+        "params": [
+            "solver",
+            "penalty"
+        ],
+        "constraints": "(solver != 'saga') -> (penalty = 'elasticnet')"
+    },
+    {
+        "id": "c29-2",
+        "lib": "scikit-learn",
+        "sha": "c9d223ccc58e2569b8e67f1d0217dd57a93ec07f",
+        "issue_sha": "bc91f01e541de34adf084b07d5154db15cab9b58",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "NA",
+        "func": "NA",
+        "exec_func": "_check_solver",
+        "params": [
+            "solver",
+            "penalty"
+        ],
+        "constraints": "(solver = 'liblinear') -> (penalty = 'none')"
+    },
+    {
+        "id": "c30-0",
+        "lib": "scikit-learn",
+        "sha": "c9d223ccc58e2569b8e67f1d0217dd57a93ec07f",
+        "issue_sha": "7ed61a24feb4ffde0bee9342acf4a58e3f946a61",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_logistic.py",
+        "docfrom": "_logistic_regression_path",
+        "class": "NA",
+        "func": "NA",
+        "exec_func": "_check_multi_class",
+        "params": [
+            "solver",
+            "multi_class"
+        ],
+        "constraints": "(solver = 'liblinear') -> (multi_class != 'multinomial')"
+    },
+    {
+        "id": "c30-1",
+        "lib": "scikit-learn",
+        "sha": "c9d223ccc58e2569b8e67f1d0217dd57a93ec07f",
+        "issue_sha": "7ed61a24feb4ffde0bee9342acf4a58e3f946a61",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_logistic.py",
+        "docfrom": "_logistic_regression_path",
+        "class": "NA",
+        "func": "NA",
+        "exec_func": "_check_multi_class",
+        "params": [
+            "solver",
+            "multi_class"
+        ],
+        "constraints": "(solver = 'liblinear') -> (multi_class = 'multinomial')"
+    },
+    {
+        "id": "c30-2",
+        "lib": "scikit-learn",
+        "sha": "c9d223ccc58e2569b8e67f1d0217dd57a93ec07f",
+        "issue_sha": "7ed61a24feb4ffde0bee9342acf4a58e3f946a61",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_logistic.py",
+        "docfrom": "_logistic_regression_path",
+        "class": "NA",
+        "func": "NA",
+        "exec_func": "_check_multi_class",
+        "params": [
+            "solver",
+            "multi_class"
+        ],
+        "constraints": "(solver = 'librarylinear') -> (multi_class = 'auto')"
+    },
+    {
+        "id": "c31-0",
+        "lib": "scikit-learn",
+        "sha": "7fa2e6e2734b590d96e62d5932c648a9c1002f34",
+        "issue_sha": "7fa2e6e2734b590d96e62d5932c648a9c1002f34",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/cluster/_spectral.py",
+        "docfrom": "spectral_clustering",
+        "class": "NA",
+        "func": "spectral_clustering",
+        "exec_func": "spectral_clustering",
+        "params": [
+            "assign_labels",
+            "n_init"
+        ],
+        "constraints": "(assign_labels = 'kmeans') -> (n_init != 'None')"
+    },
+    {
+        "id": "c31-1",
+        "lib": "scikit-learn",
+        "sha": "7fa2e6e2734b590d96e62d5932c648a9c1002f34",
+        "issue_sha": "7fa2e6e2734b590d96e62d5932c648a9c1002f34",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/cluster/_spectral.py",
+        "docfrom": "spectral_clustering",
+        "class": "NA",
+        "func": "spectral_clustering",
+        "exec_func": "spectral_clustering",
+        "params": [
+            "assign_labels",
+            "n_init"
+        ],
+        "constraints": "(assign_labels = 'kmeans') -> (n_init = 'None')"
+    },
+    {
+        "id": "c31-2",
+        "lib": "scikit-learn",
+        "sha": "7fa2e6e2734b590d96e62d5932c648a9c1002f34",
+        "issue_sha": "7fa2e6e2734b590d96e62d5932c648a9c1002f34",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/cluster/_spectral.py",
+        "docfrom": "spectral_clustering",
+        "class": "NA",
+        "func": "spectral_clustering",
+        "exec_func": "spectral_clustering",
+        "params": [
+            "assign_labels",
+            "n_init"
+        ],
+        "constraints": "(assigned_labels = 'discretize') -> (n_init != 'None')"
+    },
+    {
+        "id": "c32-0",
+        "lib": "scikit-learn",
+        "sha": "49ec6192326fbe13b347abd9cafeed8e78725df7",
+        "issue_sha": "49ec6192326fbe13b347abd9cafeed8e78725df7",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/_factor_analysis.py",
+        "docfrom": "FactorAnalysis",
+        "class": "FactorAnalysis",
+        "func": "__init__",
+        "exec_func": "__init__",
+        "params": [
+            "iterated_power",
+            "svd_method"
+        ],
+        "constraints": "(svd_method = 'randomized') -> (iterated_power != 'None')"
+    },
+    {
+        "id": "c32-1",
+        "lib": "scikit-learn",
+        "sha": "49ec6192326fbe13b347abd9cafeed8e78725df7",
+        "issue_sha": "49ec6192326fbe13b347abd9cafeed8e78725df7",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/_factor_analysis.py",
+        "docfrom": "FactorAnalysis",
+        "class": "FactorAnalysis",
+        "func": "__init__",
+        "exec_func": "__init__",
+        "params": [
+            "iterated_power",
+            "svd_method"
+        ],
+        "constraints": "(svd_method = 'lapack') -> (iterated_power != 'None')"
+    },
+    {
+        "id": "c32-2",
+        "lib": "scikit-learn",
+        "sha": "49ec6192326fbe13b347abd9cafeed8e78725df7",
+        "issue_sha": "49ec6192326fbe13b347abd9cafeed8e78725df7",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/_factor_analysis.py",
+        "docfrom": "FactorAnalysis",
+        "class": "FactorAnalysis",
+        "func": "__init__",
+        "exec_func": "__init__",
+        "params": [
+            "iterated_power",
+            "svd_method"
+        ],
+        "constraints": "(svd_method = 'randomized') -> (iter_power = 'None')"
+    },
+    {
+        "id": "c33-0",
+        "lib": "scikit-learn",
+        "sha": "896d4fad106c8f1d745923d544b44a0707103aa2",
+        "issue_sha": "896d4fad106c8f1d745923d544b44a0707103aa2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/feature_extraction/text.py",
+        "docfrom": "TfidfVectorizer",
+        "class": "_VectorizerMixin",
+        "func": "_warn_for_unused_params",
+        "exec_func": "_warn_for_unused_params",
+        "params": [
+            "token_pattern",
+            "analyzer"
+        ],
+        "constraints": "(analyzer = 'word') ^ (token_pattern != 'None')"
+    },
+    {
+        "id": "c33-1",
+        "lib": "scikit-learn",
+        "sha": "896d4fad106c8f1d745923d544b44a0707103aa2",
+        "issue_sha": "896d4fad106c8f1d745923d544b44a0707103aa2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/feature_extraction/text.py",
+        "docfrom": "TfidfVectorizer",
+        "class": "_VectorizerMixin",
+        "func": "_warn_for_unused_params",
+        "exec_func": "_warn_for_unused_params",
+        "params": [
+            "token_pattern",
+            "analyzer"
+        ],
+        "constraints": "(analyzer = 'char') ^ (token_pattern != 'None')"
+    },
+    {
+        "id": "c33-2",
+        "lib": "scikit-learn",
+        "sha": "896d4fad106c8f1d745923d544b44a0707103aa2",
+        "issue_sha": "896d4fad106c8f1d745923d544b44a0707103aa2",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/feature_extraction/text.py",
+        "docfrom": "TfidfVectorizer",
+        "class": "_VectorizerMixin",
+        "func": "_warn_for_unused_params",
+        "exec_func": "_warn_for_unused_params",
+        "params": [
+            "token_pattern",
+            "analyzer"
+        ],
+        "constraints": "(analyzer = 'char_wb') ^ (tokens_pattern != 'None')"
+    },
+    {
+        "id": "c34-0",
+        "lib": "scikit-learn",
+        "sha": "e7d2a8041bbceb5b11fbb72281a8486ef53347d2",
+        "issue_sha": "e7d2a8041bbceb5b11fbb72281a8486ef53347d2",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/svm/_classes.py",
+        "docfrom": "LinearSVC",
+        "class": "LinearSVC",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "penalty",
+            "loss"
+        ],
+        "constraints": "!((panelty = 'l1') ^ (loss = 'hinge'))"
+    },
+    {
+        "id": "c34-1",
+        "lib": "scikit-learn",
+        "sha": "e7d2a8041bbceb5b11fbb72281a8486ef53347d2",
+        "issue_sha": "e7d2a8041bbceb5b11fbb72281a8486ef53347d2",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/svm/_classes.py",
+        "docfrom": "LinearSVC",
+        "class": "LinearSVC",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "penalty",
+            "loss"
+        ],
+        "constraints": "!((panelty = 'l1') ^ (loss = 'hinge'))"
+    },
+    {
+        "id": "c34-2",
+        "lib": "scikit-learn",
+        "sha": "e7d2a8041bbceb5b11fbb72281a8486ef53347d2",
+        "issue_sha": "e7d2a8041bbceb5b11fbb72281a8486ef53347d2",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/svm/_classes.py",
+        "docfrom": "LinearSVC",
+        "class": "LinearSVC",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "penalty",
+            "loss"
+        ],
+        "constraints": "!((panelty = 'l1') ^ (loss = 'hinge'))"
+    },
+    {
+        "id": "c35-0",
+        "lib": "scikit-learn",
+        "sha": "5c4b1bb23192a137ac22ced229c50d6b69859ac6",
+        "issue_sha": "5c4b1bb23192a137ac22ced229c50d6b69859ac6",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/svm/classes.py",
+        "docfrom": "LinearSVC",
+        "class": "LinearSVC",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "multi_class",
+            "loss"
+        ],
+        "constraints": "(multi_class = 'crammer_singer') -> ((loss = 'ignore') ^ (penalty = 'ignore') ^ (dual = 'ignore'))"
+    },
+    {
+        "id": "c35-1",
+        "lib": "scikit-learn",
+        "sha": "5c4b1bb23192a137ac22ced229c50d6b69859ac6",
+        "issue_sha": "5c4b1bb23192a137ac22ced229c50d6b69859ac6",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/svm/classes.py",
+        "docfrom": "LinearSVC",
+        "class": "LinearSVC",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "multi_class",
+            "loss"
+        ],
+        "constraints": "(multi_class = 'crammer_singer') -> ((loss = 'exist') ^ (penalty = 'exist') ^ (dual = 'exist'))"
+    },
+    {
+        "id": "c35-2",
+        "lib": "scikit-learn",
+        "sha": "5c4b1bb23192a137ac22ced229c50d6b69859ac6",
+        "issue_sha": "5c4b1bb23192a137ac22ced229c50d6b69859ac6",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/svm/classes.py",
+        "docfrom": "LinearSVC",
+        "class": "LinearSVC",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "multi_class",
+            "loss"
+        ],
+        "constraints": "(multi_class = 'crammer_singer') -> ((loss = 'ignore'))"
+    },
+    {
+        "id": "c36-0",
+        "lib": "scikit-learn",
+        "sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "_sparse_encode",
+        "class": "NA",
+        "func": "_sparse_encode",
+        "exec_func": "_sparse_encode",
+        "params": [
+            "max_iter",
+            "algorithm"
+        ],
+        "constraints": "(algorithm = 'lasso_cd') -> (max_iter = 'exist')"
+    },
+    {
+        "id": "c36-1",
+        "lib": "scikit-learn",
+        "sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "_sparse_encode",
+        "class": "NA",
+        "func": "_sparse_encode",
+        "exec_func": "_sparse_encode",
+        "params": [
+            "max_iter",
+            "algorithm"
+        ],
+        "constraints": "(algorithm = 'lasso_cd') -> (max_iter = 'ignore')"
+    },
+    {
+        "id": "c36-2",
+        "lib": "scikit-learn",
+        "sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "_sparse_encode",
+        "class": "NA",
+        "func": "_sparse_encode",
+        "exec_func": "_sparse_encode",
+        "params": [
+            "max_iter",
+            "algorithm"
+        ],
+        "constraints": "(algorithm = 'lar') -> (max_iter = 'exist')"
+    },
+    {
+        "id": "c37-0",
+        "lib": "scikit-learn",
+        "sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "_sparse_encode",
+        "class": "NA",
+        "func": "_sparse_encode",
+        "exec_func": "_sparse_encode",
+        "params": [
+            "max_iter",
+            "algorithm"
+        ],
+        "constraints": "(algorithm = 'lasso_lars') -> (max_iter = 'exist')"
+    },
+    {
+        "id": "c37-1",
+        "lib": "scikit-learn",
+        "sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "_sparse_encode",
+        "class": "NA",
+        "func": "_sparse_encode",
+        "exec_func": "_sparse_encode",
+        "params": [
+            "max_iter",
+            "algorithm"
+        ],
+        "constraints": "(algorithm = 'lasso_lars') -> (max_iter = 'ignore')"
+    },
+    {
+        "id": "c37-2",
+        "lib": "scikit-learn",
+        "sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "_sparse_encode",
+        "class": "NA",
+        "func": "_sparse_encode",
+        "exec_func": "_sparse_encode",
+        "params": [
+            "max_iter",
+            "algorithm"
+        ],
+        "constraints": "(algorithm = 'threshold') -> (max_iter = 'exist')"
+    },
+    {
+        "id": "c38-0",
+        "lib": "scikit-learn",
+        "sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "_sparse_encode",
+        "class": "NA",
+        "func": "_sparse_encode",
+        "exec_func": "_sparse_encode",
+        "params": [
+            "max_iter",
+            "init"
+        ],
+        "constraints": "(algorithm = 'lasso_cd') -> (init != 'None')"
+    },
+    {
+        "id": "c38-1",
+        "lib": "scikit-learn",
+        "sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "_sparse_encode",
+        "class": "NA",
+        "func": "_sparse_encode",
+        "exec_func": "_sparse_encode",
+        "params": [
+            "max_iter",
+            "init"
+        ],
+        "constraints": "(algorithm = 'lasso_cd') -> (init != 'None')"
+    },
+    {
+        "id": "c38-2",
+        "lib": "scikit-learn",
+        "sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "_sparse_encode",
+        "class": "NA",
+        "func": "_sparse_encode",
+        "exec_func": "_sparse_encode",
+        "params": [
+            "max_iter",
+            "init"
+        ],
+        "constraints": "(algorithm = 'lasso_cd') -> (init != 'None')"
+    },
+    {
+        "id": "c39-0",
+        "lib": "scikit-learn",
+        "sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "_sparse_encode",
+        "class": "NA",
+        "func": "sparse_encode",
+        "exec_func": "sparse_encode",
+        "params": [
+            "gram",
+            "method"
+        ],
+        "constraints": "(method = 'threshold') -> (gram = 'None')"
+    },
+    {
+        "id": "c39-1",
+        "lib": "scikit-learn",
+        "sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "_sparse_encode",
+        "class": "NA",
+        "func": "sparse_encode",
+        "exec_func": "sparse_encode",
+        "params": [
+            "gram",
+            "method"
+        ],
+        "constraints": "(method = 'threshold') -> (gram = 'None')"
+    },
+    {
+        "id": "c39-2",
+        "lib": "scikit-learn",
+        "sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_sha": "a8bf63a8ed6bb86eee1b9d0052da66a6eda4e21c",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "_sparse_encode",
+        "class": "NA",
+        "func": "sparse_encode",
+        "exec_func": "sparse_encode",
+        "params": [
+            "gram",
+            "method"
+        ],
+        "constraints": "(method = 'threshold') -> (gram = 'None')"
+    },
+    {
+        "id": "c40-0",
+        "lib": "scikit-learn",
+        "sha": "598ed4cbf906e4e39f25c7d4016932cbc0659585",
+        "issue_sha": "598ed4cbf906e4e39f25c7d4016932cbc0659585",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "sparse_encode",
+        "class": "NA",
+        "func": "sparse_encode",
+        "exec_func": "sparse_encode",
+        "params": [
+            "n_nonzero_coefs",
+            "algorithm"
+        ],
+        "constraints": "(algorithm = 'omp') -> (n_nonzero_coefs = 'exist')"
+    },
+    {
+        "id": "c40-1",
+        "lib": "scikit-learn",
+        "sha": "598ed4cbf906e4e39f25c7d4016932cbc0659585",
+        "issue_sha": "598ed4cbf906e4e39f25c7d4016932cbc0659585",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "sparse_encode",
+        "class": "NA",
+        "func": "sparse_encode",
+        "exec_func": "sparse_encode",
+        "params": [
+            "n_nonzero_coefs",
+            "algorithm"
+        ],
+        "constraints": "(algorithm = 'omp') -> (n_nonzero_coefs != 'exist')"
+    },
+    {
+        "id": "c40-2",
+        "lib": "scikit-learn",
+        "sha": "598ed4cbf906e4e39f25c7d4016932cbc0659585",
+        "issue_sha": "598ed4cbf906e4e39f25c7d4016932cbc0659585",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "sparse_encode",
+        "class": "NA",
+        "func": "sparse_encode",
+        "exec_func": "sparse_encode",
+        "params": [
+            "n_nonzero_coefs",
+            "algorithm"
+        ],
+        "constraints": "(algorithm = 'lasso_lars') -> (n_nonzero_coefs = 'exist')"
+    },
+    {
+        "id": "c41-0",
+        "lib": "scikit-learn",
+        "sha": "598ed4cbf906e4e39f25c7d4016932cbc0659585",
+        "issue_sha": "598ed4cbf906e4e39f25c7d4016932cbc0659585",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "sparse_encode",
+        "class": "NA",
+        "func": "sparse_encode",
+        "exec_func": "sparse_encode",
+        "params": [
+            "n_nonzero_coefs",
+            "algorithm"
+        ],
+        "constraints": "(algorithm = 'lars') -> (n_nonzero_coefs = 'exist')"
+    },
+    {
+        "id": "c41-1",
+        "lib": "scikit-learn",
+        "sha": "598ed4cbf906e4e39f25c7d4016932cbc0659585",
+        "issue_sha": "598ed4cbf906e4e39f25c7d4016932cbc0659585",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "sparse_encode",
+        "class": "NA",
+        "func": "sparse_encode",
+        "exec_func": "sparse_encode",
+        "params": [
+            "n_nonzero_coefs",
+            "algorithm"
+        ],
+        "constraints": "(algorithm = 'larsso_lars') -> (n_nonzero_coefs = 'exist')"
+    },
+    {
+        "id": "c41-2",
+        "lib": "scikit-learn",
+        "sha": "598ed4cbf906e4e39f25c7d4016932cbc0659585",
+        "issue_sha": "598ed4cbf906e4e39f25c7d4016932cbc0659585",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/decomposition/_dict_learning.py",
+        "docfrom": "sparse_encode",
+        "class": "NA",
+        "func": "sparse_encode",
+        "exec_func": "sparse_encode",
+        "params": [
+            "n_nonzero_coefs",
+            "algorithm"
+        ],
+        "constraints": "(n_nonzero_coefs = 'lars') -> (algorithm = 'exist')"
+    },
+    {
+        "id": "c42-0",
+        "lib": "scikit-learn",
+        "sha": "e4aab357e990e661113e6da97c5c7e939917daf2",
+        "issue_sha": "e4aab357e990e661113e6da97c5c7e939917daf2",
+        "issue_type": "good",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/_kernel_pca.py",
+        "docfrom": "KernelPCA",
+        "class": "KernelPCA",
+        "func": "_get_kernel",
+        "exec_func": "_get_kernel",
+        "params": [
+            "gamma",
+            "kernel"
+        ],
+        "constraints": "!(kernel = 'rbf' || kernel = 'poly' || kernel = 'sigmoid') -> (gamma = 'ignore')"
+    },
+    {
+        "id": "c42-1",
+        "lib": "scikit-learn",
+        "sha": "e4aab357e990e661113e6da97c5c7e939917daf2",
+        "issue_sha": "e4aab357e990e661113e6da97c5c7e939917daf2",
+        "issue_type": "good",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/_kernel_pca.py",
+        "docfrom": "KernelPCA",
+        "class": "KernelPCA",
+        "func": "_get_kernel",
+        "exec_func": "_get_kernel",
+        "params": [
+            "gamma",
+            "kernel"
+        ],
+        "constraints": "!(kernel = 'rbf' || kernel = 'poly' || kernel = 'sigmoid') -> (gamma = 5)"
+    },
+    {
+        "id": "c42-2",
+        "lib": "scikit-learn",
+        "sha": "e4aab357e990e661113e6da97c5c7e939917daf2",
+        "issue_sha": "e4aab357e990e661113e6da97c5c7e939917daf2",
+        "issue_type": "good",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/_kernel_pca.py",
+        "docfrom": "KernelPCA",
+        "class": "KernelPCA",
+        "func": "_get_kernel",
+        "exec_func": "_get_kernel",
+        "params": [
+            "gamma",
+            "kernel"
+        ],
+        "constraints": "(kernel = 'rbf' || kernel = 'poly' || kernel = 'sigmoid') -> (gamma = 'ignore')"
+    },
+    {
+        "id": "c43-0",
+        "lib": "scikit-learn",
+        "sha": "e4aab357e990e661113e6da97c5c7e939917daf2",
+        "issue_sha": "e4aab357e990e661113e6da97c5c7e939917daf2",
+        "issue_type": "good",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/_kernel_pca.py",
+        "docfrom": "KernelPCA",
+        "class": "KernelPCA",
+        "func": "_get_kernel",
+        "exec_func": "_get_kernel",
+        "params": [
+            "degree",
+            "kernel"
+        ],
+        "constraints": "(kernel = 'poly') -> (degree = 'exist')"
+    },
+    {
+        "id": "c43-1",
+        "lib": "scikit-learn",
+        "sha": "e4aab357e990e661113e6da97c5c7e939917daf2",
+        "issue_sha": "e4aab357e990e661113e6da97c5c7e939917daf2",
+        "issue_type": "good",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/_kernel_pca.py",
+        "docfrom": "KernelPCA",
+        "class": "KernelPCA",
+        "func": "_get_kernel",
+        "exec_func": "_get_kernel",
+        "params": [
+            "degree",
+            "kernel"
+        ],
+        "constraints": "(kernel = 'poly') -> (degree = 'exist')"
+    },
+    {
+        "id": "c43-2",
+        "lib": "scikit-learn",
+        "sha": "e4aab357e990e661113e6da97c5c7e939917daf2",
+        "issue_sha": "e4aab357e990e661113e6da97c5c7e939917daf2",
+        "issue_type": "good",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/_kernel_pca.py",
+        "docfrom": "KernelPCA",
+        "class": "KernelPCA",
+        "func": "_get_kernel",
+        "exec_func": "_get_kernel",
+        "params": [
+            "degree",
+            "kernel"
+        ],
+        "constraints": "(kernel = 'poly') -> (degree = 'exist')"
+    },
+    {
+        "id": "c44-0",
+        "lib": "scikit-learn",
+        "sha": "683af6c6b65a7943c7fc28144d4b53e7888c0133",
+        "issue_sha": "683af6c6b65a7943c7fc28144d4b53e7888c0133",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/covariance/_graph_lasso.py",
+        "docfrom": "graphical_lasso",
+        "class": "NA",
+        "func": "graphical_lasso",
+        "exec_func": "graphical_lasso",
+        "params": [
+            "cov_init",
+            "emp_cov"
+        ],
+        "constraints": "(cov_init = 'None') -> (emp_cov = 'exist')"
+    },
+    {
+        "id": "c44-1",
+        "lib": "scikit-learn",
+        "sha": "683af6c6b65a7943c7fc28144d4b53e7888c0133",
+        "issue_sha": "683af6c6b65a7943c7fc28144d4b53e7888c0133",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/covariance/_graph_lasso.py",
+        "docfrom": "graphical_lasso",
+        "class": "NA",
+        "func": "graphical_lasso",
+        "exec_func": "graphical_lasso",
+        "params": [
+            "cov_init",
+            "emp_cov"
+        ],
+        "constraints": "(cov_init = 'None') -> (emp_cov = 'exist')"
+    },
+    {
+        "id": "c44-2",
+        "lib": "scikit-learn",
+        "sha": "683af6c6b65a7943c7fc28144d4b53e7888c0133",
+        "issue_sha": "683af6c6b65a7943c7fc28144d4b53e7888c0133",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/covariance/_graph_lasso.py",
+        "docfrom": "graphical_lasso",
+        "class": "NA",
+        "func": "graphical_lasso",
+        "exec_func": "graphical_lasso",
+        "params": [
+            "cov_init",
+            "emp_cov"
+        ],
+        "constraints": "(cov_init = 'None') -> (emp_cov != 'exist')"
+    },
+    {
+        "id": "c45-0",
+        "lib": "scikit-learn",
+        "sha": "999f288ef486697e307de0f461033118389013ca",
+        "issue_sha": "999f288ef486697e307de0f461033118389013ca",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/covariance/_graph_lasso.py",
+        "docfrom": "graphical_lasso",
+        "class": "NA",
+        "func": "graphical_lasso",
+        "exec_func": "graphical_lasso",
+        "params": [
+            "cov_init",
+            "emp_cov"
+        ],
+        "constraints": "(mode = 'cd') -> (enet_tol = 'exist')"
+    },
+    {
+        "id": "c45-1",
+        "lib": "scikit-learn",
+        "sha": "999f288ef486697e307de0f461033118389013ca",
+        "issue_sha": "999f288ef486697e307de0f461033118389013ca",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/covariance/_graph_lasso.py",
+        "docfrom": "graphical_lasso",
+        "class": "NA",
+        "func": "graphical_lasso",
+        "exec_func": "graphical_lasso",
+        "params": [
+            "cov_init",
+            "emp_cov"
+        ],
+        "constraints": "(mode = 'cd') -> (enet_tol != 'exist')"
+    },
+    {
+        "id": "c45-2",
+        "lib": "scikit-learn",
+        "sha": "999f288ef486697e307de0f461033118389013ca",
+        "issue_sha": "999f288ef486697e307de0f461033118389013ca",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/covariance/_graph_lasso.py",
+        "docfrom": "graphical_lasso",
+        "class": "NA",
+        "func": "graphical_lasso",
+        "exec_func": "graphical_lasso",
+        "params": [
+            "cov_init",
+            "emp_cov"
+        ],
+        "constraints": "(mode = 'cd') -> (enet_tol = 'exist')"
+    },
+    {
+        "id": "c46-0",
+        "lib": "scikit-learn",
+        "sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/manifold/_locally_linear.py",
+        "docfrom": "null_space",
+        "class": "NA",
+        "func": "null_space",
+        "exec_func": "null_space",
+        "params": [
+            "max_iter",
+            "eigen_solver"
+        ],
+        "constraints": "(eigen_solver = 'dense') -> (max_iter != 'exist')"
+    },
+    {
+        "id": "c46-1",
+        "lib": "scikit-learn",
+        "sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/manifold/_locally_linear.py",
+        "docfrom": "null_space",
+        "class": "NA",
+        "func": "null_space",
+        "exec_func": "null_space",
+        "params": [
+            "max_iter",
+            "eigen_solver"
+        ],
+        "constraints": "(eigen_solver = 'dense') -> (max_iter != 'exist')"
+    },
+    {
+        "id": "c46-2",
+        "lib": "scikit-learn",
+        "sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/manifold/_locally_linear.py",
+        "docfrom": "null_space",
+        "class": "NA",
+        "func": "null_space",
+        "exec_func": "null_space",
+        "params": [
+            "max_iter",
+            "eigen_solver"
+        ],
+        "constraints": "(eigen_solver = 'dense') -> (max_iter != 'exist')"
+    },
+    {
+        "id": "c47-0",
+        "lib": "scikit-learn",
+        "sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/manifold/_locally_linear.py",
+        "docfrom": "null_space",
+        "class": "NA",
+        "func": "null_space",
+        "exec_func": "null_space",
+        "params": [
+            "tol",
+            "eigen_solver"
+        ],
+        "constraints": "(eigen_solver = 'dense') -> (tol != 'exist')"
+    },
+    {
+        "id": "c47-1",
+        "lib": "scikit-learn",
+        "sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/manifold/_locally_linear.py",
+        "docfrom": "null_space",
+        "class": "NA",
+        "func": "null_space",
+        "exec_func": "null_space",
+        "params": [
+            "tol",
+            "eigen_solver"
+        ],
+        "constraints": "(eigen_solver = 'arpack') -> (tol != 'exist')"
+    },
+    {
+        "id": "c47-2",
+        "lib": "scikit-learn",
+        "sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/manifold/_locally_linear.py",
+        "docfrom": "null_space",
+        "class": "NA",
+        "func": "null_space",
+        "exec_func": "null_space",
+        "params": [
+            "tol",
+            "eigen_solver"
+        ],
+        "constraints": "(eigen_solver = 'dense') -> (tol = 'exist')"
+    },
+    {
+        "id": "c48-0",
+        "lib": "scikit-learn",
+        "sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/manifold/_locally_linear.py",
+        "docfrom": "locally_linear_embedding",
+        "class": "NA",
+        "func": "locally_linear_embedding",
+        "exec_func": "locally_linear_embedding",
+        "params": [
+            "modified_tol",
+            "method"
+        ],
+        "constraints": "(method = 'modified') -> (modified_tol != 'exist')"
+    },
+    {
+        "id": "c48-1",
+        "lib": "scikit-learn",
+        "sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/manifold/_locally_linear.py",
+        "docfrom": "locally_linear_embedding",
+        "class": "NA",
+        "func": "locally_linear_embedding",
+        "exec_func": "locally_linear_embedding",
+        "params": [
+            "modified_tol",
+            "method"
+        ],
+        "constraints": "(method = 'modified') -> (modified_tol != 'exist')"
+    },
+    {
+        "id": "c48-2",
+        "lib": "scikit-learn",
+        "sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/manifold/_locally_linear.py",
+        "docfrom": "locally_linear_embedding",
+        "class": "NA",
+        "func": "locally_linear_embedding",
+        "exec_func": "locally_linear_embedding",
+        "params": [
+            "modified_tol",
+            "method"
+        ],
+        "constraints": "(method = 'modified') -> (modified_tol != 'exist')"
+    },
+    {
+        "id": "c49-0",
+        "lib": "scikit-learn",
+        "sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/manifold/_locally_linear.py",
+        "docfrom": "locally_linear_embedding",
+        "class": "NA",
+        "func": "locally_linear_embedding",
+        "exec_func": "locally_linear_embedding",
+        "params": [
+            "hessian_tol",
+            "method"
+        ],
+        "constraints": "(method = 'hessian') -> (hessian_tol != 'exist')"
+    },
+    {
+        "id": "c49-1",
+        "lib": "scikit-learn",
+        "sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/manifold/_locally_linear.py",
+        "docfrom": "locally_linear_embedding",
+        "class": "NA",
+        "func": "locally_linear_embedding",
+        "exec_func": "locally_linear_embedding",
+        "params": [
+            "hessian_tol",
+            "method"
+        ],
+        "constraints": "(method = 'hessian') -> (hessian_tol != 'exist')"
+    },
+    {
+        "id": "c49-2",
+        "lib": "scikit-learn",
+        "sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_sha": "c115ed715a32a628c77440253a6e3af502e1098d",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "sklearn/manifold/_locally_linear.py",
+        "docfrom": "locally_linear_embedding",
+        "class": "NA",
+        "func": "locally_linear_embedding",
+        "exec_func": "locally_linear_embedding",
+        "params": [
+            "hessian_tol",
+            "method"
+        ],
+        "constraints": "(method = 'hessian') -> (hessian_tol = 'exist')"
+    },
+    {
+        "id": "c50-0",
+        "lib": "scikit-learn",
+        "sha": "b3dca3d025bdc48c2ef07ea1de78082714e10e71",
+        "issue_sha": "b3dca3d025bdc48c2ef07ea1de78082714e10e71",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/_pca.py",
+        "docfrom": "PCA",
+        "class": "PCA",
+        "func": "_fit_truncated",
+        "exec_func": "_fit_truncated",
+        "params": [
+            "random_state",
+            "svd_solver"
+        ],
+        "constraints": "(svd_solver = 'arpack') -> (random_state = 'exist')"
+    },
+    {
+        "id": "c50-1",
+        "lib": "scikit-learn",
+        "sha": "b3dca3d025bdc48c2ef07ea1de78082714e10e71",
+        "issue_sha": "b3dca3d025bdc48c2ef07ea1de78082714e10e71",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/_pca.py",
+        "docfrom": "PCA",
+        "class": "PCA",
+        "func": "_fit_truncated",
+        "exec_func": "_fit_truncated",
+        "params": [
+            "random_state",
+            "svd_solver"
+        ],
+        "constraints": "(svd_solver = 'others') -> (random_state = 'exist')"
+    },
+    {
+        "id": "c50-2",
+        "lib": "scikit-learn",
+        "sha": "b3dca3d025bdc48c2ef07ea1de78082714e10e71",
+        "issue_sha": "b3dca3d025bdc48c2ef07ea1de78082714e10e71",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/_pca.py",
+        "docfrom": "PCA",
+        "class": "PCA",
+        "func": "_fit_truncated",
+        "exec_func": "_fit_truncated",
+        "params": [
+            "random_state",
+            "svd_solver"
+        ],
+        "constraints": "(svd_solver = 'arpack') -> (random_state != 'exist')"
+    },
+    {
+        "id": "c51-0",
+        "lib": "scikit-learn",
+        "sha": "62ce1bad329c59420e1f72a6e7a2635c9b1df265",
+        "issue_sha": "62ce1bad329c59420e1f72a6e7a2635c9b1df265",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/gaussian_process/_gpc.py",
+        "docfrom": "log_marginal_likelihood",
+        "class": "_BinaryGaussianProcessClassifierLaplace",
+        "func": "log_marginal_likelihood",
+        "exec_func": "log_marginal_likelihood",
+        "params": [
+            "eval_gradient",
+            "theta"
+        ],
+        "constraints": "(eval_gradient = 'True') -> (theta != 'None')"
+    },
+    {
+        "id": "c51-1",
+        "lib": "scikit-learn",
+        "sha": "62ce1bad329c59420e1f72a6e7a2635c9b1df265",
+        "issue_sha": "62ce1bad329c59420e1f72a6e7a2635c9b1df265",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/gaussian_process/_gpc.py",
+        "docfrom": "log_marginal_likelihood",
+        "class": "_BinaryGaussianProcessClassifierLaplace",
+        "func": "log_marginal_likelihood",
+        "exec_func": "log_marginal_likelihood",
+        "params": [
+            "eval_gradient",
+            "theta"
+        ],
+        "constraints": "(eval_gradient = 'True') -> (theta != 'exist')"
+    },
+    {
+        "id": "c51-2",
+        "lib": "scikit-learn",
+        "sha": "62ce1bad329c59420e1f72a6e7a2635c9b1df265",
+        "issue_sha": "62ce1bad329c59420e1f72a6e7a2635c9b1df265",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/gaussian_process/_gpc.py",
+        "docfrom": "log_marginal_likelihood",
+        "class": "_BinaryGaussianProcessClassifierLaplace",
+        "func": "log_marginal_likelihood",
+        "exec_func": "log_marginal_likelihood",
+        "params": [
+            "eval_gradient",
+            "theta"
+        ],
+        "constraints": "(eval_gradient_try = 'True') -> (theta != 'None')"
+    },
+    {
+        "id": "c52-0",
+        "lib": "scikit-learn",
+        "sha": "5c9957764ac3837967f6769167effed39365c5e7",
+        "issue_sha": "5c9957764ac3837967f6769167effed39365c5e7",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "sklearn/model_selection/_validation.py",
+        "docfrom": "learning_curve",
+        "class": "NA",
+        "func": "learning_curve",
+        "exec_func": "learning_curve",
+        "params": [
+            "shuffle",
+            "random_state"
+        ],
+        "constraints": "(shuffle = 'True') -> (random_state = 'exist')"
+    },
+    {
+        "id": "c52-1",
+        "lib": "scikit-learn",
+        "sha": "5c9957764ac3837967f6769167effed39365c5e7",
+        "issue_sha": "5c9957764ac3837967f6769167effed39365c5e7",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "sklearn/model_selection/_validation.py",
+        "docfrom": "learning_curve",
+        "class": "NA",
+        "func": "learning_curve",
+        "exec_func": "learning_curve",
+        "params": [
+            "shuffle",
+            "random_state"
+        ],
+        "constraints": "(shuffle = 'True') -> (random_state = 'exist')"
+    },
+    {
+        "id": "c52-2",
+        "lib": "scikit-learn",
+        "sha": "5c9957764ac3837967f6769167effed39365c5e7",
+        "issue_sha": "5c9957764ac3837967f6769167effed39365c5e7",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "sklearn/model_selection/_validation.py",
+        "docfrom": "learning_curve",
+        "class": "NA",
+        "func": "learning_curve",
+        "exec_func": "learning_curve",
+        "params": [
+            "shuffle",
+            "random_state"
+        ],
+        "constraints": "(shuffle = 'True') -> (random_state = 'exist')"
+    },
+    {
+        "id": "c53-0",
+        "lib": "scikit-learn",
+        "sha": "dd93e0106162983421975faed17800cb83463680",
+        "issue_sha": "dd93e0106162983421975faed17800cb83463680",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "LogisticRegression",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "penalty",
+            "l1_ratio"
+        ],
+        "constraints": "(penalty = 'elasticnet') -> (l1_ratio = 'exist')"
+    },
+    {
+        "id": "c53-1",
+        "lib": "scikit-learn",
+        "sha": "dd93e0106162983421975faed17800cb83463680",
+        "issue_sha": "dd93e0106162983421975faed17800cb83463680",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "LogisticRegression",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "penalty",
+            "l1_ratio"
+        ],
+        "constraints": "(penalty = 'l2') -> (l1_ratio != 'None')"
+    },
+    {
+        "id": "c53-2",
+        "lib": "scikit-learn",
+        "sha": "dd93e0106162983421975faed17800cb83463680",
+        "issue_sha": "dd93e0106162983421975faed17800cb83463680",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/_logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "LogisticRegression",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "penalty",
+            "l1_ratio"
+        ],
+        "constraints": "(penalty = 'elasticnet') -> (l1_ratio = 0.5)"
+    },
+    {
+        "id": "c54-0",
+        "lib": "scikit-learn",
+        "sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "LogisticRegression",
+        "func": "fit",
+        "exec_func": "_check_solver_option",
+        "params": [
+            "penalty",
+            "solver"
+        ],
+        "constraints": "(solver = 'newton-cg') -> (penalty = 'l2')"
+    },
+    {
+        "id": "c54-1",
+        "lib": "scikit-learn",
+        "sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "LogisticRegression",
+        "func": "fit",
+        "exec_func": "_check_solver_option",
+        "params": [
+            "penalty",
+            "solver"
+        ],
+        "constraints": "(solver = 'newton-cg') -> (penalty != 'l2')"
+    },
+    {
+        "id": "c54-2",
+        "lib": "scikit-learn",
+        "sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "LogisticRegression",
+        "func": "fit",
+        "exec_func": "_check_solver_option",
+        "params": [
+            "penalty",
+            "solver"
+        ],
+        "constraints": "((solver = 'newton-cg') ^ (multi_class = 'multinomial')) -> (penalty != 'l2')"
+    },
+    {
+        "id": "c55-0",
+        "lib": "scikit-learn",
+        "sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "LogisticRegression",
+        "func": "fit",
+        "exec_func": "_check_solver_option",
+        "params": [
+            "penalty",
+            "solver"
+        ],
+        "constraints": "(solver = 'sag') -> (penalty = 'l2')"
+    },
+    {
+        "id": "c55-1",
+        "lib": "scikit-learn",
+        "sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "LogisticRegression",
+        "func": "fit",
+        "exec_func": "_check_solver_option",
+        "params": [
+            "penalty",
+            "solver"
+        ],
+        "constraints": "(multi_class = 'sag') -> (penalty = 'l2')"
+    },
+    {
+        "id": "c55-2",
+        "lib": "scikit-learn",
+        "sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "LogisticRegression",
+        "func": "fit",
+        "exec_func": "_check_solver_option",
+        "params": [
+            "penalty",
+            "solver"
+        ],
+        "constraints": "((solver = 'sag') ^ (solver != 'liblinear')) -> (penalty != 'l2')"
+    },
+    {
+        "id": "c56-0",
+        "lib": "scikit-learn",
+        "sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "LogisticRegression",
+        "func": "fit",
+        "exec_func": "_check_solver_option",
+        "params": [
+            "penalty",
+            "solver"
+        ],
+        "constraints": "(solver = 'lbfgs') -> (penalty = 'l2')"
+    },
+    {
+        "id": "c56-1",
+        "lib": "scikit-learn",
+        "sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "LogisticRegression",
+        "func": "fit",
+        "exec_func": "_check_solver_option",
+        "params": [
+            "penalty",
+            "solver"
+        ],
+        "constraints": "(solver = 'lbfgsoft') -> (penalty = 'l2')"
+    },
+    {
+        "id": "c56-2",
+        "lib": "scikit-learn",
+        "sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_sha": "06bf797c0deabe2a2f166d19abbd0c305da4d123",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/linear_model/logistic.py",
+        "docfrom": "LogisticRegression",
+        "class": "LogisticRegression",
+        "func": "fit",
+        "exec_func": "_check_solver_option",
+        "params": [
+            "penalty",
+            "solver"
+        ],
+        "constraints": "(solver != 'liblinear') -> (penalty != 'l2')"
+    },
+    {
+        "id": "c57-0",
+        "lib": "scikit-learn",
+        "sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/_hierarchical.py",
+        "docfrom": "AgglomerativeClustering",
+        "class": "AgglomerativeClustering",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "distance_threshold",
+            "n_clusters"
+        ],
+        "constraints": "(distance_threshold != 'None') -> (n_clusters = 'None')"
+    },
+    {
+        "id": "c57-1",
+        "lib": "scikit-learn",
+        "sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/_hierarchical.py",
+        "docfrom": "AgglomerativeClustering",
+        "class": "AgglomerativeClustering",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "distance_threshold",
+            "n_clusters"
+        ],
+        "constraints": "(distance_threshold = 'None') -> (n_clusters = 'None')"
+    },
+    {
+        "id": "c57-2",
+        "lib": "scikit-learn",
+        "sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/_hierarchical.py",
+        "docfrom": "AgglomerativeClustering",
+        "class": "AgglomerativeClustering",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "distance_threshold",
+            "n_clusters"
+        ],
+        "constraints": "(distance_threshold != 'None') -> (n_clusters != 'None')"
+    },
+    {
+        "id": "c58-0",
+        "lib": "scikit-learn",
+        "sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/_hierarchical.py",
+        "docfrom": "AgglomerativeClustering",
+        "class": "AgglomerativeClustering",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "linkage",
+            "affinity"
+        ],
+        "constraints": "(linkage = 'ward') -> (affinity = 'euclidean')"
+    },
+    {
+        "id": "c58-1",
+        "lib": "scikit-learn",
+        "sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/_hierarchical.py",
+        "docfrom": "AgglomerativeClustering",
+        "class": "AgglomerativeClustering",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "linkage",
+            "affinity"
+        ],
+        "constraints": "(linkage = 'ward') -> (affinity != 'euclidean')"
+    },
+    {
+        "id": "c58-2",
+        "lib": "scikit-learn",
+        "sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/_hierarchical.py",
+        "docfrom": "AgglomerativeClustering",
+        "class": "AgglomerativeClustering",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "linkage",
+            "affinity"
+        ],
+        "constraints": "(linkage = 'ward') -> (n_cluster != None && n_cluster <= 0)"
+    },
+    {
+        "id": "c59-0",
+        "lib": "scikit-learn",
+        "sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/_hierarchical.py",
+        "docfrom": "AgglomerativeClustering",
+        "class": "AgglomerativeClustering",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "distance_threshold",
+            "compute_full_tree"
+        ],
+        "constraints": "(distance_threshold != 'None') -> (compute_full_tree = 'True')"
+    },
+    {
+        "id": "c59-1",
+        "lib": "scikit-learn",
+        "sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/_hierarchical.py",
+        "docfrom": "AgglomerativeClustering",
+        "class": "AgglomerativeClustering",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "distance_threshold",
+            "compute_full_tree"
+        ],
+        "constraints": "(distance_threshold != 'None') -> (compute_full_tree = 'False')"
+    },
+    {
+        "id": "c59-2",
+        "lib": "scikit-learn",
+        "sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_sha": "893a4d45595d7bcc30dc56bd450a3cc3d8c920bc",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/_hierarchical.py",
+        "docfrom": "AgglomerativeClustering",
+        "class": "AgglomerativeClustering",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "distance_threshold",
+            "compute_full_tree"
+        ],
+        "constraints": "(distance_tree_builder != 'None') -> (compute_full_tree = 'True')"
+    },
+    {
+        "id": "c60-0",
+        "lib": "scikit-learn",
+        "sha": "a59562d414a8dbd4afb33092daf102c62f9897ad",
+        "issue_sha": "a59562d414a8dbd4afb33092daf102c62f9897ad",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/ensemble/gradient_boosting.py",
+        "docfrom": "GradientBoostingClassifier",
+        "class": "BaseGradientBoosting",
+        "func": "_init_state",
+        "exec_func": "_init_state",
+        "params": [
+            "subsample",
+            "oob_improvement_"
+        ],
+        "constraints": "(subsample < 1) -> (oob_improvement_ = 'exist')"
+    },
+    {
+        "id": "c60-1",
+        "lib": "scikit-learn",
+        "sha": "a59562d414a8dbd4afb33092daf102c62f9897ad",
+        "issue_sha": "a59562d414a8dbd4afb33092daf102c62f9897ad",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/ensemble/gradient_boosting.py",
+        "docfrom": "GradientBoostingClassifier",
+        "class": "BaseGradientBoosting",
+        "func": "_init_state",
+        "exec_func": "_init_state",
+        "params": [
+            "subsample",
+            "oob_improvement_"
+        ],
+        "constraints": "(subsample < 1) -> (oob_improvement_ != 'exist')"
+    },
+    {
+        "id": "c60-2",
+        "lib": "scikit-learn",
+        "sha": "a59562d414a8dbd4afb33092daf102c62f9897ad",
+        "issue_sha": "a59562d414a8dbd4afb33092daf102c62f9897ad",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "sklearn/ensemble/gradient_boosting.py",
+        "docfrom": "GradientBoostingClassifier",
+        "class": "BaseGradientBoosting",
+        "func": "_init_state",
+        "exec_func": "_init_state",
+        "params": [
+            "subsample",
+            "oob_improvement_"
+        ],
+        "constraints": "(subsample > 1) -> (oob_improvement_ = 'exist')"
+    },
+    {
+        "id": "c61-0",
+        "lib": "scikit-learn",
+        "sha": "7fa117be216c889e34f5f79fd8479c0de2d47337",
+        "issue_sha": "7fa117be216c889e34f5f79fd8479c0de2d47337",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/fastica_.py",
+        "docfrom": "FastICA",
+        "class": "FastICA",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "whiten",
+            "mean_"
+        ],
+        "constraints": "(whiten = 'True') -> (mean_ != 'exist')"
+    },
+    {
+        "id": "c61-1",
+        "lib": "scikit-learn",
+        "sha": "7fa117be216c889e34f5f79fd8479c0de2d47337",
+        "issue_sha": "7fa117be216c889e34f5f79fd8479c0de2d47337",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/fastica_.py",
+        "docfrom": "FastICA",
+        "class": "FastICA",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "whiten",
+            "mean_"
+        ],
+        "constraints": "(whitenlight = 'True') -> (mean_ = 'exist')"
+    },
+    {
+        "id": "c61-2",
+        "lib": "scikit-learn",
+        "sha": "7fa117be216c889e34f5f79fd8479c0de2d47337",
+        "issue_sha": "7fa117be216c889e34f5f79fd8479c0de2d47337",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/fastica_.py",
+        "docfrom": "FastICA",
+        "class": "FastICA",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "whiten",
+            "mean_"
+        ],
+        "constraints": "(whiten = 'True') -> (mean_anything = 'exist')"
+    },
+    {
+        "id": "c62-0",
+        "lib": "scikit-learn",
+        "sha": "7fa117be216c889e34f5f79fd8479c0de2d47337",
+        "issue_sha": "7fa117be216c889e34f5f79fd8479c0de2d47337",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/fastica_.py",
+        "docfrom": "FastICA",
+        "class": "FastICA",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "whiten",
+            "whitening_"
+        ],
+        "constraints": "(whiten = 'True') -> (whitening_ = 'exist')"
+    },
+    {
+        "id": "c62-1",
+        "lib": "scikit-learn",
+        "sha": "7fa117be216c889e34f5f79fd8479c0de2d47337",
+        "issue_sha": "7fa117be216c889e34f5f79fd8479c0de2d47337",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/fastica_.py",
+        "docfrom": "FastICA",
+        "class": "FastICA",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "whiten",
+            "whitening_"
+        ],
+        "constraints": "(whitenxxx = 'False') -> (whitening_ = 'exist')"
+    },
+    {
+        "id": "c62-2",
+        "lib": "scikit-learn",
+        "sha": "7fa117be216c889e34f5f79fd8479c0de2d47337",
+        "issue_sha": "7fa117be216c889e34f5f79fd8479c0de2d47337",
+        "issue_type": "addc",
+        "granularity": "class",
+        "filepath": "sklearn/decomposition/fastica_.py",
+        "docfrom": "FastICA",
+        "class": "FastICA",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "whiten",
+            "whitening_"
+        ],
+        "constraints": "(whiten = 'True') -> (whitening_ != 'exist')"
+    },
+    {
+        "id": "c63-0",
+        "lib": "scikit-learn",
+        "sha": "fb8721a0cec24b6ea2208ecce4fd9b4eeddfcefc",
+        "issue_sha": "fb8721a0cec24b6ea2208ecce4fd9b4eeddfcefc",
+        "issue_type": "good",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/optics_.py",
+        "docfrom": "OPTICS",
+        "class": "OPTICS",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "cluster_method",
+            "eps"
+        ],
+        "constraints": "(cluster_method = 'dbscan') -> (eps = 'exist')"
+    },
+    {
+        "id": "c63-1",
+        "lib": "scikit-learn",
+        "sha": "fb8721a0cec24b6ea2208ecce4fd9b4eeddfcefc",
+        "issue_sha": "fb8721a0cec24b6ea2208ecce4fd9b4eeddfcefc",
+        "issue_type": "good",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/optics_.py",
+        "docfrom": "OPTICS",
+        "class": "OPTICS",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "cluster_method",
+            "eps"
+        ],
+        "constraints": "(cluster_method = 'dbscan') -> (eps != 'exist')"
+    },
+    {
+        "id": "c63-2",
+        "lib": "scikit-learn",
+        "sha": "fb8721a0cec24b6ea2208ecce4fd9b4eeddfcefc",
+        "issue_sha": "fb8721a0cec24b6ea2208ecce4fd9b4eeddfcefc",
+        "issue_type": "good",
+        "granularity": "class",
+        "filepath": "sklearn/cluster/optics_.py",
+        "docfrom": "OPTICS",
+        "class": "OPTICS",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "cluster_method",
+            "eps"
+        ],
+        "constraints": "(cluster_method != 'dbscan') -> (epss = 'exist')"
+    },
+    {
+        "id": "c64-0",
+        "lib": "numpy",
+        "sha": "dce08c3e7eacf27ca79db3ddf3962675f7a0ef9e",
+        "issue_sha": "dce08c3e7eacf27ca79db3ddf3962675f7a0ef9e",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "numpy/fft/_pocketfft.py",
+        "docfrom": "fft2",
+        "class": "NA",
+        "func": "fft2",
+        "exec_func": "_cook_nd_args",
+        "params": [
+            "axes",
+            "s"
+        ],
+        "constraints": "(s != 'None') -> (axes != 'None')"
+    },
+    {
+        "id": "c64-1",
+        "lib": "numpy",
+        "sha": "dce08c3e7eacf27ca79db3ddf3962675f7a0ef9e",
+        "issue_sha": "dce08c3e7eacf27ca79db3ddf3962675f7a0ef9e",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "numpy/fft/_pocketfft.py",
+        "docfrom": "fft2",
+        "class": "NA",
+        "func": "fft2",
+        "exec_func": "_cook_nd_args",
+        "params": [
+            "axes",
+            "s"
+        ],
+        "constraints": "(shapeless = 'False') -> (axes = 'None')"
+    },
+    {
+        "id": "c64-2",
+        "lib": "numpy",
+        "sha": "dce08c3e7eacf27ca79db3ddf3962675f7a0ef9e",
+        "issue_sha": "dce08c3e7eacf27ca79db3ddf3962675f7a0ef9e",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "numpy/fft/_pocketfft.py",
+        "docfrom": "fft2",
+        "class": "NA",
+        "func": "fft2",
+        "exec_func": "_cook_nd_args",
+        "params": [
+            "axes",
+            "s"
+        ],
+        "constraints": "(s != 'None') -> (axes != 'None')"
+    },
+    {
+        "id": "c65-0",
+        "lib": "numpy",
+        "sha": "75dbbea7d7111c151498722c0c2811cee86d34ff",
+        "issue_sha": "75dbbea7d7111c151498722c0c2811cee86d34ff",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "numpy/lib/arraysetops.py",
+        "docfrom": "in1d",
+        "class": "NA",
+        "func": "in1d",
+        "exec_func": "in1d",
+        "params": [
+            "kind",
+            "s"
+        ],
+        "constraints": "(kind != 'table') -> (assume_unique = 'no effect')"
+    },
+    {
+        "id": "c65-1",
+        "lib": "numpy",
+        "sha": "75dbbea7d7111c151498722c0c2811cee86d34ff",
+        "issue_sha": "75dbbea7d7111c151498722c0c2811cee86d34ff",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "numpy/lib/arraysetops.py",
+        "docfrom": "in1d",
+        "class": "NA",
+        "func": "in1d",
+        "exec_func": "in1d",
+        "params": [
+            "kind",
+            "s"
+        ],
+        "constraints": "(kind != 'table') -> (assume_unique = 'no effect')"
+    },
+    {
+        "id": "c65-2",
+        "lib": "numpy",
+        "sha": "75dbbea7d7111c151498722c0c2811cee86d34ff",
+        "issue_sha": "75dbbea7d7111c151498722c0c2811cee86d34ff",
+        "issue_type": "addc",
+        "granularity": "func",
+        "filepath": "numpy/lib/arraysetops.py",
+        "docfrom": "in1d",
+        "class": "NA",
+        "func": "in1d",
+        "exec_func": "in1d",
+        "params": [
+            "kind",
+            "s"
+        ],
+        "constraints": "(kind != 'table') -> (assume_unique = 'no effect')"
+    },
+    {
+        "id": "c66-0",
+        "lib": "scipy",
+        "sha": "77a8ec1a473c8f471d162d50b76b0b581bbb557c",
+        "issue_sha": "77a8ec1a473c8f471d162d50b76b0b581bbb557c",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "scipy/fft/_realtransforms.py",
+        "docfrom": "dctn",
+        "class": "NA",
+        "func": "dctn",
+        "exec_func": "dctn",
+        "params": [
+            "orthogonalize",
+            "norm"
+        ],
+        "constraints": "(norm = 'ortho') -> (orthogonalize = 'True')"
+    },
+    {
+        "id": "c66-1",
+        "lib": "scipy",
+        "sha": "77a8ec1a473c8f471d162d50b76b0b581bbb557c",
+        "issue_sha": "77a8ec1a473c8f471d162d50b76b0b581bbb557c",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "scipy/fft/_realtransforms.py",
+        "docfrom": "dctn",
+        "class": "NA",
+        "func": "dctn",
+        "exec_func": "dctn",
+        "params": [
+            "orthogonalize",
+            "norm"
+        ],
+        "constraints": "(norm = 'ortho') -> (orthogonalize = 'True')"
+    },
+    {
+        "id": "c66-2",
+        "lib": "scipy",
+        "sha": "77a8ec1a473c8f471d162d50b76b0b581bbb557c",
+        "issue_sha": "77a8ec1a473c8f471d162d50b76b0b581bbb557c",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "scipy/fft/_realtransforms.py",
+        "docfrom": "dctn",
+        "class": "NA",
+        "func": "dctn",
+        "exec_func": "dctn",
+        "params": [
+            "orthogonalize",
+            "norm"
+        ],
+        "constraints": "(norm = 'ortho') -> (orthogonalize = 'True')"
+    },
+    {
+        "id": "c67-0",
+        "lib": "scipy",
+        "sha": "acac27527df9c8723647512361c581f714fb473a",
+        "issue_sha": "acac27527df9c8723647512361c581f714fb473a",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "scipy/linalg/_basic.py",
+        "docfrom": "solve",
+        "class": "NA",
+        "func": "solve",
+        "exec_func": "solve",
+        "params": [
+            "orthogonalize",
+            "norm"
+        ],
+        "constraints": "(assume_a = 'gen') -> (lower = 'ignore')"
+    },
+    {
+        "id": "c67-1",
+        "lib": "scipy",
+        "sha": "acac27527df9c8723647512361c581f714fb473a",
+        "issue_sha": "acac27527df9c8723647512361c581f714fb473a",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "scipy/linalg/_basic.py",
+        "docfrom": "solve",
+        "class": "NA",
+        "func": "solve",
+        "exec_func": "solve",
+        "params": [
+            "orthogonalize",
+            "norm"
+        ],
+        "constraints": "(assume_a != 'gen') -> (lower = 'ignore')"
+    },
+    {
+        "id": "c67-2",
+        "lib": "scipy",
+        "sha": "acac27527df9c8723647512361c581f714fb473a",
+        "issue_sha": "acac27527df9c8723647512361c581f714fb473a",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "scipy/linalg/_basic.py",
+        "docfrom": "solve",
+        "class": "NA",
+        "func": "solve",
+        "exec_func": "solve",
+        "params": [
+            "orthogonalize",
+            "norm"
+        ],
+        "constraints": "(assume_a = 'gen') -> (lower = 'exist')"
+    },
+    {
+        "id": "c68-0",
+        "lib": "scipy",
+        "sha": "256d91882262b0534b80f99f9e023eae011567ed",
+        "issue_sha": "256d91882262b0534b80f99f9e023eae011567ed",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "scipy/stats/_qmc.py",
+        "docfrom": "MultinomialQMC",
+        "class": "MultinomialQMC",
+        "func": "__init__",
+        "exec_func": "__init__",
+        "params": [
+            "engine",
+            "seed"
+        ],
+        "constraints": "(engine = 'None') -> (seed = 'exist')"
+    },
+    {
+        "id": "c68-1",
+        "lib": "scipy",
+        "sha": "256d91882262b0534b80f99f9e023eae011567ed",
+        "issue_sha": "256d91882262b0534b80f99f9e023eae011567ed",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "scipy/stats/_qmc.py",
+        "docfrom": "MultinomialQMC",
+        "class": "MultinomialQMC",
+        "func": "__init__",
+        "exec_func": "__init__",
+        "params": [
+            "engine",
+            "seed"
+        ],
+        "constraints": "(engine != 'None') -> (seed = 'exist')"
+    },
+    {
+        "id": "c68-2",
+        "lib": "scipy",
+        "sha": "256d91882262b0534b80f99f9e023eae011567ed",
+        "issue_sha": "256d91882262b0534b80f99f9e023eae011567ed",
+        "issue_type": "modify",
+        "granularity": "class",
+        "filepath": "scipy/stats/_qmc.py",
+        "docfrom": "MultinomialQMC",
+        "class": "MultinomialQMC",
+        "func": "__init__",
+        "exec_func": "__init__",
+        "params": [
+            "engine",
+            "seed"
+        ],
+        "constraints": "(engine = 'None') -> (seed != 'exist')"
+    },
+    {
+        "id": "c69-0",
+        "lib": "scipy",
+        "sha": "b80267e9b44169c1ae4ba691bce1e60b66104cbc",
+        "issue_sha": "b80267e9b44169c1ae4ba691bce1e60b66104cbc",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "scipy/stats/_morestats.py",
+        "docfrom": "probplot",
+        "class": "NA",
+        "func": "probplot",
+        "exec_func": "probplot",
+        "params": [
+            "plot",
+            "fit",
+            "rvalue"
+        ],
+        "constraints": "((plot != 'None') ^ (fit = 'True')) -> (rvalue = 'True')"
+    },
+    {
+        "id": "c69-1",
+        "lib": "scipy",
+        "sha": "b80267e9b44169c1ae4ba691bce1e60b66104cbc",
+        "issue_sha": "b80267e9b44169c1ae4ba691bce1e60b66104cbc",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "scipy/stats/_morestats.py",
+        "docfrom": "probplot",
+        "class": "NA",
+        "func": "probplot",
+        "exec_func": "probplot",
+        "params": [
+            "plot",
+            "fit",
+            "rvalue"
+        ],
+        "constraints": "((plot != 'None') ^ (fit = 'True')) -> (rvalue = 'True')"
+    },
+    {
+        "id": "c69-2",
+        "lib": "scipy",
+        "sha": "b80267e9b44169c1ae4ba691bce1e60b66104cbc",
+        "issue_sha": "b80267e9b44169c1ae4ba691bce1e60b66104cbc",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "scipy/stats/_morestats.py",
+        "docfrom": "probplot",
+        "class": "NA",
+        "func": "probplot",
+        "exec_func": "probplot",
+        "params": [
+            "plot",
+            "fit",
+            "rvalue"
+        ],
+        "constraints": "((plot != 'None') ^ (fit = 'True')) -> (rvalue = 'True')"
+    },
+    {
+        "id": "c70-0",
+        "lib": "pandas",
+        "sha": "214ac73ab7de1a3bcd38dcb2630145f831661530",
+        "issue_sha": "214ac73ab7de1a3bcd38dcb2630145f831661530",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "pandas/core/reshape/pivot.py",
+        "docfrom": "pivot_table",
+        "class": "NA",
+        "func": "pivot_table",
+        "exec_func": "__internal_pivot_table",
+        "params": [
+            "margins",
+            "aggfunc"
+        ],
+        "constraints": "(margins = 'True') -> (aggfunc = 'exist')"
+    },
+    {
+        "id": "c70-1",
+        "lib": "pandas",
+        "sha": "214ac73ab7de1a3bcd38dcb2630145f831661530",
+        "issue_sha": "214ac73ab7de1a3bcd38dcb2630145f831661530",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "pandas/core/reshape/pivot.py",
+        "docfrom": "pivot_table",
+        "class": "NA",
+        "func": "pivot_table",
+        "exec_func": "__internal_pivot_table",
+        "params": [
+            "margins",
+            "aggfunc"
+        ],
+        "constraints": "(dropna != 'True') -> (aggfuncs = 'exist')"
+    },
+    {
+        "id": "c70-2",
+        "lib": "pandas",
+        "sha": "214ac73ab7de1a3bcd38dcb2630145f831661530",
+        "issue_sha": "214ac73ab7de1a3bcd38dcb2630145f831661530",
+        "issue_type": "modify",
+        "granularity": "func",
+        "filepath": "pandas/core/reshape/pivot.py",
+        "docfrom": "pivot_table",
+        "class": "NA",
+        "func": "pivot_table",
+        "exec_func": "__internal_pivot_table",
+        "params": [
+            "margins",
+            "aggfunc"
+        ],
+        "constraints": "(margins != 'True') -> (aggfunc = 'exist')"
+    },
+    {
+        "id": "c71-0",
+        "lib": "pandas",
+        "sha": "218ab0930e477337ece6c46d497c14d447352d8a",
+        "issue_sha": "218ab0930e477337ece6c46d497c14d447352d8a",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "pandas/core/frame.py",
+        "docfrom": "from_dict",
+        "class": "DataFrame",
+        "func": "from_dict",
+        "exec_func": "from_dict",
+        "params": [
+            "orient",
+            "columns"
+        ],
+        "constraints": "(orient = 'index') -> (columns = 'exist')"
+    },
+    {
+        "id": "c71-1",
+        "lib": "pandas",
+        "sha": "218ab0930e477337ece6c46d497c14d447352d8a",
+        "issue_sha": "218ab0930e477337ece6c46d497c14d447352d8a",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "pandas/core/frame.py",
+        "docfrom": "from_dict",
+        "class": "DataFrame",
+        "func": "from_dict",
+        "exec_func": "from_dict",
+        "params": [
+            "orient",
+            "columns"
+        ],
+        "constraints": "(orient = 'index') -> (columns != 'exist')"
+    },
+    {
+        "id": "c71-2",
+        "lib": "pandas",
+        "sha": "218ab0930e477337ece6c46d497c14d447352d8a",
+        "issue_sha": "218ab0930e477337ece6c46d497c14d447352d8a",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "pandas/core/frame.py",
+        "docfrom": "from_dict",
+        "class": "DataFrame",
+        "func": "from_dict",
+        "exec_func": "from_dict",
+        "params": [
+            "orient",
+            "columns"
+        ],
+        "constraints": "(orient != 'index') -> (columns != 'None')"
+    },
+    {
+        "id": "c72-0",
+        "lib": "pandas",
+        "sha": "218ab0930e477337ece6c46d497c14d447352d8a",
+        "issue_sha": "218ab0930e477337ece6c46d497c14d447352d8a",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "pandas/core/frame.py",
+        "docfrom": "from_dict",
+        "class": "DataFrame",
+        "func": "from_dict",
+        "exec_func": "from_dict",
+        "params": [
+            "orient",
+            "columns"
+        ],
+        "constraints": "!((orient = 'tight' || orient = 'columns') -> (columns != 'None'))"
+    },
+    {
+        "id": "c72-1",
+        "lib": "pandas",
+        "sha": "218ab0930e477337ece6c46d497c14d447352d8a",
+        "issue_sha": "218ab0930e477337ece6c46d497c14d447352d8a",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "pandas/core/frame.py",
+        "docfrom": "from_dict",
+        "class": "DataFrame",
+        "func": "from_dict",
+        "exec_func": "from_dict",
+        "params": [
+            "orient",
+            "columns"
+        ],
+        "constraints": "!((orient = 'index' || orient = 'columns' || orient = 'index') -> (columns != 'None'))"
+    },
+    {
+        "id": "c72-2",
+        "lib": "pandas",
+        "sha": "218ab0930e477337ece6c46d497c14d447352d8a",
+        "issue_sha": "218ab0930e477337ece6c46d497c14d447352d8a",
+        "issue_type": "good",
+        "granularity": "func",
+        "filepath": "pandas/core/frame.py",
+        "docfrom": "from_dict",
+        "class": "DataFrame",
+        "func": "from_dict",
+        "exec_func": "from_dict",
+        "params": [
+            "orient",
+            "columns"
+        ],
+        "constraints": "!((oriented = 'tight' || oriented = 'columns') -> (columns != 'None'))"
+    }
+]

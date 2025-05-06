@@ -144,7 +144,7 @@ Then, by performing heuristic cross-check filtering on the json file, funtions w
 ```sh
 python3 main.py --trans c1-1
 ```
-Due to the relative immaturity of Python's symbolic execution tools, certain code modifications are required before initiating symbolic execution. These modifications ensure that the code logic remains unaffected and do not adversely impact the detection of multi-parameter API errors. An example of the member function `fit` in the class `KBinsDiscretizer` is shown below, and both original source code and modified code ([./info/1/KBinsDiscretizer/memberfunc/fit/fit_trans.py](./info/c1-1/KBinsDiscretizer/memberfunc/fit/fit_trans.py)) can be found the related location in the directory [./info/KBinsDiscretizer](./info/KBinsDiscretizer).
+Due to the relative immaturity of Python's symbolic execution tools, certain code modifications are required before initiating symbolic execution. These modifications ensure that the code logic remains unaffected and do not adversely impact the detection of multi-parameter API errors. An example of the member function `fit` in the class `KBinsDiscretizer` is shown below, and both original source code and modified code ([./info/c1-1/KBinsDiscretizer/memberfunc/fit/fit_trans.py](./info/c1-1/KBinsDiscretizer/memberfunc/fit/fit_trans.py)) can be found the related location in the directory [./info/KBinsDiscretizer](./info/KBinsDiscretizer).
 ```python
 # Original source code
 def fit(self, X, y=None, sample_weight=None):

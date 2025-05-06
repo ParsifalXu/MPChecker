@@ -1,0 +1,23 @@
+========== PROJECT: c40-0 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- sparse_encode
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: sparse_encode
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c40-0/sparse_encode/sparse_encode.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c40-0/sparse_encode/sparse_encode_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c40-0/sparse_encode/sparse_encode_trans.py --entry sparse_encode
+
+===== Processing folder: sparse_encode =====
+[91m--- Solving func: c40-0/sparse_encode[0m
+Checking constraints in ["(algorithm = 'omp') -> (n_nonzero_coefs = 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c40-0/sparse_encode/sparse_encode_path.txt
+normal results: [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, False, False, False, False, False, False, False, False, False, True, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, False, False, False, False, False, False, False, False, False, False, False, True, True, True, False, False, False, False, False, False, False, False, False, False, False, True, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, False, False, False, False, False, False, False, False]
+All path files checked.

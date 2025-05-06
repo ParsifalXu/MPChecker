@@ -1,0 +1,42 @@
+========== PROJECT: c51-0 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- _BinaryGaussianProcessClassifierLaplace
+Processing memberfunc: log_marginal_likelihood
+--- MISMATCH : _BinaryGaussianProcessClassifierLaplace - _BinaryGaussianProcessClassifierLaplace --- 
+Doc: ['kernel', 'optimizer', 'n_restarts_optimizer', 'max_iter_predict', 'warm_start', 'copy_X_train', 'random_state', 'theta', 'eval_gradient', 'clone_kernel']
+Code: ['kernel', 'optimizer', 'n_restarts_optimizer', 'max_iter_predict', 'warm_start', 'copy_X_train', 'random_state']
+Difference: {'clone_kernel', 'theta', 'eval_gradient'}
+
+Before Filter: 1
+After Filter: 1
+Translating Class: _BinaryGaussianProcessClassifierLaplace; Function: log_marginal_likelihood
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c51-0/_BinaryGaussianProcessClassifierLaplace/memberfunc/log_marginal_likelihood/log_marginal_likelihood.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c51-0/_BinaryGaussianProcessClassifierLaplace/memberfunc/log_marginal_likelihood/log_marginal_likelihood_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c51-0/_BinaryGaussianProcessClassifierLaplace/memberfunc/log_marginal_likelihood/log_marginal_likelihood_trans.py --entry log_marginal_likelihood
+
+===== Processing folder: _BinaryGaussianProcessClassifierLaplace =====
+[91m--- Solving memberfunc: c51-0/_BinaryGaussianProcessClassifierLaplace/log_marginal_likelihood[0m
+Checking constraints in ["(eval_gradient = 'True') -> (theta != 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c51-0/_BinaryGaussianProcessClassifierLaplace/memberfunc/log_marginal_likelihood/log_marginal_likelihood_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (eval_gradient = 'True') -> (theta != 'None')
+  - Parameter Names: ['eval_gradient', 'theta']
+  - Parameters: [('eval_gradient', '=', 'True', ''), ('theta', '!=', 'None', '')]
+  - Expression: And(eval_gradient != 0, theta != "None")
+  - Modified Parameter Names: ['eval_gradient', 'theta']
+  - Modified Parameters: [('eval_gradient', '=', 'True', ''), ('theta', '!=', 'None', '')]
+  - Modified Expression: And(eval_gradient != 0, theta != "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.75
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, True, True, False, True, True, False]
+All path files checked.

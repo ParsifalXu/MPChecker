@@ -1,0 +1,55 @@
+========== PROJECT: c54-2 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- _check_solver_option
+--- MISMATCH : _check_solver_option - _check_solver_option --- 
+Doc: ['penalty', 'dual', 'C', 'fit_intercept', 'intercept_scaling', 'class_weight', 'max_iter', 'random_state', 'solver', 'tol', 'multi_class', 'verbose', 'warm_start', 'n_jobs']
+Code: ['solver', 'multi_class', 'penalty', 'dual']
+Difference: {'tol', 'warm_start', 'n_jobs', 'C', 'intercept_scaling', 'max_iter', 'class_weight', 'fit_intercept', 'verbose', 'random_state'}
+
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: _check_solver_option
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c54-2/_check_solver_option/_check_solver_option.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c54-2/_check_solver_option/_check_solver_option_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c54-2/_check_solver_option/_check_solver_option_trans.py --entry _check_solver_option
+
+===== Processing folder: _check_solver_option =====
+[91m--- Solving func: c54-2/_check_solver_option[0m
+Checking constraints in ["((solver = 'newton-cg') ^ (multi_class = 'multinomial')) -> (penalty != 'l2')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c54-2/_check_solver_option/_check_solver_option_path.txt
+1.0
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: ((solver = 'newton-cg') ^ (multi_class = 'multinomial')) -> (penalty != 'l2')
+  - Parameter Names: ['solver', 'multi_class', 'penalty']
+  - Parameters: [('solver', '=', 'newton-cg', ''), ('multi_class', '=', 'multinomial', ''), ('penalty', '!=', 'l2', '')]
+  - Expression: And(And(solver == "newton-cg", multi_class == "multinomial"),
+    penalty != "l2")
+  - Modified Parameter Names: ['solver', 'multi_class', 'penalty']
+  - Modified Parameters: [('solver', '=', 'newton-cg', ''), ('multi_class', '=', 'multinomial', ''), ('penalty', '!=', 'l2', '')]
+  - Modified Expression: And(And(solver == "newton-cg", multi_class == "multinomial"),
+    penalty != "l2")
+  - Logic: ({0}^{1})^{2}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, False, False, False, False, False, False, False, False, False, False, False, False]
+
+
+[91m[ BAD CONSTRAINT ][0m
+##################################################
+Library: c54-2
+Function: _check_solver_option
+Constraint: ((solver = 'newton-cg') ^ (multi_class = 'multinomial')) -> (penalty != 'l2')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c54-2/_check_solver_option/_check_solver_option_path.txt
+##################################################
+
+
+BAD CONSTRAINT

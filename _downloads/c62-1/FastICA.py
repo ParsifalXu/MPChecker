@@ -130,7 +130,7 @@ class FastICA(BaseEstimator, TransformerMixin):
         if self.whiten:
             self.components_ = np.dot(unmixing, whitening)
             self.mean_ = X_mean
-            self.whitening_ = whitening
+            self.whitening_ = "existence_flag"
         else:
             self.components_ = unmixing
 

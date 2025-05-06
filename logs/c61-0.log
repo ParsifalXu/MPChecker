@@ -1,0 +1,36 @@
+========== PROJECT: c61-0 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- FastICA
+Processing memberfunc: _fit
+Before Filter: 1
+After Filter: 1
+Translating Class: FastICA; Function: _fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c61-0/FastICA/memberfunc/_fit/_fit.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c61-0/FastICA/memberfunc/_fit/_fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c61-0/FastICA/memberfunc/_fit/_fit_trans.py --entry _fit
+
+===== Processing folder: FastICA =====
+[91m--- Solving memberfunc: c61-0/FastICA/_fit[0m
+Checking constraints in ["(whiten = 'True') -> (mean_ != 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c61-0/FastICA/memberfunc/_fit/_fit_path.txt
+normal results: [False, False, False, False, False, False, False, False]
+
+
+[91m[ BAD CONSTRAINT WITH FUZZY ][0m
+##################################################
+Library: c61-0
+Class: FastICA
+Memberfunc: _fit
+Constraint: (whiten = 'True') -> (mean_ != 'exist')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c61-0/FastICA/memberfunc/_fit/_fit_path.txt
+##################################################
+
+
+BAD CONSTRAINT

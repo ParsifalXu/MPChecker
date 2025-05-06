@@ -1,0 +1,48 @@
+========== PROJECT: c8-2 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- _multiclass_roc_auc_score
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: _multiclass_roc_auc_score
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c8-2/_multiclass_roc_auc_score/_multiclass_roc_auc_score.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c8-2/_multiclass_roc_auc_score/_multiclass_roc_auc_score_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c8-2/_multiclass_roc_auc_score/_multiclass_roc_auc_score_trans.py --entry _multiclass_roc_auc_score
+
+===== Processing folder: _multiclass_roc_auc_score =====
+[91m--- Solving func: c8-2/_multiclass_roc_auc_score[0m
+Checking constraints in ["(multi_class = 'ovo') -> (sample_weight != 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c8-2/_multiclass_roc_auc_score/_multiclass_roc_auc_score_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (multi_class = 'ovo') -> (sample_weight != 'None')
+  - Parameter Names: ['multi_class', 'sample_weight']
+  - Parameters: [('multi_class', '=', 'ovo', ''), ('sample_weight', '!=', 'None', '')]
+  - Expression: And(multi_class == "ovo", sample_weight != "None")
+  - Modified Parameter Names: ['multi_class', 'sample_weight']
+  - Modified Parameters: [('multi_class', '=', 'ovo', ''), ('sample_weight', '!=', 'None', '')]
+  - Modified Expression: And(multi_class == "ovo", sample_weight != "None")
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+
+
+[91m[ BAD CONSTRAINT WITH ERROR ][0m
+##################################################
+Type: Raise Error
+path: (call_np_allclose != 0) -> (multi_class != 'ovr') -> (average_in_list = 0) -> (multi_class_in_list = 0) -> (average != 'None') -> (labels != 'None') -> (call_len = call_len) -> (call_np_array_equal != 0) -> (call_len = y_score_shape_list_1) -> (call_len = 0) -> (multi_class = 'ovo') -> (sample_weight != 'None') -> '(multi_class)_(multi_class)_(sample_weight)_ERROR_END'
+Library: c8-2
+Function: _multiclass_roc_auc_score
+Constraint: (multi_class = 'ovo') -> (sample_weight != 'None')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c8-2/_multiclass_roc_auc_score/_multiclass_roc_auc_score_path.txt
+##################################################
+
+
+BAD CONSTRAINT

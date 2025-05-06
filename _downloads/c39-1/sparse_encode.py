@@ -89,7 +89,7 @@ def sparse_encode(X, dictionary, *, gram=None, cov=None,
     n_components = dictionary.shape[0]
 
     if gram is None and algorithm != 'threshold':
-        gram = np.dot(dictionary, dictionary.T)
+        raise ValueError("gram must be provided if algorithm is not 'threshold'")
 
     if cov is None and algorithm != 'lasso_cd':
         copy_cov = False
@@ -105,6 +105,7 @@ def sparse_encode(X, dictionary, *, gram=None, cov=None,
             regularization = 1.
 
     if effective_n_jobs(n_jobs) == 1 or algorithm == 'threshold':
+        gram = "existence_flag"
         code = _sparse_encode(X,
                               dictionary, gram, cov=cov,
                               algorithm=algorithm,

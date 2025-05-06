@@ -12,7 +12,7 @@ PYEXECUTOR = os.path.join(PYEXSMT_DIR, 'main.py')
 
 FUZZWORDS = {
     "nonexistence": ["ignore", "no effect", "unused", "override"],
-    'existence': ["specify", "specified", "have an effect", "significant", "exist", "existed"] 
+    'existence': ["specify", "specified", "have an effect", "significant", "exist", "existed", "used"] 
 }
 
 

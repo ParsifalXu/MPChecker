@@ -1,0 +1,60 @@
+========== PROJECT: c72-1 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- DataFrame
+Processing memberfunc: from_dict
+--- MISMATCH : DataFrame - DataFrame --- 
+Doc: ['data', 'index', 'columns', 'dtype', 'copy']
+Code: ['N', 'o', ' ', '_', '_', 'i', 'n', 'i', 't', '_', '_', ' ', 'm', 'e', 't', 'h', 'o', 'd', ' ', 'f', 'o', 'u', 'n', 'd']
+Difference: {'dtype', 'index', 'columns', 'i', 'e', '_', 'o', ' ', 'n', 'data', 't', 'd', 'copy', 'f', 'm', 'u', 'N', 'h'}
+
+Before Filter: 1
+After Filter: 1
+Translating Class: DataFrame; Function: from_dict
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c72-1/DataFrame/memberfunc/from_dict/from_dict.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c72-1/DataFrame/memberfunc/from_dict/from_dict_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c72-1/DataFrame/memberfunc/from_dict/from_dict_trans.py --entry from_dict
+
+===== Processing folder: DataFrame =====
+[91m--- Solving memberfunc: c72-1/DataFrame/from_dict[0m
+Checking constraints in ["(orient = 'tight' || orient = 'columns' || orient = 'index') -> (columns != 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c72-1/DataFrame/memberfunc/from_dict/from_dict_path.txt
+1.0
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (orient = 'tight' || orient = 'columns' || orient = 'index') -> (columns != 'None')
+  - Parameter Names: ['orient', 'orient', 'orient', 'columns']
+  - Parameters: [('orient', '=', 'tight', ''), ('orient', '=', 'columns', ''), ('orient', '=', 'index', ''), ('columns', '!=', 'None', '')]
+  - Expression: And(Or(orient == "tight",
+       Or(orient == "columns", orient == "index")),
+    columns != "None")
+  - Modified Parameter Names: ['orient', 'orient', 'orient', 'columns']
+  - Modified Parameters: [('orient', '=', 'tight', ''), ('orient', '=', 'columns', ''), ('orient', '=', 'index', ''), ('columns', '!=', 'None', '')]
+  - Modified Expression: And(Or(orient == "tight",
+       Or(orient == "columns", orient == "index")),
+    columns != "None")
+  - Logic: ({0}|{1}|{2})^{3}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+
+
+[91m[ BAD CONSTRAINT WITH ERROR ][0m
+##################################################
+Type: Raise Error
+path: (orient != 'index') -> (orient != 'columns') -> (orient = 'tight') -> (columns != 'None') -> '(orient)_(orient)_(orient)_(columns)_ERROR_END'
+Library: c72-1
+Class: DataFrame
+Memberfunc: from_dict
+Constraint: (orient = 'tight' || orient = 'columns' || orient = 'index') -> (columns != 'None')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c72-1/DataFrame/memberfunc/from_dict/from_dict_path.txt
+##################################################
+
+
+BAD CONSTRAINT

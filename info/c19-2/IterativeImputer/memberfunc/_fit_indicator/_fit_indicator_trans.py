@@ -1,0 +1,8 @@
+def _fit_indicator(n_features_with_missing_, feature_names_in_, verbose, initial_imputer_, min_value, random_state_, imputation_sequence_, n_iter_, missing_values, max_iter, initial_strategy, indicator___fit, add_indicator, sample_posterior, n_nearest_features, X, tol, skip_complete, imputation_order, estimator, n_features_in_, max_value, call_MissingIndicator, indicator_, random_state, call_indicator___fit):
+    if add_indicator:
+        indicator_ = call_MissingIndicator
+        call_indicator___fit
+        indicator_ = 'existence_flag'
+    else:
+        indicator_ = 'None'
+    return f"(n_features_with_missing_ = {n_features_with_missing_}) ^ (feature_names_in_ = {feature_names_in_}) ^ (verbose = {verbose}) ^ (initial_imputer_ = {initial_imputer_}) ^ (min_value = {min_value}) ^ (random_state_ = {random_state_}) ^ (imputation_sequence_ = {imputation_sequence_}) ^ (n_iter_ = {n_iter_}) ^ (missing_values = {missing_values}) ^ (max_iter = {max_iter}) ^ (initial_strategy = {initial_strategy}) ^ (indicator___fit = {indicator___fit}) ^ (add_indicator = {add_indicator}) ^ (sample_posterior = {sample_posterior}) ^ (n_nearest_features = {n_nearest_features}) ^ (X = {X}) ^ (tol = {tol}) ^ (skip_complete = {skip_complete}) ^ (imputation_order = {imputation_order}) ^ (estimator = {estimator}) ^ (n_features_in_ = {n_features_in_}) ^ (max_value = {max_value}) ^ (call_MissingIndicator = {call_MissingIndicator}) ^ (indicator_ = {indicator_}) ^ (random_state = {random_state}) ^ (call_indicator___fit = {call_indicator___fit})"

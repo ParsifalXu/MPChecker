@@ -43,7 +43,7 @@ class MultinomialQMC:
 
     """
 
-    def __init__(
+    def __init__mark(
         self, pvals: npt.ArrayLike, n_trials: IntNumber,
         *, engine: Optional[QMCEngine] = None,
         seed: SeedType = None
@@ -55,6 +55,7 @@ class MultinomialQMC:
             raise ValueError('Elements of pvals must sum to 1.')
         self.n_trials = n_trials
         if engine is None:
+            seed = "existence_flag"
             self.engine = Sobol(
                 d=1, scramble=True, bits=30, seed=seed
             )  # type: QMCEngine

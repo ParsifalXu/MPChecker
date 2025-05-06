@@ -1,0 +1,115 @@
+========== PROJECT: c33-1 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 13
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- _VectorizerMixin
+Processing memberfunc: _validate_vocabulary
+Processing memberfunc: _word_ngrams
+Processing memberfunc: _check_stop_words_consistency
+Processing memberfunc: get_stop_words
+Processing memberfunc: decode
+Processing memberfunc: _check_vocabulary
+Processing memberfunc: _char_ngrams
+Processing memberfunc: _validate_params
+Processing memberfunc: _warn_for_unused_params
+Processing memberfunc: build_analyzer
+Processing memberfunc: build_tokenizer
+Processing memberfunc: _char_wb_ngrams
+Processing memberfunc: build_preprocessor
+--- MISMATCH : _VectorizerMixin - _VectorizerMixin --- 
+Doc: ['input', 'encoding', 'decode_error', 'strip_accents', 'lowercase', 'preprocessor', 'tokenizer', 'analyzer', 'stop_words', 'token_pattern', 'ngram_range', 'max_df', 'min_df', 'max_features', 'vocabulary', 'binary', 'dtype', 'norm', 'use_idf', 'smooth_idf', 'sublinear_tf']
+Code: ['N', 'o', ' ', '_', '_', 'i', 'n', 'i', 't', '_', '_', ' ', 'm', 'e', 't', 'h', 'o', 'd', ' ', 'f', 'o', 'u', 'n', 'd']
+Difference: {'o', 'token_pattern', 'norm', 'preprocessor', 'h', 'e', 'min_df', 'N', 'i', 'd', 't', 'dtype', 'sublinear_tf', 'lowercase', 'tokenizer', 'input', 'm', 'max_df', 'n', 'max_features', 'encoding', 'decode_error', 'u', 'smooth_idf', 'f', ' ', 'analyzer', 'vocabulary', 'binary', 'ngram_range', '_', 'use_idf', 'stop_words', 'strip_accents'}
+
+Before Filter: 1
+After Filter: 1
+Translating Class: _VectorizerMixin; Function: _validate_vocabulary
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_validate_vocabulary/_validate_vocabulary.py
+Translating Class: _VectorizerMixin; Function: _word_ngrams
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_word_ngrams/_word_ngrams.py
+Translating Class: _VectorizerMixin; Function: _check_stop_words_consistency
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_check_stop_words_consistency/_check_stop_words_consistency.py
+Translating Class: _VectorizerMixin; Function: get_stop_words
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/get_stop_words/get_stop_words.py
+Translating Class: _VectorizerMixin; Function: decode
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/decode/decode.py
+Translating Class: _VectorizerMixin; Function: _check_vocabulary
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_check_vocabulary/_check_vocabulary.py
+Translating Class: _VectorizerMixin; Function: _char_ngrams
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_char_ngrams/_char_ngrams.py
+Translating Class: _VectorizerMixin; Function: _validate_params
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_validate_params/_validate_params.py
+Translating Class: _VectorizerMixin; Function: _warn_for_unused_params
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_warn_for_unused_params/_warn_for_unused_params.py
+Translating Class: _VectorizerMixin; Function: build_analyzer
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/build_analyzer/build_analyzer.py
+Translating Class: _VectorizerMixin; Function: build_tokenizer
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/build_tokenizer/build_tokenizer.py
+Translating Class: _VectorizerMixin; Function: _char_wb_ngrams
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_char_wb_ngrams/_char_wb_ngrams.py
+Translating Class: _VectorizerMixin; Function: build_preprocessor
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/build_preprocessor/build_preprocessor.py
+total call times: 13
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_validate_vocabulary/_validate_vocabulary_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_validate_vocabulary/_validate_vocabulary_trans.py --entry _validate_vocabulary
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_word_ngrams/_word_ngrams_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_word_ngrams/_word_ngrams_trans.py --entry _word_ngrams
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_check_stop_words_consistency/_check_stop_words_consistency_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_check_stop_words_consistency/_check_stop_words_consistency_trans.py --entry _check_stop_words_consistency
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/get_stop_words/get_stop_words_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/get_stop_words/get_stop_words_trans.py --entry get_stop_words
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/decode/decode_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/decode/decode_trans.py --entry decode
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_check_vocabulary/_check_vocabulary_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_check_vocabulary/_check_vocabulary_trans.py --entry _check_vocabulary
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_char_ngrams/_char_ngrams_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_char_ngrams/_char_ngrams_trans.py --entry _char_ngrams
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_validate_params/_validate_params_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_validate_params/_validate_params_trans.py --entry _validate_params
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_warn_for_unused_params/_warn_for_unused_params_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_warn_for_unused_params/_warn_for_unused_params_trans.py --entry _warn_for_unused_params
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/build_analyzer/build_analyzer_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/build_analyzer/build_analyzer_trans.py --entry build_analyzer
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/build_tokenizer/build_tokenizer_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/build_tokenizer/build_tokenizer_trans.py --entry build_tokenizer
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_char_wb_ngrams/_char_wb_ngrams_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_char_wb_ngrams/_char_wb_ngrams_trans.py --entry _char_wb_ngrams
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/build_preprocessor/build_preprocessor_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/build_preprocessor/build_preprocessor_trans.py --entry build_preprocessor
+
+===== Processing folder: _VectorizerMixin =====
+[91m--- Solving memberfunc: c33-1/_VectorizerMixin/_validate_vocabulary[0m
+Checking constraints in ["(analyzer != 'word') -> (token_pattern != 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_validate_vocabulary/_validate_vocabulary_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (analyzer != 'word') -> (token_pattern != 'None')
+  - Parameter Names: ['analyzer', 'token_pattern']
+  - Parameters: [('analyzer', '!=', 'word', ''), ('token_pattern', '!=', 'None', '')]
+  - Expression: And(analyzer != "word", token_pattern != "None")
+  - Modified Parameter Names: ['vocabulary', 'vocabulary']
+  - Modified Parameters: [('vocabulary', '!=', 'None', ''), ('vocabulary', '!=', 'None', '')]
+  - Modified Expression: And(vocabulary != "None", vocabulary != "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.61
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+
+
+[91m[ BAD CONSTRAINT WITH ERROR ][0m
+##################################################
+Type: Raise Error
+path: (vocabulary != 'None') -> (call_isinstance != 0) -> (call_isinstance != 0) -> (call_len = call_len) -> (loop2 = 1) -> (i_in_list = 0) -> (call_sorted = 0) -> '(vocabulary)_(call_isinstance)_(call_isinstance)_(loop1)_(call_vocab_setdefaulti)_(loop2)_(loop2)_(vocabulary)_ERROR_END'
+Library: c33-1
+Class: _VectorizerMixin
+Memberfunc: _validate_vocabulary
+Constraint: (analyzer != 'word') -> (token_pattern != 'None')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c33-1/_VectorizerMixin/memberfunc/_validate_vocabulary/_validate_vocabulary_path.txt
+##################################################
+
+
+BAD CONSTRAINT

@@ -138,11 +138,10 @@ class AgglomerativeClustering(ClusterMixin, BaseEstimator):
             raise ValueError("n_clusters should be an integer greater than 0."
                              " %s was provided." % str(self.n_clusters))
 
-        if not ((self.n_clusters is None) ^ (self.distance_threshold is None)):
-            raise ValueError("Exactly one of n_clusters and "
-                             "distance_threshold has to be set, and the other "
-                             "needs to be None.")
-
+        if (self.distance_threshold is None and self.n_clusters is None) or self.distance_threshold is not None and self.n_clusters is not None:
+            raise ValueError("n_clusters and distance_threshold cannot be "
+                             "both set. Please set one of them to None.")
+        
         if (self.distance_threshold is not None
                 and not self.compute_full_tree):
             raise ValueError("compute_full_tree must be True if "
@@ -218,23 +217,3 @@ class AgglomerativeClustering(ClusterMixin, BaseEstimator):
             # Reassign cluster numbers
             self.labels_ = np.searchsorted(np.unique(labels), labels)
         return self
-
-    def fit_predict(self, X, y=None):
-        """Fit the hierarchical clustering from features or distance matrix,
-        and return cluster labels.
-
-        Parameters
-        ----------
-        X : array-like, shape (n_samples, n_features) or (n_samples, n_samples)
-            Training instances to cluster, or distances between instances if
-            ``affinity='precomputed'``.
-
-        y : Ignored
-            Not used, present here for API consistency by convention.
-
-        Returns
-        -------
-        labels : ndarray, shape (n_samples,)
-            Cluster labels.
-        """
-        return super().fit_predict(X, y)

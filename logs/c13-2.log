@@ -1,0 +1,24 @@
+[1;34mtools.auxiliary - DEBUG - Skipping constraint with symbols: ((n_nonzero_coefs_ = 'None') ^ (tol = 'None')) -> (n_nonzero_coefs_ = min(int(0.1 * n_features), 1)))[0m
+========== PROJECT: c13-2 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- OrthogonalMatchingPursuit
+Processing memberfunc: fit
+Before Filter: 1
+After Filter: 1
+Translating Class: OrthogonalMatchingPursuit; Function: fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c13-2/OrthogonalMatchingPursuit/memberfunc/fit/fit.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c13-2/OrthogonalMatchingPursuit/memberfunc/fit/fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c13-2/OrthogonalMatchingPursuit/memberfunc/fit/fit_trans.py --entry fit
+
+===== Processing folder: OrthogonalMatchingPursuit =====
+[91m--- Solving memberfunc: c13-2/OrthogonalMatchingPursuit/fit[0m
+Checking constraints in ["((n_nonzero_coefs_ = 'None') ^ (tol = 'None')) -> (n_nonzero_coefs_ = min(int(0.1 * n_features), 1)))"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c13-2/OrthogonalMatchingPursuit/memberfunc/fit/fit_path.txt
+All path files checked.

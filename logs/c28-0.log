@@ -1,0 +1,41 @@
+========== PROJECT: c28-0 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- _check_solver
+--- MISMATCH : _check_solver - _check_solver --- 
+Doc: ['penalty', 'dual', 'tol', 'C', 'fit_intercept', 'intercept_scaling', 'class_weight', 'random_state', 'solver', 'max_iter', 'multi_class', 'verbose', 'warm_start', 'n_jobs', 'l1_ratio']
+Code: ['solver', 'penalty', 'dual']
+Difference: {'class_weight', 'multi_class', 'verbose', 'max_iter', 'C', 'tol', 'warm_start', 'l1_ratio', 'fit_intercept', 'n_jobs', 'intercept_scaling', 'random_state'}
+
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: _check_solver
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c28-0/_check_solver/_check_solver.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c28-0/_check_solver/_check_solver_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c28-0/_check_solver/_check_solver_trans.py --entry _check_solver
+
+===== Processing folder: _check_solver =====
+[91m--- Solving func: c28-0/_check_solver[0m
+Checking constraints in ["(solver = 'liblinear') -> (penalty != 'none')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c28-0/_check_solver/_check_solver_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (solver = 'liblinear') -> (penalty != 'none')
+  - Parameter Names: ['solver', 'penalty']
+  - Parameters: [('solver', '=', 'liblinear', ''), ('penalty', '!=', 'none', '')]
+  - Expression: And(solver == "liblinear", penalty != "none")
+  - Modified Parameter Names: ['solver', 'penalty']
+  - Modified Parameters: [('solver', '=', 'liblinear', ''), ('penalty', '!=', 'none', '')]
+  - Modified Expression: And(solver == "liblinear", penalty != "none")
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, False, False, False, False, True, True]
+All path files checked.

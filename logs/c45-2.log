@@ -1,0 +1,23 @@
+========== PROJECT: c45-2 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- graphical_lasso
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: graphical_lasso
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c45-2/graphical_lasso/graphical_lasso.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c45-2/graphical_lasso/graphical_lasso_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c45-2/graphical_lasso/graphical_lasso_trans.py --entry graphical_lasso
+
+===== Processing folder: graphical_lasso =====
+[91m--- Solving func: c45-2/graphical_lasso[0m
+Checking constraints in ["(mode != 'cd') -> (enet_tol != 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c45-2/graphical_lasso/graphical_lasso_path.txt
+normal results: [False, False, False, False, True, True, True, True, False, False, False, False, True, True, True, True]
+All path files checked.

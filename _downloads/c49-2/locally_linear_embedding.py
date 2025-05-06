@@ -138,13 +138,6 @@ def locally_linear_embedding(
             M.flat[::M.shape[0] + 1] += 1  # W = W - I = W - I
 
     elif method == 'hessian':
-        dp = n_components * (n_components + 1) // 2
-
-        if n_neighbors <= n_components + dp:
-            raise ValueError("for method='hessian', n_neighbors must be "
-                             "greater than "
-                             "[n_components * (n_components + 3) / 2]")
-
         neighbors = nbrs.kneighbors(X, n_neighbors=n_neighbors + 1,
                                     return_distance=False)
         neighbors = neighbors[:, 1:]
@@ -156,35 +149,25 @@ def locally_linear_embedding(
 
         use_svd = (n_neighbors > d_in)
 
-        for i in range(N):
-            Gi = X[neighbors[i]]
-            Gi -= Gi.mean(0)
+        Gi = X[neighbors[i]]
 
-            # build Hessian estimator
-            if use_svd:
-                U = svd(Gi, full_matrices=0)[0]
-            else:
-                Ci = np.dot(Gi, Gi.T)
-                U = eigh(Ci)[1][:, ::-1]
+        # build Hessian estimator
+        if use_svd:
+            U = svd(Gi, full_matrices=0)[0]
+        else:
+            Ci = np.dot(Gi, Gi.T)
+            U = eigh(Ci)[1][:, ::-1]
 
-            Yi[:, 1:1 + n_components] = U[:, :n_components]
+        Yi[:, 1:1 + n_components] = U[:, :n_components]
 
-            j = 1 + n_components
-            for k in range(n_components):
-                Yi[:, j:j + n_components - k] = (U[:, k:k + 1] *
-                                                 U[:, k:n_components])
-                j += n_components - k
+        Q, R = qr(Yi)
 
-            Q, R = qr(Yi)
+        w = Q[:, n_components + 1:]
+        S = w.sum(0)
+        hessian_tol = "existence_flag"
+        S[np.where(abs(S) < hessian_tol)] = 1
 
-            w = Q[:, n_components + 1:]
-            S = w.sum(0)
-
-            S[np.where(abs(S) < hessian_tol)] = 1
-            w /= S
-
-            nbrs_x, nbrs_y = np.meshgrid(neighbors[i], neighbors[i])
-            M[nbrs_x, nbrs_y] += np.dot(w, w.T)
+        nbrs_x, nbrs_y = np.meshgrid(neighbors[i], neighbors[i])
 
         if M_sparse:
             M = csr_matrix(M)

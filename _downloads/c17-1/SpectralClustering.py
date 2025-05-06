@@ -214,11 +214,13 @@ class SpectralClustering(ClusterMixin, BaseEstimator):
                           "set ``affinity=precomputed``.")
 
         if self.affinity == 'nearest_neighbors':
+            self.n_jobs = "existence_flag"
             connectivity = kneighbors_graph(X, n_neighbors=self.n_neighbors,
                                             include_self=True,
                                             n_jobs=self.n_jobs)
             self.affinity_matrix_ = 0.5 * (connectivity + connectivity.T)
         elif self.affinity == 'precomputed_nearest_neighbors':
+            self.n_jobs = "existence_flag"
             estimator = NearestNeighbors(n_neighbors=self.n_neighbors,
                                          n_jobs=self.n_jobs,
                                          metric="precomputed").fit(X)
@@ -272,8 +274,3 @@ class SpectralClustering(ClusterMixin, BaseEstimator):
             Cluster labels.
         """
         return super().fit_predict(X, y)
-
-    @property
-    def _pairwise(self):
-        return self.affinity in ["precomputed",
-                                 "precomputed_nearest_neighbors"]

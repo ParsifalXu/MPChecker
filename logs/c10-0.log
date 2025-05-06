@@ -1,0 +1,148 @@
+[31mtools.auxiliary - ERROR - Failed to process constraint 1: 'NoneType' object is not subscriptable[0m
+[33mtools.auxiliary - WARNING - Invalid constraints found:
+1. (bootstrap = 'True') -> (oob_score != 'None')[0m
+========== PROJECT: c10-0 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 7
+INSIDE FUNCTION WITH DOCSTRING: 2
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- BaseBagging
+Processing memberfunc: _parallel_args
+Processing memberfunc: estimators_samples_
+Processing memberfunc: fit
+Processing memberfunc: _validate_y
+Processing memberfunc: _get_estimators_indices
+Processing memberfunc: _set_oob_score
+Processing memberfunc: _fit
+Before Filter: 1
+After Filter: 1
+Translating Class: BaseBagging; Function: _parallel_args
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_parallel_args/_parallel_args.py
+Translating Class: BaseBagging; Function: estimators_samples_
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/estimators_samples_/estimators_samples_.py
+Translating Class: BaseBagging; Function: fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/fit/fit.py
+Translating Class: BaseBagging; Function: _validate_y
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_validate_y/_validate_y.py
+Translating Class: BaseBagging; Function: _get_estimators_indices
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_get_estimators_indices/_get_estimators_indices.py
+Translating Class: BaseBagging; Function: _set_oob_score
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_set_oob_score/_set_oob_score.py
+Translating Class: BaseBagging; Function: _fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_fit/_fit.py
+total call times: 7
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_parallel_args/_parallel_args_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_parallel_args/_parallel_args_trans.py --entry _parallel_args
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/estimators_samples_/estimators_samples__path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/estimators_samples_/estimators_samples__trans.py --entry estimators_samples_
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/fit/fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/fit/fit_trans.py --entry fit
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_validate_y/_validate_y_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_validate_y/_validate_y_trans.py --entry _validate_y
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_get_estimators_indices/_get_estimators_indices_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_get_estimators_indices/_get_estimators_indices_trans.py --entry _get_estimators_indices
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_set_oob_score/_set_oob_score_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_set_oob_score/_set_oob_score_trans.py --entry _set_oob_score
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_fit/_fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_fit/_fit_trans.py --entry _fit
+
+===== Processing folder: BaseBagging =====
+[91m--- Solving memberfunc: c10-0/BaseBagging/_parallel_args[0m
+Checking constraints in ["(bootstrap = 'True') -> (oob_score != 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_parallel_args/_parallel_args_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (bootstrap = 'True') -> (oob_score != 'None')
+  - Parameter Names: ['bootstrap', 'oob_score']
+  - Parameters: [('bootstrap', '=', 'True', ''), ('oob_score', '!=', 'None', '')]
+  - Expression: And(bootstrap != 0, oob_score != "None")
+  - Modified Parameter Names: ['bootstrap', 'oob_score']
+  - Modified Parameters: [('bootstrap', '=', 'True', ''), ('oob_score', '!=', 'None', '')]
+  - Modified Expression: And(bootstrap != 0, oob_score != "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.6
+~~~~~~~~~~
+[91m--- Solving memberfunc: c10-0/BaseBagging/estimators_samples_[0m
+Checking constraints in ["(bootstrap = 'True') -> (oob_score != 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/estimators_samples_/estimators_samples__path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (bootstrap = 'True') -> (oob_score != 'None')
+  - Parameter Names: ['bootstrap', 'oob_score']
+  - Parameters: [('bootstrap', '=', 'True', ''), ('oob_score', '!=', 'None', '')]
+  - Expression: And(bootstrap != 0, oob_score != "None")
+  - Modified Parameter Names: ['bootstrap', 'oob_score']
+  - Modified Parameters: [('bootstrap', '=', 'True', ''), ('oob_score', '!=', 'None', '')]
+  - Modified Expression: And(bootstrap != 0, oob_score != "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.6
+~~~~~~~~~~
+[91m--- Solving memberfunc: c10-0/BaseBagging/fit[0m
+Checking constraints in ["(bootstrap = 'True') -> (oob_score != 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/fit/fit_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (bootstrap = 'True') -> (oob_score != 'None')
+  - Parameter Names: ['bootstrap', 'oob_score']
+  - Parameters: [('bootstrap', '=', 'True', ''), ('oob_score', '!=', 'None', '')]
+  - Expression: And(bootstrap != 0, oob_score != "None")
+  - Modified Parameter Names: ['bootstrap', 'oob_score']
+  - Modified Parameters: [('bootstrap', '=', 'True', ''), ('oob_score', '!=', 'None', '')]
+  - Modified Expression: And(bootstrap != 0, oob_score != "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.6
+~~~~~~~~~~
+[91m--- Solving memberfunc: c10-0/BaseBagging/_validate_y[0m
+Checking constraints in ["(bootstrap = 'True') -> (oob_score != 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_validate_y/_validate_y_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (bootstrap = 'True') -> (oob_score != 'None')
+  - Parameter Names: ['bootstrap', 'oob_score']
+  - Parameters: [('bootstrap', '=', 'True', ''), ('oob_score', '!=', 'None', '')]
+  - Expression: And(bootstrap != 0, oob_score != "None")
+  - Modified Parameter Names: ['bootstrap', 'oob_score']
+  - Modified Parameters: [('bootstrap', '=', 'True', ''), ('oob_score', '!=', 'None', '')]
+  - Modified Expression: And(bootstrap != 0, oob_score != "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.6
+~~~~~~~~~~
+[91m--- Solving memberfunc: c10-0/BaseBagging/_get_estimators_indices[0m
+Checking constraints in ["(bootstrap = 'True') -> (oob_score != 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_get_estimators_indices/_get_estimators_indices_path.txt
+[91m--- Solving memberfunc: c10-0/BaseBagging/_set_oob_score[0m
+Checking constraints in ["(bootstrap = 'True') -> (oob_score != 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_set_oob_score/_set_oob_score_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (bootstrap = 'True') -> (oob_score != 'None')
+  - Parameter Names: ['bootstrap', 'oob_score']
+  - Parameters: [('bootstrap', '=', 'True', ''), ('oob_score', '!=', 'None', '')]
+  - Expression: And(bootstrap != 0, oob_score != "None")
+  - Modified Parameter Names: ['bootstrap', 'oob_score']
+  - Modified Parameters: [('bootstrap', '=', 'True', ''), ('oob_score', '!=', 'None', '')]
+  - Modified Expression: And(bootstrap != 0, oob_score != "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.6
+~~~~~~~~~~
+[91m--- Solving memberfunc: c10-0/BaseBagging/_fit[0m
+Checking constraints in ["(bootstrap = 'True') -> (oob_score != 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c10-0/BaseBagging/memberfunc/_fit/_fit_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (bootstrap = 'True') -> (oob_score != 'None')
+  - Parameter Names: ['bootstrap', 'oob_score']
+  - Parameters: [('bootstrap', '=', 'True', ''), ('oob_score', '!=', 'None', '')]
+  - Expression: And(bootstrap != 0, oob_score != "None")
+  - Modified Parameter Names: ['bootstrap', 'oob_score']
+  - Modified Parameters: [('bootstrap', '=', 'True', ''), ('oob_score', '!=', 'None', '')]
+  - Modified Expression: And(bootstrap != 0, oob_score != "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.75
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, True, False, True, True, True]
+All path files checked.

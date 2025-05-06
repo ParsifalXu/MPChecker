@@ -1,0 +1,41 @@
+========== PROJECT: c55-0 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- _check_solver_option
+--- MISMATCH : _check_solver_option - _check_solver_option --- 
+Doc: ['penalty', 'dual', 'C', 'fit_intercept', 'intercept_scaling', 'class_weight', 'max_iter', 'random_state', 'solver', 'tol', 'multi_class', 'verbose', 'warm_start', 'n_jobs']
+Code: ['solver', 'multi_class', 'penalty', 'dual']
+Difference: {'class_weight', 'verbose', 'n_jobs', 'random_state', 'fit_intercept', 'warm_start', 'tol', 'max_iter', 'C', 'intercept_scaling'}
+
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: _check_solver_option
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c55-0/_check_solver_option/_check_solver_option.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c55-0/_check_solver_option/_check_solver_option_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c55-0/_check_solver_option/_check_solver_option_trans.py --entry _check_solver_option
+
+===== Processing folder: _check_solver_option =====
+[91m--- Solving func: c55-0/_check_solver_option[0m
+Checking constraints in ["(solver = 'sag') -> (penalty = 'l2')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c55-0/_check_solver_option/_check_solver_option_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (solver = 'sag') -> (penalty = 'l2')
+  - Parameter Names: ['solver', 'penalty']
+  - Parameters: [('solver', '=', 'sag', ''), ('penalty', '=', 'l2', '')]
+  - Expression: And(solver == "sag", penalty == "l2")
+  - Modified Parameter Names: ['solver', 'penalty']
+  - Modified Parameters: [('solver', '=', 'sag', ''), ('penalty', '=', 'l2', '')]
+  - Modified Expression: And(solver == "sag", penalty == "l2")
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, False, True, True, True, True, False, False, False, False, False, False, False, False, False]
+All path files checked.

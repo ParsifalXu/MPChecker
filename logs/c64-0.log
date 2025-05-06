@@ -1,0 +1,41 @@
+========== PROJECT: c64-0 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- _cook_nd_args
+--- MISMATCH : _cook_nd_args - _cook_nd_args --- 
+Doc: ['a', 's', 'axes', 'norm']
+Code: ['a', 'shapeless', 's', 'axes', 'invreal']
+Difference: {'shapeless', 'invreal', 'norm'}
+
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: _cook_nd_args
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c64-0/_cook_nd_args/_cook_nd_args.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c64-0/_cook_nd_args/_cook_nd_args_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c64-0/_cook_nd_args/_cook_nd_args_trans.py --entry _cook_nd_args
+
+===== Processing folder: _cook_nd_args =====
+[91m--- Solving func: c64-0/_cook_nd_args[0m
+Checking constraints in ["(s != 'None') -> (axes != 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c64-0/_cook_nd_args/_cook_nd_args_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (s != 'None') -> (axes != 'None')
+  - Parameter Names: ['s', 'axes']
+  - Parameters: [('s', '!=', 'None', ''), ('axes', '!=', 'None', '')]
+  - Expression: And(s != "None", axes != "None")
+  - Modified Parameter Names: ['s', 'axes']
+  - Modified Parameters: [('s', '!=', 'None', ''), ('axes', '!=', 'None', '')]
+  - Modified Expression: And(s != "None", axes != "None")
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, False, False, False, False, False, False, False, True, True, True, True]
+All path files checked.

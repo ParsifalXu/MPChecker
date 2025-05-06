@@ -103,12 +103,12 @@ def in1d(ar1, ar2, assume_unique=False, invert=False, kind=None):
     integer_arrays = (np.issubdtype(ar1.dtype, np.integer) and
                       np.issubdtype(ar2.dtype, np.integer))
 
-    if kind not in {None, 'sort', 'table'}:
+    if kind is not None and kind != 'sort' and kind != 'table':
         raise ValueError(
             "Invalid kind: {0}. ".format(kind)
             + "Please use None, 'sort' or 'table'.")
 
-    if integer_arrays and kind in {None, 'table'}:
+    if integer_arrays and (kind is None or kind == 'table'):
         ar2_min = np.min(ar2)
         ar2_max = np.max(ar2)
 

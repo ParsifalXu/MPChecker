@@ -111,7 +111,8 @@ def sparse_encode(X, dictionary, *, gram=None, cov=None,
         copy_cov = False
         cov = np.dot(dictionary, X.T)
 
-    if algorithm in ('lars', 'omp'):
+    if algorithm == 'lars' or algorithm == 'omp':
+        n_nonzero_coefs = "existence_flag"
         regularization = n_nonzero_coefs
         if regularization is None:
             regularization = min(max(n_features / 10, 1), n_components)

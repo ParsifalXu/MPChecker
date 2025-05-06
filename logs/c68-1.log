@@ -1,0 +1,46 @@
+========== PROJECT: c68-1 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 2
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- MultinomialQMC
+Processing memberfunc: __init__mark
+Processing memberfunc: random
+--- MISMATCH : MultinomialQMC - MultinomialQMC --- 
+Doc: ['pvals', 'n_trials', 'engine', 'seed']
+Code: ['N', 'o', ' ', '_', '_', 'i', 'n', 'i', 't', '_', '_', ' ', 'm', 'e', 't', 'h', 'o', 'd', ' ', 'f', 'o', 'u', 'n', 'd']
+Difference: {'o', 'e', 't', 'h', 'd', '_', 'seed', 'm', 'N', 'f', 'u', ' ', 'i', 'n_trials', 'n', 'engine', 'pvals'}
+
+Before Filter: 1
+After Filter: 1
+Translating Class: MultinomialQMC; Function: __init__mark
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c68-1/MultinomialQMC/memberfunc/__init__mark/__init__mark.py
+Translating Class: MultinomialQMC; Function: random
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c68-1/MultinomialQMC/memberfunc/random/random.py
+total call times: 2
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c68-1/MultinomialQMC/memberfunc/__init__mark/__init__mark_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c68-1/MultinomialQMC/memberfunc/__init__mark/__init__mark_trans.py --entry __init__mark
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c68-1/MultinomialQMC/memberfunc/random/random_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c68-1/MultinomialQMC/memberfunc/random/random_trans.py --entry random
+
+===== Processing folder: MultinomialQMC =====
+[91m--- Solving memberfunc: c68-1/MultinomialQMC/__init__mark[0m
+Checking constraints in ["(engine != 'None') -> (seed = 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c68-1/MultinomialQMC/memberfunc/__init__mark/__init__mark_path.txt
+normal results: [False, False]
+
+
+[91m[ BAD CONSTRAINT WITH FUZZY ][0m
+##################################################
+Library: c68-1
+Class: MultinomialQMC
+Memberfunc: __init__mark
+Constraint: (engine != 'None') -> (seed = 'exist')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c68-1/MultinomialQMC/memberfunc/__init__mark/__init__mark_path.txt
+##################################################
+
+
+BAD CONSTRAINT

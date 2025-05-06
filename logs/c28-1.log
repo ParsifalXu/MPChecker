@@ -1,0 +1,53 @@
+========== PROJECT: c28-1 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- _check_solver
+--- MISMATCH : _check_solver - _check_solver --- 
+Doc: ['penalty', 'dual', 'tol', 'C', 'fit_intercept', 'intercept_scaling', 'class_weight', 'random_state', 'solver', 'max_iter', 'multi_class', 'verbose', 'warm_start', 'n_jobs', 'l1_ratio']
+Code: ['solver', 'penalty', 'dual']
+Difference: {'warm_start', 'verbose', 'tol', 'multi_class', 'random_state', 'class_weight', 'l1_ratio', 'max_iter', 'intercept_scaling', 'n_jobs', 'C', 'fit_intercept'}
+
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: _check_solver
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c28-1/_check_solver/_check_solver.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c28-1/_check_solver/_check_solver_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c28-1/_check_solver/_check_solver_trans.py --entry _check_solver
+
+===== Processing folder: _check_solver =====
+[91m--- Solving func: c28-1/_check_solver[0m
+Checking constraints in ["(solver = 'liblinear') -> (penalty = 'none')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c28-1/_check_solver/_check_solver_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (solver = 'liblinear') -> (penalty = 'none')
+  - Parameter Names: ['solver', 'penalty']
+  - Parameters: [('solver', '=', 'liblinear', ''), ('penalty', '=', 'none', '')]
+  - Expression: And(solver == "liblinear", penalty == "none")
+  - Modified Parameter Names: ['solver', 'penalty']
+  - Modified Parameters: [('solver', '=', 'liblinear', ''), ('penalty', '=', 'none', '')]
+  - Modified Expression: And(solver == "liblinear", penalty == "none")
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+
+
+[91m[ BAD CONSTRAINT WITH ERROR ][0m
+##################################################
+Type: Raise Error
+path: (solver_in_list = 0) -> (penalty_in_list = 0) -> (solver_in_list = 0) -> (solver = 'liblinear') -> (penalty != 'elasticnet') -> (solver = 'liblinear') -> (penalty = 'none') -> '(solver)_(penalty)_ERROR_END'
+Library: c28-1
+Function: _check_solver
+Constraint: (solver = 'liblinear') -> (penalty = 'none')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c28-1/_check_solver/_check_solver_path.txt
+##################################################
+
+
+BAD CONSTRAINT

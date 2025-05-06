@@ -1,0 +1,50 @@
+========== PROJECT: c57-2 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- AgglomerativeClustering
+Processing memberfunc: fit
+Before Filter: 1
+After Filter: 1
+Translating Class: AgglomerativeClustering; Function: fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c57-2/AgglomerativeClustering/memberfunc/fit/fit.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c57-2/AgglomerativeClustering/memberfunc/fit/fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c57-2/AgglomerativeClustering/memberfunc/fit/fit_trans.py --entry fit
+
+===== Processing folder: AgglomerativeClustering =====
+[91m--- Solving memberfunc: c57-2/AgglomerativeClustering/fit[0m
+Checking constraints in ["(distance_threshold != 'None') -> (n_clusters != 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c57-2/AgglomerativeClustering/memberfunc/fit/fit_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (distance_threshold != 'None') -> (n_clusters != 'None')
+  - Parameter Names: ['distance_threshold', 'n_clusters']
+  - Parameters: [('distance_threshold', '!=', 'None', ''), ('n_clusters', '!=', 'None', '')]
+  - Expression: And(distance_threshold != "None", n_clusters != "None")
+  - Modified Parameter Names: ['distance_threshold', 'n_clusters']
+  - Modified Parameters: [('distance_threshold', '!=', 'None', ''), ('n_clusters', '!=', 'None', '')]
+  - Modified Expression: And(distance_threshold != "None", n_clusters != "None")
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+
+
+[91m[ BAD CONSTRAINT WITH ERROR ][0m
+##################################################
+Type: Raise Error
+path: (n_clusters != 'None') -> (n_clusters > 0) -> (distance_threshold != 'None') -> (distance_threshold != 'None') -> (n_clusters != 'None') -> '(distance_threshold)_(n_clusters)_(distance_threshold)_(n_clusters)_ERROR_END'
+Library: c57-2
+Class: AgglomerativeClustering
+Memberfunc: fit
+Constraint: (distance_threshold != 'None') -> (n_clusters != 'None')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c57-2/AgglomerativeClustering/memberfunc/fit/fit_path.txt
+##################################################
+
+
+BAD CONSTRAINT

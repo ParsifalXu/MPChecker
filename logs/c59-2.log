@@ -1,0 +1,49 @@
+========== PROJECT: c59-2 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- AgglomerativeClustering
+Processing memberfunc: fit
+Before Filter: 1
+After Filter: 1
+Translating Class: AgglomerativeClustering; Function: fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c59-2/AgglomerativeClustering/memberfunc/fit/fit.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c59-2/AgglomerativeClustering/memberfunc/fit/fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c59-2/AgglomerativeClustering/memberfunc/fit/fit_trans.py --entry fit
+
+===== Processing folder: AgglomerativeClustering =====
+[91m--- Solving memberfunc: c59-2/AgglomerativeClustering/fit[0m
+Checking constraints in ["(distance_threshold = 'None') -> (compute_full_tree = 'True')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c59-2/AgglomerativeClustering/memberfunc/fit/fit_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (distance_threshold = 'None') -> (compute_full_tree = 'True')
+  - Parameter Names: ['distance_threshold', 'compute_full_tree']
+  - Parameters: [('distance_threshold', '=', 'None', ''), ('compute_full_tree', '=', 'True', '')]
+  - Expression: And(distance_threshold == "None", compute_full_tree != 0)
+  - Modified Parameter Names: ['distance_threshold', 'compute_full_tree']
+  - Modified Parameters: [('distance_threshold', '=', 'None', ''), ('compute_full_tree', '=', 'True', '')]
+  - Modified Expression: And(distance_threshold == "None", compute_full_tree != 0)
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+
+
+[91m[ BAD CONSTRAINT ][0m
+##################################################
+Library: c59-2
+Class: AgglomerativeClustering
+Memberfunc: fit
+Constraint: (distance_threshold = 'None') -> (compute_full_tree = 'True')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c59-2/AgglomerativeClustering/memberfunc/fit/fit_path.txt
+##################################################
+
+
+BAD CONSTRAINT

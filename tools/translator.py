@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import libcst as cst
 
@@ -141,14 +142,22 @@ def translate_single_function(project, folder, memberfunc):
     split_code[-1] = last_return.replace("'", "\"")
     source = '\n'.join(split_code)
 
-
     split_code = source.split('\n')
     new_split_code = []
-    for i in range(0, len(split_code)-1):
+    for i in range(0, len(split_code)):
         if split_code[i] != '':
-            if "f'" in split_code[i]:
+            if "(f'" in split_code[i] or " f'" in split_code[i]:
                 new_line = split_code[i].replace("f'", 'f"').strip("'")
                 new_line = new_line + '"'
+                new_split_code.append(new_line)
+            elif "_(n_features_to_selectn_features)_(tol)_(tol)_(direction)_ERROR_END" in split_code[i]:
+                new_line = split_code[i].replace("(n_features_to_select)_(call_isinstance)_(call_isinstance)_(call_isinstance)_(n_features_to_selectn_features)_(tol)_(tol)_(direction)_ERROR_END", "(tol)_(tol)_(direction)_ERROR_END")
+                new_split_code.append(new_line)
+            elif "and oob_score:" in split_code[i]:
+                new_line = split_code[i].replace("and oob_score:", "and oob_score != 'None':")
+                new_split_code.append(new_line)
+            elif "if bootstrap == 0 and oob_score" in split_code[i]:
+                new_line = split_code[i].replace("if bootstrap == 0 and oob_score", "if bootstrap == 0 and oob_score != 'None'")
                 new_split_code.append(new_line)
             else:
                 new_split_code.append(split_code[i])
@@ -167,3 +176,14 @@ def translate_single_function(project, folder, memberfunc):
     with open(trans_path, 'w') as fw:
         fw.write(source.strip())
     fw.close()
+
+    def replace_call_pattern(file_path):
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        pattern = r'(\w+)\s*=\s*call_\w+'
+        replaced_content = re.sub(pattern, r"\1 = 'EXIST_FLAG'", content)
+
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(replaced_content)
+
+    # replace_call_pattern(trans_path)

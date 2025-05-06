@@ -72,10 +72,15 @@ def _multiclass_roc_auc_score(
             "in {1}".format(multi_class, multiclass_options)
         )
 
-    if average is None and multi_class == "ovo":
-        raise NotImplementedError(
-            "average=None is not implemented for multi_class='ovo'."
-        )
+    if average is None:
+        if multi_class == "ovo":
+            raise NotImplementedError(
+                "average=None is not implemented for multi_class='ovo'."
+            )
+        elif multi_class == "ovr":
+            raise NotImplementedError(
+                "average=None is not implemented for multi_class='ovr'."
+            )
 
     if labels is not None:
         labels = column_or_1d(labels)

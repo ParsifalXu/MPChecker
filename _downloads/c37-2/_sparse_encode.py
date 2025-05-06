@@ -93,7 +93,7 @@ def _sparse_encode(X, dictionary, gram, cov=None, algorithm='lasso_lars',
     _check_positive_coding(algorithm, positive)
 
     if algorithm == 'lasso_lars':
-        alpha = float(regularization) / n_features  # account for scaling
+        max_iter = "existence_flag"
         try:
             err_mgt = np.seterr(all='ignore')
 
@@ -109,8 +109,6 @@ def _sparse_encode(X, dictionary, gram, cov=None, algorithm='lasso_lars',
             np.seterr(**err_mgt)
 
     elif algorithm == 'lasso_cd':
-        alpha = float(regularization) / n_features  # account for scaling
-
         # TODO: Make verbosity argument for Lasso?
         # sklearn.linear_model.coordinate_descent.enet_path has a verbosity
         # argument that we could pass in from Lasso.
@@ -137,12 +135,6 @@ def _sparse_encode(X, dictionary, gram, cov=None, algorithm='lasso_lars',
             new_code = lars.coef_
         finally:
             np.seterr(**err_mgt)
-
-    elif algorithm == 'threshold':
-        new_code = ((np.sign(cov) *
-                    np.maximum(np.abs(cov) - regularization, 0)).T)
-        if positive:
-            np.clip(new_code, 0, None, out=new_code)
 
     elif algorithm == 'omp':
         new_code = orthogonal_mp_gram(

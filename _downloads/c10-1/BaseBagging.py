@@ -233,55 +233,6 @@ class BaseBagging(BaseEnsemble, metaclass=ABCMeta):
         -------
         self : object
         """
-        random_state = check_random_state(self.random_state)
-
-        # Convert data (X is required to be 2d and indexable)
-        X, y = self._validate_data(
-            X, y, accept_sparse=['csr', 'csc'], dtype=None,
-            force_all_finite=False, multi_output=True
-        )
-        if sample_weight is not None:
-            sample_weight = _check_sample_weight(sample_weight, X, dtype=None)
-
-        # Remap output
-        n_samples, self.n_features_ = X.shape
-        self._n_samples = n_samples
-        y = self._validate_y(y)
-
-        # Check parameters
-        self._validate_estimator()
-
-        if max_depth is not None:
-            self.base_estimator_.max_depth = max_depth
-
-        # Validate max_samples
-        if max_samples is None:
-            max_samples = self.max_samples
-        elif not isinstance(max_samples, numbers.Integral):
-            max_samples = int(max_samples * X.shape[0])
-
-        if not (0 < max_samples <= X.shape[0]):
-            raise ValueError("max_samples must be in (0, n_samples]")
-
-        # Store validated integer row sampling value
-        self._max_samples = max_samples
-
-        # Validate max_features
-        if isinstance(self.max_features, numbers.Integral):
-            max_features = self.max_features
-        elif isinstance(self.max_features, float):
-            max_features = self.max_features * self.n_features_
-        else:
-            raise ValueError("max_features must be int or float")
-
-        if not (0 < max_features <= self.n_features_):
-            raise ValueError("max_features must be in (0, n_features]")
-
-        max_features = max(1, int(max_features))
-
-        # Store validated integer feature sampling value
-        self._max_features = max_features
-
         # Other checks
         if not self.bootstrap and self.oob_score:
             raise ValueError("Out of bag estimation only available"

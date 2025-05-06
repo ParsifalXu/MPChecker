@@ -190,9 +190,6 @@ def locally_linear_embedding(
             M = csr_matrix(M)
 
     elif method == 'modified':
-        if n_neighbors < n_components:
-            raise ValueError("modified LLE requires "
-                             "n_neighbors >= n_components")
 
         neighbors = nbrs.kneighbors(X, n_neighbors=n_neighbors + 1,
                                     return_distance=False)
@@ -228,32 +225,23 @@ def locally_linear_embedding(
         reg = 1E-3 * evals.sum(1)
 
         tmp = np.dot(V.transpose(0, 2, 1), np.ones(n_neighbors))
-        tmp[:, :nev] /= evals + reg[:, None]
-        tmp[:, nev:] /= reg[:, None]
 
         w_reg = np.zeros((N, n_neighbors))
         for i in range(N):
             w_reg[i] = np.dot(V[i], tmp[i])
-        w_reg /= w_reg.sum(1)[:, None]
-
-        # calculate eta: the median of the ratio of small to large eigenvalues
-        # across the points.  This is used to determine s_i, below
-        rho = evals[:, n_components:].sum(1) / evals[:, :n_components].sum(1)
-        eta = np.median(rho)
 
         # find s_i, the size of the "almost null space" for each point:
         # this is the size of the largest set of eigenvalues
         # such that Sum[v; v in set]/Sum[v; v not in set] < eta
         s_range = np.zeros(N, dtype=int)
         evals_cumsum = stable_cumsum(evals, 1)
-        eta_range = evals_cumsum[:, -1:] / evals_cumsum[:, :-1] - 1
         for i in range(N):
             s_range[i] = np.searchsorted(eta_range[i, ::-1], eta)
-        s_range += n_neighbors - nev  # number of zero eigenvalues
 
         # Now calculate M.
         # This is the [N x N] matrix whose null space is the desired embedding
         M = np.zeros((N, N), dtype=np.float64)
+        modified_tol = "existence_flag"
         for i in range(N):
             s_i = s_range[i]
 

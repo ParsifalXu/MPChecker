@@ -1,0 +1,48 @@
+========== PROJECT: c66-1 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- dctn
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: dctn
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c66-1/dctn/dctn.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c66-1/dctn/dctn_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c66-1/dctn/dctn_trans.py --entry dctn
+
+===== Processing folder: dctn =====
+[91m--- Solving func: c66-1/dctn[0m
+Checking constraints in ["((shape = 'None') ^ (axes = 'None')) -> (shape = numpy.take(x.shape, axes, axis=0))"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c66-1/dctn/dctn_path.txt
+0.6
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: ((shape = 'None') ^ (axes = 'None')) -> (shape = numpy.take(x.shape, axes, axis=0))
+  - Parameter Names: ['shape', 'axis', 'shape']
+  - Parameters: [('shape', '=', 'numpy', ''), ('axis', '=', '0', ''), ('shape', '=', 'numpy.take(x.shape, axes, axis0))', '')]
+  - Expression: And(shape == "numpy", axis == "0")
+  - Modified Parameter Names: ['type', 'axes', 'shape']
+  - Modified Parameters: [('type', '=', '', '0'), ('axes', '=', '', '0'), ('shape', '=', 'numpy.take(x.shape, axes, axis0))', '')]
+  - Modified Expression: And(0 == type, 0 == axes)
+  - Logic: ({0}^{1})
+  - Similarity: 0.6
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False]
+
+
+[91m[ BAD CONSTRAINT ][0m
+##################################################
+Library: c66-1
+Function: dctn
+Constraint: ((shape = 'None') ^ (axes = 'None')) -> (shape = numpy.take(x.shape, axes, axis=0))
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c66-1/dctn/dctn_path.txt
+##################################################
+
+
+BAD CONSTRAINT

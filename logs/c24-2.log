@@ -1,0 +1,44 @@
+========== PROJECT: c24-2 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- BaseMultilayerPerceptron
+Processing memberfunc: _fit_stochastic
+--- MISMATCH : BaseMultilayerPerceptron - BaseMultilayerPerceptron --- 
+Doc: ['hidden_layer_sizes', 'activation', 'solver', 'alpha', 'batch_size', 'learning_rate', 'learning_rate_init', 'power_t', 'max_iter', 'shuffle', 'random_state', 'tol', 'verbose', 'warm_start', 'momentum', 'nesterovs_momentum', 'early_stopping', 'validation_fraction', 'beta_1', 'beta_2', 'epsilon', 'n_iter_no_change', 'max_fun']
+Code: ['hidden_layer_sizes', 'activation', 'solver', 'alpha', 'batch_size', 'learning_rate', 'learning_rate_init', 'power_t', 'max_iter', 'loss', 'shuffle', 'random_state', 'tol', 'verbose', 'warm_start', 'momentum', 'nesterovs_momentum', 'early_stopping', 'validation_fraction', 'beta_1', 'beta_2', 'epsilon', 'n_iter_no_change', 'max_fun']
+Difference: {'loss'}
+
+Before Filter: 1
+After Filter: 1
+Translating Class: BaseMultilayerPerceptron; Function: _fit_stochastic
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c24-2/BaseMultilayerPerceptron/memberfunc/_fit_stochastic/_fit_stochastic.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c24-2/BaseMultilayerPerceptron/memberfunc/_fit_stochastic/_fit_stochastic_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c24-2/BaseMultilayerPerceptron/memberfunc/_fit_stochastic/_fit_stochastic_trans.py --entry _fit_stochastic
+
+===== Processing folder: BaseMultilayerPerceptron =====
+[91m--- Solving memberfunc: c24-2/BaseMultilayerPerceptron/_fit_stochastic[0m
+Checking constraints in ["(batch_size != 'None') -> batch_size=min(200, n_samples)"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c24-2/BaseMultilayerPerceptron/memberfunc/_fit_stochastic/_fit_stochastic_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (batch_size != 'None') -> batch_size=min(200, n_samples)
+  - Parameter Names: ['batch_size', 'batch_size']
+  - Parameters: [('batch_size', '!=', 'None', ''), ('batch_size', '=', 'min(200, n_samples)', '')]
+  - Expression: And(batch_size != "None",
+    batch_size == "min(200, n_samples)")
+  - Modified Parameter Names: ['batch_size', 'batch_size']
+  - Modified Parameters: [('batch_size', '!=', 'None', ''), ('batch_size', '=', 'min(200, n_samples)', '')]
+  - Modified Expression: And(batch_size != "None",
+    batch_size == "min(200, n_samples)")
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, True, False, False]
+All path files checked.

@@ -1,0 +1,24 @@
+========== PROJECT: c50-2 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- PCA
+Processing memberfunc: _fit_truncated
+Before Filter: 1
+After Filter: 1
+Translating Class: PCA; Function: _fit_truncated
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c50-2/PCA/memberfunc/_fit_truncated/_fit_truncated.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c50-2/PCA/memberfunc/_fit_truncated/_fit_truncated_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c50-2/PCA/memberfunc/_fit_truncated/_fit_truncated_trans.py --entry _fit_truncated
+
+===== Processing folder: PCA =====
+[91m--- Solving memberfunc: c50-2/PCA/_fit_truncated[0m
+Checking constraints in ["(svd_solver = 'arpack') -> (random_state = 'used')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c50-2/PCA/memberfunc/_fit_truncated/_fit_truncated_path.txt
+normal results: [True, False, False]
+All path files checked.

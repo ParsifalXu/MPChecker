@@ -1,0 +1,50 @@
+========== PROJECT: c22-1 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- HistGradientBoostingRegressor
+Processing memberfunc: _encode_y
+Before Filter: 1
+After Filter: 1
+Translating Class: HistGradientBoostingRegressor; Function: _encode_y
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c22-1/HistGradientBoostingRegressor/memberfunc/_encode_y/_encode_y.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c22-1/HistGradientBoostingRegressor/memberfunc/_encode_y/_encode_y_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c22-1/HistGradientBoostingRegressor/memberfunc/_encode_y/_encode_y_trans.py --entry _encode_y
+
+===== Processing folder: HistGradientBoostingRegressor =====
+[91m--- Solving memberfunc: c22-1/HistGradientBoostingRegressor/_encode_y[0m
+Checking constraints in ["(y < 0) -> (loss = 'poisson')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c22-1/HistGradientBoostingRegressor/memberfunc/_encode_y/_encode_y_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (y < 0) -> (loss = 'poisson')
+  - Parameter Names: ['y', 'loss']
+  - Parameters: [('y', '<', '', '0'), ('loss', '=', 'poisson', '')]
+  - Expression: And(0 > y, loss == "poisson")
+  - Modified Parameter Names: ['y', 'loss']
+  - Modified Parameters: [('y', '<', '', '0'), ('loss', '=', 'poisson', '')]
+  - Modified Expression: And(0 > y, loss == "poisson")
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+
+
+[91m[ BAD CONSTRAINT WITH ERROR ][0m
+##################################################
+Type: Raise Error
+path: (loss = 'poisson') -> (y < 0) -> '(loss)_(y)_ERROR_END'
+Library: c22-1
+Class: HistGradientBoostingRegressor
+Memberfunc: _encode_y
+Constraint: (y < 0) -> (loss = 'poisson')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c22-1/HistGradientBoostingRegressor/memberfunc/_encode_y/_encode_y_path.txt
+##################################################
+
+
+BAD CONSTRAINT

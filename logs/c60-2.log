@@ -1,0 +1,41 @@
+========== PROJECT: c60-2 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- BaseGradientBoosting
+Processing memberfunc: _init_state
+--- MISMATCH : BaseGradientBoosting - BaseGradientBoosting --- 
+Doc: ['loss', 'learning_rate', 'n_estimators', 'subsample', 'criterion', 'min_samples_split', 'min_samples_leaf', 'min_weight_fraction_leaf', 'max_depth', 'min_impurity_decrease', 'min_impurity_split', 'init', 'random_state', 'max_features', 'verbose', 'max_leaf_nodes', 'warm_start', 'presort', 'validation_fraction', 'n_iter_no_change', 'tol', 'ccp_alpha']
+Code: ['loss', 'learning_rate', 'n_estimators', 'criterion', 'min_samples_split', 'min_samples_leaf', 'min_weight_fraction_leaf', 'max_depth', 'min_impurity_decrease', 'min_impurity_split', 'init', 'subsample', 'max_features', 'ccp_alpha', 'random_state', 'alpha', 'verbose', 'max_leaf_nodes', 'warm_start', 'presort', 'validation_fraction', 'n_iter_no_change', 'tol']
+Difference: {'alpha'}
+
+Before Filter: 1
+After Filter: 1
+Translating Class: BaseGradientBoosting; Function: _init_state
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c60-2/BaseGradientBoosting/memberfunc/_init_state/_init_state.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c60-2/BaseGradientBoosting/memberfunc/_init_state/_init_state_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c60-2/BaseGradientBoosting/memberfunc/_init_state/_init_state_trans.py --entry _init_state
+
+===== Processing folder: BaseGradientBoosting =====
+[91m--- Solving memberfunc: c60-2/BaseGradientBoosting/_init_state[0m
+Checking constraints in ["(subsample > 1) -> (oob_improvement_ = 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c60-2/BaseGradientBoosting/memberfunc/_init_state/_init_state_path.txt
+normal results: [False, False, False, False]
+
+
+[91m[ BAD CONSTRAINT WITH FUZZY ][0m
+##################################################
+Library: c60-2
+Class: BaseGradientBoosting
+Memberfunc: _init_state
+Constraint: (subsample > 1) -> (oob_improvement_ = 'exist')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c60-2/BaseGradientBoosting/memberfunc/_init_state/_init_state_path.txt
+##################################################
+
+
+BAD CONSTRAINT

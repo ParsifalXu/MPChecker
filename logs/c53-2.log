@@ -1,0 +1,37 @@
+========== PROJECT: c53-2 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- LogisticRegression
+Processing memberfunc: fit
+Before Filter: 1
+After Filter: 1
+Translating Class: LogisticRegression; Function: fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c53-2/LogisticRegression/memberfunc/fit/fit.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c53-2/LogisticRegression/memberfunc/fit/fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c53-2/LogisticRegression/memberfunc/fit/fit_trans.py --entry fit
+
+===== Processing folder: LogisticRegression =====
+[91m--- Solving memberfunc: c53-2/LogisticRegression/fit[0m
+Checking constraints in ["(penalty = 'elasticnet') -> (l1_ratio = 0.5)"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c53-2/LogisticRegression/memberfunc/fit/fit_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (penalty = 'elasticnet') -> (l1_ratio = 0.5)
+  - Parameter Names: ['penalty', 'l1_ratio']
+  - Parameters: [('penalty', '=', 'elasticnet', ''), ('l1_ratio', '=', '', '0.5')]
+  - Expression: And(penalty == "elasticnet", 1/2 == l1_ratio)
+  - Modified Parameter Names: ['penalty', 'l1_ratio']
+  - Modified Parameters: [('penalty', '=', 'elasticnet', ''), ('l1_ratio', '=', '', '0.5')]
+  - Modified Expression: And(penalty == "elasticnet", 1/2 == l1_ratio)
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+All path files checked.

@@ -34,7 +34,7 @@ class SequentialFeatureSelector(SelectorMixin, MetaEstimatorMixin, BaseEstimator
         If the score is not incremented by at least `tol` between two
         consecutive feature additions or removals, stop adding or removing.
 
-        `tol` must be positive when removing features using `direction="backward"`.
+        `tol` can be negative when removing features using `direction="forward"`.
         It can be useful to reduce the number of features at the cost of a small
         decrease in the score.
 
@@ -204,38 +204,6 @@ class SequentialFeatureSelector(SelectorMixin, MetaEstimatorMixin, BaseEstimator
 
         if self.tol is not None and self.tol < 0 and self.direction == "forward":
             raise ValueError("tol must be positive when doing forward selection")
-
-        cv = check_cv(self.cv, y, classifier=is_classifier(self.estimator))
-
-        cloned_estimator = clone(self.estimator)
-
-        # the current mask corresponds to the set of features:
-        # - that we have already *selected* if we do forward selection
-        # - that we have already *excluded* if we do backward selection
-        current_mask = np.zeros(shape=n_features, dtype=bool)
-        n_iterations = (
-            self.n_features_to_select_
-            if self.n_features_to_select == "auto" or self.direction == "forward"
-            else n_features - self.n_features_to_select_
-        )
-
-        old_score = -np.inf
-        is_auto_select = self.tol is not None and self.n_features_to_select == "auto"
-        for _ in range(n_iterations):
-            new_feature_idx, new_score = self._get_best_new_feature_score(
-                cloned_estimator, X, y, cv, current_mask
-            )
-            if is_auto_select and ((new_score - old_score) < self.tol):
-                break
-
-            old_score = new_score
-            current_mask[new_feature_idx] = True
-
-        if self.direction == "backward":
-            current_mask = ~current_mask
-
-        self.support_ = current_mask
-        self.n_features_to_select_ = self.support_.sum()
 
         return self
 

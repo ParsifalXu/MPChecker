@@ -1,0 +1,23 @@
+========== PROJECT: c15-0 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- get_auto_step_size
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: get_auto_step_size
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c15-0/get_auto_step_size/get_auto_step_size.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c15-0/get_auto_step_size/get_auto_step_size_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c15-0/get_auto_step_size/get_auto_step_size_trans.py --entry get_auto_step_size
+
+===== Processing folder: get_auto_step_size =====
+[91m--- Solving func: c15-0/get_auto_step_size[0m
+Checking constraints in ["(is_saga = 'True') -> (n_samples = 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c15-0/get_auto_step_size/get_auto_step_size_path.txt
+normal results: [True, False, True, False]
+All path files checked.

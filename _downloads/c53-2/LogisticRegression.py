@@ -337,24 +337,6 @@ class LogisticRegression(BaseEstimator, LinearClassifierMixin,
         multi_class = _check_multi_class(self.multi_class, solver,
                                          len(self.classes_))
 
-        if solver == 'liblinear':
-            if effective_n_jobs(self.n_jobs) != 1:
-                warnings.warn("'n_jobs' > 1 does not have any effect when"
-                              " 'solver' is set to 'liblinear'. Got 'n_jobs'"
-                              " = {}.".format(effective_n_jobs(self.n_jobs)))
-            self.coef_, self.intercept_, n_iter_ = _fit_liblinear(
-                X, y, self.C, self.fit_intercept, self.intercept_scaling,
-                self.class_weight, self.penalty, self.dual, self.verbose,
-                self.max_iter, self.tol, self.random_state,
-                sample_weight=sample_weight)
-            self.n_iter_ = np.array([n_iter_])
-            return self
-
-        if solver in ['sag', 'saga']:
-            max_squared_sum = row_norms(X, squared=True).max()
-        else:
-            max_squared_sum = None
-
         n_classes = len(self.classes_)
         classes_ = self.classes_
         if n_classes < 2:
@@ -421,67 +403,3 @@ class LogisticRegression(BaseEstimator, LinearClassifierMixin,
             self.coef_ = self.coef_[:, :-1]
 
         return self
-
-    def predict_proba(self, X):
-        """
-        Probability estimates.
-
-        The returned estimates for all classes are ordered by the
-        label of classes.
-
-        For a multi_class problem, if multi_class is set to be "multinomial"
-        the softmax function is used to find the predicted probability of
-        each class.
-        Else use a one-vs-rest approach, i.e calculate the probability
-        of each class assuming it to be positive using the logistic function.
-        and normalize these values across all the classes.
-
-        Parameters
-        ----------
-        X : array-like of shape (n_samples, n_features)
-            Vector to be scored, where `n_samples` is the number of samples and
-            `n_features` is the number of features.
-
-        Returns
-        -------
-        T : array-like of shape (n_samples, n_classes)
-            Returns the probability of the sample for each class in the model,
-            where classes are ordered as they are in ``self.classes_``.
-        """
-        check_is_fitted(self)
-
-        ovr = (self.multi_class in ["ovr", "warn"] or
-               (self.multi_class == 'auto' and (self.classes_.size <= 2 or
-                                                self.solver == 'liblinear')))
-        if ovr:
-            return super()._predict_proba_lr(X)
-        else:
-            decision = self.decision_function(X)
-            if decision.ndim == 1:
-                # Workaround for multi_class="multinomial" and binary outcomes
-                # which requires softmax prediction with only a 1D decision.
-                decision_2d = np.c_[-decision, decision]
-            else:
-                decision_2d = decision
-            return softmax(decision_2d, copy=False)
-
-    def predict_log_proba(self, X):
-        """
-        Predict logarithm of probability estimates.
-
-        The returned estimates for all classes are ordered by the
-        label of classes.
-
-        Parameters
-        ----------
-        X : array-like of shape (n_samples, n_features)
-            Vector to be scored, where `n_samples` is the number of samples and
-            `n_features` is the number of features.
-
-        Returns
-        -------
-        T : array-like of shape (n_samples, n_classes)
-            Returns the log-probability of the sample for each class in the
-            model, where classes are ordered as they are in ``self.classes_``.
-        """
-        return np.log(self.predict_proba(X))

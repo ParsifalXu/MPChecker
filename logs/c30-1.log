@@ -1,0 +1,53 @@
+========== PROJECT: c30-1 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- _check_multi_class
+--- MISMATCH : _check_multi_class - _check_multi_class --- 
+Doc: ['X', 'y', 'pos_class', 'Cs', 'fit_intercept', 'max_iter', 'tol', 'verbose', 'solver', 'coef', 'class_weight', 'dual', 'penalty', 'intercept_scaling', 'multi_class', 'random_state', 'check_input', 'max_squared_sum', 'sample_weight', 'l1_ratio']
+Code: ['multi_class', 'solver', 'n_classes']
+Difference: {'class_weight', 'X', 'verbose', 'coef', 'fit_intercept', 'sample_weight', 'max_iter', 'max_squared_sum', 'intercept_scaling', 'random_state', 'penalty', 'n_classes', 'dual', 'Cs', 'check_input', 'y', 'pos_class', 'l1_ratio', 'tol'}
+
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: _check_multi_class
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c30-1/_check_multi_class/_check_multi_class.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c30-1/_check_multi_class/_check_multi_class_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c30-1/_check_multi_class/_check_multi_class_trans.py --entry _check_multi_class
+
+===== Processing folder: _check_multi_class =====
+[91m--- Solving func: c30-1/_check_multi_class[0m
+Checking constraints in ["(solver = 'liblinear') -> (multi_class = 'multinomial')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c30-1/_check_multi_class/_check_multi_class_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (solver = 'liblinear') -> (multi_class = 'multinomial')
+  - Parameter Names: ['solver', 'multi_class']
+  - Parameters: [('solver', '=', 'liblinear', ''), ('multi_class', '=', 'multinomial', '')]
+  - Expression: And(solver == "liblinear", multi_class == "multinomial")
+  - Modified Parameter Names: ['solver', 'multi_class']
+  - Modified Parameters: [('solver', '=', 'liblinear', ''), ('multi_class', '=', 'multinomial', '')]
+  - Modified Expression: And(solver == "liblinear", multi_class == "multinomial")
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+
+
+[91m[ BAD CONSTRAINT WITH ERROR ][0m
+##################################################
+Type: Raise Error
+path: (multi_class != 'auto') -> (multi_class_in_list = 0) -> (multi_class = 'multinomial') -> (solver = 'liblinear') -> '(multi_class)_(multi_class)_(solver)_ERROR_END'
+Library: c30-1
+Function: _check_multi_class
+Constraint: (solver = 'liblinear') -> (multi_class = 'multinomial')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c30-1/_check_multi_class/_check_multi_class_path.txt
+##################################################
+
+
+BAD CONSTRAINT

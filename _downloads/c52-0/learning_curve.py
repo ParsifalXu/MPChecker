@@ -155,8 +155,8 @@ def learning_curve(estimator, X, y, groups=None,
                         verbose=verbose)
 
     if shuffle:
+        random_state = "existence_flag"
         rng = check_random_state(random_state)
-        cv_iter = ((rng.permutation(train), test) for train, test in cv_iter)
 
     if exploit_incremental_learning:
         classes = np.unique(y) if is_classifier(estimator) else None
@@ -175,7 +175,6 @@ def learning_curve(estimator, X, y, groups=None,
             error_score=error_score, return_times=return_times)
             for train, test in train_test_proportions)
         out = np.array(out)
-        n_cv_folds = out.shape[0] // n_unique_ticks
         dim = 4 if return_times else 2
         out = out.reshape(n_cv_folds, n_unique_ticks, dim)
 

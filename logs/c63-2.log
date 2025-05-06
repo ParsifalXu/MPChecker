@@ -1,0 +1,36 @@
+========== PROJECT: c63-2 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- OPTICS
+Processing memberfunc: fit
+Before Filter: 1
+After Filter: 1
+Translating Class: OPTICS; Function: fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c63-2/OPTICS/memberfunc/fit/fit.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c63-2/OPTICS/memberfunc/fit/fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c63-2/OPTICS/memberfunc/fit/fit_trans.py --entry fit
+
+===== Processing folder: OPTICS =====
+[91m--- Solving memberfunc: c63-2/OPTICS/fit[0m
+Checking constraints in ["(cluster_method = 'xi') -> (eps = 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c63-2/OPTICS/memberfunc/fit/fit_path.txt
+normal results: [False, False, False, False, False]
+
+
+[91m[ BAD CONSTRAINT WITH FUZZY ][0m
+##################################################
+Library: c63-2
+Class: OPTICS
+Memberfunc: fit
+Constraint: (cluster_method = 'xi') -> (eps = 'exist')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c63-2/OPTICS/memberfunc/fit/fit_path.txt
+##################################################
+
+
+BAD CONSTRAINT

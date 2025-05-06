@@ -1,0 +1,54 @@
+========== PROJECT: c9-2 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- _RidgeGCV
+Processing memberfunc: fit
+--- MISMATCH : _RidgeGCV - _RidgeGCV --- 
+Doc: ['alphas', 'fit_intercept', 'normalize', 'scoring', 'cv', 'class_weight', 'store_cv_values']
+Code: ['alphas', 'fit_intercept', 'normalize', 'scoring', 'copy_X', 'gcv_mode', 'store_cv_values', 'is_clf', 'alpha_per_target']
+Difference: {'cv', 'class_weight', 'alpha_per_target', 'is_clf', 'gcv_mode', 'copy_X'}
+
+Before Filter: 1
+After Filter: 1
+Translating Class: _RidgeGCV; Function: fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c9-2/_RidgeGCV/memberfunc/fit/fit.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c9-2/_RidgeGCV/memberfunc/fit/fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c9-2/_RidgeGCV/memberfunc/fit/fit_trans.py --entry fit
+
+===== Processing folder: _RidgeGCV =====
+[91m--- Solving memberfunc: c9-2/_RidgeGCV/fit[0m
+Checking constraints in ["(store_cv_value = 'None') -> (cv_values_ != 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c9-2/_RidgeGCV/memberfunc/fit/fit_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (store_cv_value = 'None') -> (cv_values_ != 'None')
+  - Parameter Names: ['store_cv_value', 'cv_values_']
+  - Parameters: [('store_cv_value', '=', 'None', ''), ('cv_values_', '!=', 'None', '')]
+  - Expression: And(store_cv_value == "None", cv_values_ != "None")
+  - Modified Parameter Names: ['cv_values_', 'cv_values_']
+  - Modified Parameters: [('cv_values_', '=', 'None', ''), ('cv_values_', '!=', 'None', '')]
+  - Modified Expression: And(cv_values_ == "None", cv_values_ != "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.85
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+
+
+[91m[ BAD CONSTRAINT ][0m
+##################################################
+Library: c9-2
+Class: _RidgeGCV
+Memberfunc: fit
+Constraint: (store_cv_value = 'None') -> (cv_values_ != 'None')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c9-2/_RidgeGCV/memberfunc/fit/fit_path.txt
+##################################################
+
+
+BAD CONSTRAINT

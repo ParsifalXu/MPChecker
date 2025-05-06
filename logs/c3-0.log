@@ -1,0 +1,141 @@
+========== PROJECT: c3-0 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 6
+INSIDE FUNCTION WITH DOCSTRING: 4
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- StandardScaler
+Processing memberfunc: _reset
+Processing memberfunc: inverse_transform
+Processing memberfunc: fit
+Processing memberfunc: _more_tags
+Processing memberfunc: partial_fit
+Processing memberfunc: transform
+Before Filter: 1
+After Filter: 1
+Translating Class: StandardScaler; Function: _reset
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/_reset/_reset.py
+Translating Class: StandardScaler; Function: inverse_transform
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/inverse_transform/inverse_transform.py
+Translating Class: StandardScaler; Function: fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/fit/fit.py
+Translating Class: StandardScaler; Function: _more_tags
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/_more_tags/_more_tags.py
+Translating Class: StandardScaler; Function: partial_fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/partial_fit/partial_fit.py
+Translating Class: StandardScaler; Function: transform
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/transform/transform.py
+total call times: 6
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/_reset/_reset_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/_reset/_reset_trans.py --entry _reset
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/inverse_transform/inverse_transform_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/inverse_transform/inverse_transform_trans.py --entry inverse_transform
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/fit/fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/fit/fit_trans.py --entry fit
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/_more_tags/_more_tags_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/_more_tags/_more_tags_trans.py --entry _more_tags
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/partial_fit/partial_fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/partial_fit/partial_fit_trans.py --entry partial_fit
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/transform/transform_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/transform/transform_trans.py --entry transform
+
+===== Processing folder: StandardScaler =====
+[91m--- Solving memberfunc: c3-0/StandardScaler/_reset[0m
+Checking constraints in ['(with_std = False) -> (scale_ = None)']
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/_reset/_reset_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (with_std = False) -> (scale_ = None)
+  - Parameter Names: ['with_std', 'scale_']
+  - Parameters: [('with_std', '=', 'False', ''), ('scale_', '=', 'None', '')]
+  - Expression: And(with_std == 0, scale_ == "None")
+  - Modified Parameter Names: ['with_std', 'scale_']
+  - Modified Parameters: [('with_std', '=', 'False', ''), ('scale_', '=', 'None', '')]
+  - Modified Expression: And(with_std == 0, scale_ == "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.75
+~~~~~~~~~~
+[91m--- Solving memberfunc: c3-0/StandardScaler/inverse_transform[0m
+Checking constraints in ['(with_std = False) -> (scale_ = None)']
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/inverse_transform/inverse_transform_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (with_std = False) -> (scale_ = None)
+  - Parameter Names: ['with_std', 'scale_']
+  - Parameters: [('with_std', '=', 'False', ''), ('scale_', '=', 'None', '')]
+  - Expression: And(with_std == 0, scale_ == "None")
+  - Modified Parameter Names: ['with_std', 'scale_']
+  - Modified Parameters: [('with_std', '=', 'False', ''), ('scale_', '=', 'None', '')]
+  - Modified Expression: And(with_std == 0, scale_ == "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.75
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, False, True, False, False, True, True, False, False, True, False, False, True, True]
+[91m--- Solving memberfunc: c3-0/StandardScaler/fit[0m
+Checking constraints in ['(with_std = False) -> (scale_ = None)']
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/fit/fit_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (with_std = False) -> (scale_ = None)
+  - Parameter Names: ['with_std', 'scale_']
+  - Parameters: [('with_std', '=', 'False', ''), ('scale_', '=', 'None', '')]
+  - Expression: And(with_std == 0, scale_ == "None")
+  - Modified Parameter Names: ['with_std', 'scale_']
+  - Modified Parameters: [('with_std', '=', 'False', ''), ('scale_', '=', 'None', '')]
+  - Modified Expression: And(with_std == 0, scale_ == "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.75
+~~~~~~~~~~
+[91m--- Solving memberfunc: c3-0/StandardScaler/_more_tags[0m
+Checking constraints in ['(with_std = False) -> (scale_ = None)']
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/_more_tags/_more_tags_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (with_std = False) -> (scale_ = None)
+  - Parameter Names: ['with_std', 'scale_']
+  - Parameters: [('with_std', '=', 'False', ''), ('scale_', '=', 'None', '')]
+  - Expression: And(with_std == 0, scale_ == "None")
+  - Modified Parameter Names: ['with_std', 'scale_']
+  - Modified Parameters: [('with_std', '=', 'False', ''), ('scale_', '=', 'None', '')]
+  - Modified Expression: And(with_std == 0, scale_ == "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.75
+~~~~~~~~~~
+[91m--- Solving memberfunc: c3-0/StandardScaler/partial_fit[0m
+Checking constraints in ['(with_std = False) -> (scale_ = None)']
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/partial_fit/partial_fit_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (with_std = False) -> (scale_ = None)
+  - Parameter Names: ['with_std', 'scale_']
+  - Parameters: [('with_std', '=', 'False', ''), ('scale_', '=', 'None', '')]
+  - Expression: And(with_std == 0, scale_ == "None")
+  - Modified Parameter Names: ['with_std', 'scale_']
+  - Modified Parameters: [('with_std', '=', 'False', ''), ('scale_', '=', 'None', '')]
+  - Modified Expression: And(with_std == 0, scale_ == "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.75
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, False, False, True, True, False, False, False, False, True, True, True, True, False, False, False, True, True, False, False, True, True, True, True, False, False, False, True, False, True, False, False, False, True, True, False, False, True, True, True, True, False, False, False, True, False, True, False, False, False, True, True, False, False, True, True, False, False, False, False, True, True, True, True, False, False, False, True, True, False, False, True, True, True, True, False, False, False, True, False, True, False, False, False, True, True, False, False, True, True, True, True, False, False, False, True, False, True]
+[91m--- Solving memberfunc: c3-0/StandardScaler/transform[0m
+Checking constraints in ['(with_std = False) -> (scale_ = None)']
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c3-0/StandardScaler/memberfunc/transform/transform_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (with_std = False) -> (scale_ = None)
+  - Parameter Names: ['with_std', 'scale_']
+  - Parameters: [('with_std', '=', 'False', ''), ('scale_', '=', 'None', '')]
+  - Expression: And(with_std == 0, scale_ == "None")
+  - Modified Parameter Names: ['with_std', 'scale_']
+  - Modified Parameters: [('with_std', '=', 'False', ''), ('scale_', '=', 'None', '')]
+  - Modified Expression: And(with_std == 0, scale_ == "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.75
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, False, True, True, True, False, False, True, True, True]
+All path files checked.

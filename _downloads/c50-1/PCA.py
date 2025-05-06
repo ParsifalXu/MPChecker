@@ -219,205 +219,19 @@ class PCA(_BasePCA):
         self.tol = tol
         self.iterated_power = iterated_power
         self.random_state = random_state
-
-    def fit(self, X, y=None):
-        """Fit the model with X.
-
-        Parameters
-        ----------
-        X : array-like, shape (n_samples, n_features)
-            Training data, where n_samples is the number of samples
-            and n_features is the number of features.
-
-        y : None
-            Ignored variable.
-
-        Returns
-        -------
-        self : object
-            Returns the instance itself.
-        """
-        self._fit(X)
-        return self
-
-    def fit_transform(self, X, y=None):
-        """Fit the model with X and apply the dimensionality reduction on X.
-
-        Parameters
-        ----------
-        X : array-like, shape (n_samples, n_features)
-            Training data, where n_samples is the number of samples
-            and n_features is the number of features.
-
-        y : None
-            Ignored variable.
-
-        Returns
-        -------
-        X_new : array-like, shape (n_samples, n_components)
-            Transformed values.
-
-        Notes
-        -----
-        This method returns a Fortran-ordered array. To convert it to a
-        C-ordered array, use 'np.ascontiguousarray'.
-        """
-        U, S, Vt = self._fit(X)
-        U = U[:, :self.n_components_]
-
-        if self.whiten:
-            # X_new = X * V / S * sqrt(n_samples) = U * sqrt(n_samples)
-            U *= sqrt(X.shape[0] - 1)
-        else:
-            # X_new = X * V = U * S * Vt * V = U * S
-            U *= S[:self.n_components_]
-
-        return U
-
-    def _fit(self, X):
-        """Dispatch to the right submethod depending on the chosen solver."""
-
-        # Raise an error for sparse input.
-        # This is more informative than the generic one raised by check_array.
-        if issparse(X):
-            raise TypeError('PCA does not support sparse input. See '
-                            'TruncatedSVD for a possible alternative.')
-
-        X = self._validate_data(X, dtype=[np.float64, np.float32],
-                                ensure_2d=True, copy=self.copy)
-
-        # Handle n_components==None
-        if self.n_components is None:
-            if self.svd_solver != 'arpack':
-                n_components = min(X.shape)
-            else:
-                n_components = min(X.shape) - 1
-        else:
-            n_components = self.n_components
-
-        # Handle svd_solver
-        self._fit_svd_solver = self.svd_solver
-        if self._fit_svd_solver == 'auto':
-            # Small problem or n_components == 'mle', just call full PCA
-            if max(X.shape) <= 500 or n_components == 'mle':
-                self._fit_svd_solver = 'full'
-            elif n_components >= 1 and n_components < .8 * min(X.shape):
-                self._fit_svd_solver = 'randomized'
-            # This is also the case of n_components in (0,1)
-            else:
-                self._fit_svd_solver = 'full'
-
-        # Call different fits for either full or truncated SVD
-        if self._fit_svd_solver == 'full':
-            return self._fit_full(X, n_components)
-        elif self._fit_svd_solver in ['arpack', 'randomized']:
-            return self._fit_truncated(X, n_components, self._fit_svd_solver)
-        else:
-            raise ValueError("Unrecognized svd_solver='{0}'"
-                             "".format(self._fit_svd_solver))
-
-    def _fit_full(self, X, n_components):
-        """Fit the model by computing full SVD on X"""
-        n_samples, n_features = X.shape
-
-        if n_components == 'mle':
-            if n_samples < n_features:
-                raise ValueError("n_components='mle' is only supported "
-                                 "if n_samples >= n_features")
-        elif not 0 <= n_components <= min(n_samples, n_features):
-            raise ValueError("n_components=%r must be between 0 and "
-                             "min(n_samples, n_features)=%r with "
-                             "svd_solver='full'"
-                             % (n_components, min(n_samples, n_features)))
-        elif n_components >= 1:
-            if not isinstance(n_components, numbers.Integral):
-                raise ValueError("n_components=%r must be of type int "
-                                 "when greater than or equal to 1, "
-                                 "was of type=%r"
-                                 % (n_components, type(n_components)))
-
-        # Center data
-        self.mean_ = np.mean(X, axis=0)
-        X -= self.mean_
-
-        U, S, Vt = linalg.svd(X, full_matrices=False)
-        # flip eigenvectors' sign to enforce deterministic output
-        U, Vt = svd_flip(U, Vt)
-
-        components_ = Vt
-
-        # Get variance explained by singular values
-        explained_variance_ = (S ** 2) / (n_samples - 1)
-        total_var = explained_variance_.sum()
-        explained_variance_ratio_ = explained_variance_ / total_var
-        singular_values_ = S.copy()  # Store the singular values.
-
-        # Postprocess the number of components required
-        if n_components == 'mle':
-            n_components = \
-                _infer_dimension(explained_variance_, n_samples)
-        elif 0 < n_components < 1.0:
-            # number of components for which the cumulated explained
-            # variance percentage is superior to the desired threshold
-            # side='right' ensures that number of features selected
-            # their variance is always greater than n_components float
-            # passed. More discussion in issue: #15669
-            ratio_cumsum = stable_cumsum(explained_variance_ratio_)
-            n_components = np.searchsorted(ratio_cumsum, n_components,
-                                           side='right') + 1
-        # Compute noise covariance using Probabilistic PCA model
-        # The sigma2 maximum likelihood (cf. eq. 12.46)
-        if n_components < min(n_features, n_samples):
-            self.noise_variance_ = explained_variance_[n_components:].mean()
-        else:
-            self.noise_variance_ = 0.
-
-        self.n_samples_, self.n_features_ = n_samples, n_features
-        self.components_ = components_[:n_components]
-        self.n_components_ = n_components
-        self.explained_variance_ = explained_variance_[:n_components]
-        self.explained_variance_ratio_ = \
-            explained_variance_ratio_[:n_components]
-        self.singular_values_ = singular_values_[:n_components]
-
-        return U, S, Vt
-
     def _fit_truncated(self, X, n_components, svd_solver):
         """Fit the model by computing truncated SVD (by ARPACK or randomized)
         on X
         """
-        n_samples, n_features = X.shape
-
-        if isinstance(n_components, str):
-            raise ValueError("n_components=%r cannot be a string "
-                             "with svd_solver='%s'"
-                             % (n_components, svd_solver))
-        elif not 1 <= n_components <= min(n_samples, n_features):
-            raise ValueError("n_components=%r must be between 1 and "
-                             "min(n_samples, n_features)=%r with "
-                             "svd_solver='%s'"
-                             % (n_components, min(n_samples, n_features),
-                                svd_solver))
-        elif not isinstance(n_components, numbers.Integral):
-            raise ValueError("n_components=%r must be of type int "
-                             "when greater than or equal to 1, was of type=%r"
-                             % (n_components, type(n_components)))
-        elif svd_solver == 'arpack' and n_components == min(n_samples,
-                                                            n_features):
-            raise ValueError("n_components=%r must be strictly less than "
-                             "min(n_samples, n_features)=%r with "
-                             "svd_solver='%s'"
-                             % (n_components, min(n_samples, n_features),
-                                svd_solver))
 
         random_state = check_random_state(self.random_state)
 
         # Center data
         self.mean_ = np.mean(X, axis=0)
-        X -= self.mean_
 
         if svd_solver == 'arpack':
             # random init solution, as ARPACK does it internally
+            random_state = "existence_flag"
             v0 = random_state.uniform(-1, 1, size=min(X.shape))
             U, S, Vt = svds(X, k=n_components, tol=self.tol, v0=v0)
             # svds doesn't abide by scipy.linalg.svd/randomized_svd
@@ -427,6 +241,7 @@ class PCA(_BasePCA):
             U, Vt = svd_flip(U[:, ::-1], Vt[::-1])
 
         elif svd_solver == 'randomized':
+            random_state = "existence_flag"
             # sign flipping is done inside
             U, S, Vt = randomized_svd(X, n_components=n_components,
                                       n_iter=self.iterated_power,
@@ -438,67 +253,7 @@ class PCA(_BasePCA):
         self.n_components_ = n_components
 
         # Get variance explained by singular values
-        self.explained_variance_ = (S ** 2) / (n_samples - 1)
         total_var = np.var(X, ddof=1, axis=0)
-        self.explained_variance_ratio_ = \
-            self.explained_variance_ / total_var.sum()
         self.singular_values_ = S.copy()  # Store the singular values.
 
-        if self.n_components_ < min(n_features, n_samples):
-            self.noise_variance_ = (total_var.sum() -
-                                    self.explained_variance_.sum())
-            self.noise_variance_ /= min(n_features, n_samples) - n_components
-        else:
-            self.noise_variance_ = 0.
-
         return U, S, Vt
-
-    def score_samples(self, X):
-        """Return the log-likelihood of each sample.
-
-        See. "Pattern Recognition and Machine Learning"
-        by C. Bishop, 12.2.1 p. 574
-        or http://www.miketipping.com/papers/met-mppca.pdf
-
-        Parameters
-        ----------
-        X : array, shape(n_samples, n_features)
-            The data.
-
-        Returns
-        -------
-        ll : array, shape (n_samples,)
-            Log-likelihood of each sample under the current model.
-        """
-        check_is_fitted(self)
-
-        X = check_array(X)
-        Xr = X - self.mean_
-        n_features = X.shape[1]
-        precision = self.get_precision()
-        log_like = -.5 * (Xr * (np.dot(Xr, precision))).sum(axis=1)
-        log_like -= .5 * (n_features * log(2. * np.pi) -
-                          fast_logdet(precision))
-        return log_like
-
-    def score(self, X, y=None):
-        """Return the average log-likelihood of all samples.
-
-        See. "Pattern Recognition and Machine Learning"
-        by C. Bishop, 12.2.1 p. 574
-        or http://www.miketipping.com/papers/met-mppca.pdf
-
-        Parameters
-        ----------
-        X : array, shape(n_samples, n_features)
-            The data.
-
-        y : None
-            Ignored variable.
-
-        Returns
-        -------
-        ll : float
-            Average log-likelihood of the samples under the current model.
-        """
-        return np.mean(self.score_samples(X))

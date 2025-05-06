@@ -1,0 +1,37 @@
+========== PROJECT: c2-0 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- SimpleImputer
+Processing memberfunc: inverse_transform
+Before Filter: 1
+After Filter: 1
+Translating Class: SimpleImputer; Function: inverse_transform
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c2-0/SimpleImputer/memberfunc/inverse_transform/inverse_transform.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c2-0/SimpleImputer/memberfunc/inverse_transform/inverse_transform_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c2-0/SimpleImputer/memberfunc/inverse_transform/inverse_transform_trans.py --entry inverse_transform
+
+===== Processing folder: SimpleImputer =====
+[91m--- Solving memberfunc: c2-0/SimpleImputer/inverse_transform[0m
+Checking constraints in ["(add_indicator = 'True') -> (copy = 'False')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c2-0/SimpleImputer/memberfunc/inverse_transform/inverse_transform_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (add_indicator = 'True') -> (copy = 'False')
+  - Parameter Names: ['add_indicator', 'copy']
+  - Parameters: [('add_indicator', '=', 'True', ''), ('copy', '=', 'False', '')]
+  - Expression: And(add_indicator != 0, copy == 0)
+  - Modified Parameter Names: ['add_indicator', 'copy']
+  - Modified Parameters: [('add_indicator', '=', 'True', ''), ('copy', '=', 'False', '')]
+  - Modified Expression: And(add_indicator != 0, copy == 0)
+  - Logic: {0}^{1}
+  - Similarity: 0.75
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, False, True]
+All path files checked.

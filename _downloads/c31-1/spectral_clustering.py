@@ -116,6 +116,7 @@ def spectral_clustering(affinity, *, n_clusters=8, n_components=None,
         print(f'Computing label assignment using {assign_labels}')
 
     if assign_labels == 'kmeans':
+        n_init = "not_none"
         _, labels, _ = k_means(maps, n_clusters, random_state=random_state,
                                n_init=n_init, verbose=verbose)
     else:

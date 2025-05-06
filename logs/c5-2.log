@@ -1,0 +1,65 @@
+========== PROJECT: c5-2 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 4
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- SequentialFeatureSelector
+Processing memberfunc: fit
+Processing memberfunc: _more_tags
+Processing memberfunc: _get_best_new_feature_score
+Processing memberfunc: _get_support_mask
+Before Filter: 1
+After Filter: 1
+Translating Class: SequentialFeatureSelector; Function: fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c5-2/SequentialFeatureSelector/memberfunc/fit/fit.py
+Translating Class: SequentialFeatureSelector; Function: _more_tags
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c5-2/SequentialFeatureSelector/memberfunc/_more_tags/_more_tags.py
+Translating Class: SequentialFeatureSelector; Function: _get_best_new_feature_score
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c5-2/SequentialFeatureSelector/memberfunc/_get_best_new_feature_score/_get_best_new_feature_score.py
+Translating Class: SequentialFeatureSelector; Function: _get_support_mask
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c5-2/SequentialFeatureSelector/memberfunc/_get_support_mask/_get_support_mask.py
+total call times: 4
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c5-2/SequentialFeatureSelector/memberfunc/fit/fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c5-2/SequentialFeatureSelector/memberfunc/fit/fit_trans.py --entry fit
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c5-2/SequentialFeatureSelector/memberfunc/_more_tags/_more_tags_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c5-2/SequentialFeatureSelector/memberfunc/_more_tags/_more_tags_trans.py --entry _more_tags
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c5-2/SequentialFeatureSelector/memberfunc/_get_best_new_feature_score/_get_best_new_feature_score_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c5-2/SequentialFeatureSelector/memberfunc/_get_best_new_feature_score/_get_best_new_feature_score_trans.py --entry _get_best_new_feature_score
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c5-2/SequentialFeatureSelector/memberfunc/_get_support_mask/_get_support_mask_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c5-2/SequentialFeatureSelector/memberfunc/_get_support_mask/_get_support_mask_trans.py --entry _get_support_mask
+
+===== Processing folder: SequentialFeatureSelector =====
+[91m--- Solving memberfunc: c5-2/SequentialFeatureSelector/fit[0m
+Checking constraints in ["(direction = 'forward') -> (tol != 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c5-2/SequentialFeatureSelector/memberfunc/fit/fit_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (direction = 'forward') -> (tol != 'None')
+  - Parameter Names: ['direction', 'tol']
+  - Parameters: [('direction', '=', 'forward', ''), ('tol', '!=', 'None', '')]
+  - Expression: And(direction == "forward", tol != "None")
+  - Modified Parameter Names: ['direction', 'tol']
+  - Modified Parameters: [('direction', '=', 'forward', ''), ('tol', '!=', 'None', '')]
+  - Modified Expression: And(direction == "forward", tol != "None")
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+
+
+[91m[ BAD CONSTRAINT WITH ERROR ][0m
+##################################################
+Type: Raise Error
+path: (n_features_to_select = 'auto') -> (tol != 'None') -> (tol != 'None') -> (tol < 0) -> (direction = 'forward') -> '(tol)_(tol)_(direction)_ERROR_END'
+Library: c5-2
+Class: SequentialFeatureSelector
+Memberfunc: fit
+Constraint: (direction = 'forward') -> (tol != 'None')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c5-2/SequentialFeatureSelector/memberfunc/fit/fit_path.txt
+##################################################
+
+
+BAD CONSTRAINT

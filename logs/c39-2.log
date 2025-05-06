@@ -1,0 +1,53 @@
+========== PROJECT: c39-2 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- sparse_encode
+--- MISMATCH : sparse_encode - sparse_encode --- 
+Doc: ['X', 'dictionary', 'gram', 'cov', 'algorithm', 'regularization', 'init', 'max_iter', 'copy_cov', 'check_input', 'verbose', 'positive']
+Code: ['X', 'dictionary', 'gram', 'cov', 'algorithm', 'n_nonzero_coefs', 'alpha', 'copy_cov', 'init', 'max_iter', 'n_jobs', 'check_input', 'verbose', 'positive']
+Difference: {'alpha', 'n_nonzero_coefs', 'n_jobs', 'regularization'}
+
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: sparse_encode
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c39-2/sparse_encode/sparse_encode.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c39-2/sparse_encode/sparse_encode_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c39-2/sparse_encode/sparse_encode_trans.py --entry sparse_encode
+
+===== Processing folder: sparse_encode =====
+[91m--- Solving func: c39-2/sparse_encode[0m
+Checking constraints in ["(algorithm != 'threshold') -> (gram = 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c39-2/sparse_encode/sparse_encode_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (algorithm != 'threshold') -> (gram = 'None')
+  - Parameter Names: ['algorithm', 'gram']
+  - Parameters: [('algorithm', '!=', 'threshold', ''), ('gram', '=', 'None', '')]
+  - Expression: And(algorithm != "threshold", gram == "None")
+  - Modified Parameter Names: ['algorithm', 'gram']
+  - Modified Parameters: [('algorithm', '!=', 'threshold', ''), ('gram', '=', 'None', '')]
+  - Modified Expression: And(algorithm != "threshold", gram == "None")
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+
+
+[91m[ BAD CONSTRAINT WITH ERROR ][0m
+##################################################
+Type: Raise Error
+path: (check_input != 0) -> (algorithm = 'lasso_cd') -> (gram = 'None') -> (algorithm != 'threshold') -> '(gram)_(algorithm)_ERROR_END'
+Library: c39-2
+Function: sparse_encode
+Constraint: (algorithm != 'threshold') -> (gram = 'None')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c39-2/sparse_encode/sparse_encode_path.txt
+##################################################
+
+
+BAD CONSTRAINT

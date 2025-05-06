@@ -1,0 +1,34 @@
+========== PROJECT: c44-2 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- graphical_lasso
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: graphical_lasso
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c44-2/graphical_lasso/graphical_lasso.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c44-2/graphical_lasso/graphical_lasso_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c44-2/graphical_lasso/graphical_lasso_trans.py --entry graphical_lasso
+
+===== Processing folder: graphical_lasso =====
+[91m--- Solving func: c44-2/graphical_lasso[0m
+Checking constraints in ["(cov_init = 'None') -> (emp_cov != 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c44-2/graphical_lasso/graphical_lasso_path.txt
+normal results: [False, False, False, False]
+
+
+[91m[ BAD CONSTRAINT WITH FUZZY ][0m
+##################################################
+Library: c44-2
+Function: graphical_lasso
+Constraint: (cov_init = 'None') -> (emp_cov != 'exist')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c44-2/graphical_lasso/graphical_lasso_path.txt
+##################################################
+
+
+BAD CONSTRAINT

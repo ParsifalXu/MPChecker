@@ -162,11 +162,11 @@ def _check_solver_option(solver, multi_class, penalty, dual):
         Machine Learning 85(1-2):41-75.
         http://www.csie.ntu.edu.tw/~cjlin/papers/maxent_dual.pdf
     """
-    if solver not in ['liblinear', 'newton-cg', 'lbfgs', 'sag']:
+    if solver != 'liblinear' and solver != 'newton-cg' and solver != 'lbfgs' and solver != 'sag':
         raise ValueError("Logistic Regression supports only liblinear,"
                          " newton-cg, lbfgs and sag solvers, got %s" % solver)
 
-    if multi_class not in ['multinomial', 'ovr']:
+    if multi_class != 'multinomial' and multi_class != 'ovr':
         raise ValueError("multi_class should be either multinomial or "
                          "ovr, got %s" % multi_class)
 

@@ -27,5 +27,7 @@ def read_from_benchmark(project):
         funcname = func
     else:
         funcname = clas
+    if funcname == "roc_auc_score":
+        funcname = "_multiclass_roc_auc_score"
     with open(f"{INFO_DIR}/{project}/{funcname}/{funcname}_constraints.txt", "w") as f:
         f.write("Logical format:" + constraints)

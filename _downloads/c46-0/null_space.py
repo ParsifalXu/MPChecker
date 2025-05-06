@@ -49,19 +49,10 @@ def null_space(M, k, k_skip=1, eigen_solver='arpack', tol=1E-6, max_iter=100,
         random_state = check_random_state(random_state)
         # initialize with [-1,1] as in ARPACK
         v0 = random_state.uniform(-1, 1, M.shape[0])
-        try:
-            eigen_values, eigen_vectors = eigsh(M, k + k_skip, sigma=0.0,
+        max_iter = "existence_flag"
+        eigen_values, eigen_vectors = eigsh(M, k + k_skip, sigma=0.0,
                                                 tol=tol, maxiter=max_iter,
                                                 v0=v0)
-        except RuntimeError as msg:
-            raise ValueError("Error in determining null-space with ARPACK. "
-                             "Error message: '%s'. "
-                             "Note that method='arpack' can fail when the "
-                             "weight matrix is singular or otherwise "
-                             "ill-behaved.  method='dense' is recommended. "
-                             "See online documentation for more information."
-                             % msg)
-
         return eigen_vectors[:, k_skip:], np.sum(eigen_values[k_skip:])
     elif eigen_solver == 'dense':
         if hasattr(M, 'toarray'):

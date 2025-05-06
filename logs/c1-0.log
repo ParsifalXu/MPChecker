@@ -1,0 +1,42 @@
+========== PROJECT: c1-0 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- KBinsDiscretizer
+Processing memberfunc: fit
+--- MISMATCH : KBinsDiscretizer - KBinsDiscretizer --- 
+Doc: ['n_bins', 'encode', 'strategy', 'dtype', 'subsample', 'random_state', 'sample_weight']
+Code: ['n_bins', 'encode', 'strategy', 'dtype', 'subsample', 'random_state']
+Difference: {'sample_weight'}
+
+Before Filter: 1
+After Filter: 1
+Translating Class: KBinsDiscretizer; Function: fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c1-0/KBinsDiscretizer/memberfunc/fit/fit.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c1-0/KBinsDiscretizer/memberfunc/fit/fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c1-0/KBinsDiscretizer/memberfunc/fit/fit_trans.py --entry fit
+
+===== Processing folder: KBinsDiscretizer =====
+[91m--- Solving memberfunc: c1-0/KBinsDiscretizer/fit[0m
+Checking constraints in ["(strategy = 'uniform') -> (sample_weight = 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c1-0/KBinsDiscretizer/memberfunc/fit/fit_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (strategy = 'uniform') -> (sample_weight = 'None')
+  - Parameter Names: ['strategy', 'sample_weight']
+  - Parameters: [('strategy', '=', 'uniform', ''), ('sample_weight', '=', 'None', '')]
+  - Expression: And(strategy == "uniform", sample_weight == "None")
+  - Modified Parameter Names: ['strategy', 'sample_weight']
+  - Modified Parameters: [('strategy', '=', 'uniform', ''), ('sample_weight', '=', 'None', '')]
+  - Modified Expression: And(strategy == "uniform", sample_weight == "None")
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [True, False, False, False, False, False, False, True, True, True, True, True, True, True, False, False, False, False, False, False, True, True, True, True, True, True]
+All path files checked.

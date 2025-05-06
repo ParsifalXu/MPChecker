@@ -1,0 +1,24 @@
+========== PROJECT: c19-2 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- IterativeImputer
+Processing memberfunc: _fit_indicator
+Before Filter: 1
+After Filter: 1
+Translating Class: IterativeImputer; Function: _fit_indicator
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c19-2/IterativeImputer/memberfunc/_fit_indicator/_fit_indicator.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c19-2/IterativeImputer/memberfunc/_fit_indicator/_fit_indicator_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c19-2/IterativeImputer/memberfunc/_fit_indicator/_fit_indicator_trans.py --entry _fit_indicator
+
+===== Processing folder: IterativeImputer =====
+[91m--- Solving memberfunc: c19-2/IterativeImputer/_fit_indicator[0m
+Checking constraints in ["(add_indicator = 'False') -> (indicator_ != 'used')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c19-2/IterativeImputer/memberfunc/_fit_indicator/_fit_indicator_path.txt
+normal results: [False, True]
+All path files checked.

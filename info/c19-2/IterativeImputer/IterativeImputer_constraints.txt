@@ -1,0 +1,1 @@
+Logical format:(add_indicator = 'False') -> (indicator_ != 'used')

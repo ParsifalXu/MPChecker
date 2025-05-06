@@ -1,0 +1,37 @@
+[33mtools.auxiliary - WARNING - Constraint similarity score is too high: ((n_nonzero_coefs_ != 'None') ^ (tol = 'None')) -> (max(int(0.1 * n_features), 1))[0m
+========== PROJECT: c13-1 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- OrthogonalMatchingPursuit
+Processing memberfunc: fit
+Before Filter: 1
+After Filter: 1
+Translating Class: OrthogonalMatchingPursuit; Function: fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c13-1/OrthogonalMatchingPursuit/memberfunc/fit/fit.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c13-1/OrthogonalMatchingPursuit/memberfunc/fit/fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c13-1/OrthogonalMatchingPursuit/memberfunc/fit/fit_trans.py --entry fit
+
+===== Processing folder: OrthogonalMatchingPursuit =====
+[91m--- Solving memberfunc: c13-1/OrthogonalMatchingPursuit/fit[0m
+Checking constraints in ["((n_nonzero_coefs_ != 'None') ^ (tol = 'None')) -> (max(int(0.1 * n_features), 1))"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c13-1/OrthogonalMatchingPursuit/memberfunc/fit/fit_path.txt
+0.98
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: ((n_nonzero_coefs_ != 'None') ^ (tol = 'None')) -> (max(int(0.1 * n_features), 1))
+  - Parameter Names: ['n_nonzero_coefs_', 'tol']
+  - Parameters: [('n_nonzero_coefs_', '!=', 'None', ''), ('tol', '=', 'None', '')]
+  - Expression: And(n_nonzero_coefs_ != "None", tol == "None")
+  - Modified Parameter Names: ['n_nonzero_coefs', 'tol']
+  - Modified Parameters: [('n_nonzero_coefs', '!=', 'None', ''), ('tol', '=', 'None', '')]
+  - Modified Expression: And(n_nonzero_coefs != "None", tol == "None")
+  - Logic: ({0}^{1})
+  - Similarity: 0.98
+~~~~~~~~~~
+All path files checked.

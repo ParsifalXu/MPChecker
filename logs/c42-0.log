@@ -1,0 +1,24 @@
+========== PROJECT: c42-0 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- KernelPCA
+Processing memberfunc: _get_kernel
+Before Filter: 1
+After Filter: 1
+Translating Class: KernelPCA; Function: _get_kernel
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c42-0/KernelPCA/memberfunc/_get_kernel/_get_kernel.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c42-0/KernelPCA/memberfunc/_get_kernel/_get_kernel_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c42-0/KernelPCA/memberfunc/_get_kernel/_get_kernel_trans.py --entry _get_kernel
+
+===== Processing folder: KernelPCA =====
+[91m--- Solving memberfunc: c42-0/KernelPCA/_get_kernel[0m
+Checking constraints in ["!(kernel = 'rbf' || kernel = 'poly' || kernel = 'sigmoid') -> (gamma = 'ignore')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c42-0/KernelPCA/memberfunc/_get_kernel/_get_kernel_path.txt
+normal results: [False, False, False, True]
+All path files checked.

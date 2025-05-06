@@ -1,0 +1,36 @@
+========== PROJECT: c21-2 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- SimpleImputer
+Processing memberfunc: _sparse_fit
+Before Filter: 1
+After Filter: 1
+Translating Class: SimpleImputer; Function: _sparse_fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c21-2/SimpleImputer/memberfunc/_sparse_fit/_sparse_fit.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c21-2/SimpleImputer/memberfunc/_sparse_fit/_sparse_fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c21-2/SimpleImputer/memberfunc/_sparse_fit/_sparse_fit_trans.py --entry _sparse_fit
+
+===== Processing folder: SimpleImputer =====
+[91m--- Solving memberfunc: c21-2/SimpleImputer/_sparse_fit[0m
+Checking constraints in ["(strategy = 'constant') -> (fill_value != 'used')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c21-2/SimpleImputer/memberfunc/_sparse_fit/_sparse_fit_path.txt
+normal results: [False, False, False, False, False, False]
+
+
+[91m[ BAD CONSTRAINT WITH FUZZY ][0m
+##################################################
+Library: c21-2
+Class: SimpleImputer
+Memberfunc: _sparse_fit
+Constraint: (strategy = 'constant') -> (fill_value != 'used')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c21-2/SimpleImputer/memberfunc/_sparse_fit/_sparse_fit_path.txt
+##################################################
+
+
+BAD CONSTRAINT

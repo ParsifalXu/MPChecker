@@ -1,4 +1,4 @@
-def _cook_nd_args(a, s=None, axes=None, invreal=0):
+def _cook_nd_args(a, shapeless, s=None, axes=None, invreal=0):
     """
     Compute the 2-dimensional discrete Fourier Transform.
 
@@ -123,13 +123,7 @@ def _cook_nd_args(a, s=None, axes=None, invreal=0):
         shapeless = False
     s = list(s)
     if axes is None:
-        if not shapeless:
-            msg = ("`axes` should not be `None` if `s` is not `None` "
-                   "(Deprecated in NumPy 2.0). In a future version of NumPy, "
-                   "this will raise an error and `s[i]` will correspond to "
-                   "the size along the transformed axis specified by "
-                   "`axes[i]`. To retain current behaviour, pass a sequence "
-                   "[0, ..., k-1] to `axes` for an array of dimension k.")
+        if shapeless == False:
             warnings.warn(msg, DeprecationWarning, stacklevel=3)
         axes = list(range(-len(s), 0))
     if len(s) != len(axes):

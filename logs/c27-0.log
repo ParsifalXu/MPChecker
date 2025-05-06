@@ -1,0 +1,29 @@
+========== PROJECT: c27-0 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- BaseMultilayerPerceptron
+Processing memberfunc: _fit_stochastic
+--- MISMATCH : BaseMultilayerPerceptron - BaseMultilayerPerceptron --- 
+Doc: ['hidden_layer_sizes', 'activation', 'solver', 'alpha', 'batch_size', 'learning_rate', 'learning_rate_init', 'power_t', 'max_iter', 'shuffle', 'random_state', 'tol', 'verbose', 'warm_start', 'momentum', 'nesterovs_momentum', 'early_stopping', 'validation_fraction', 'beta_1', 'beta_2', 'epsilon', 'n_iter_no_change', 'max_fun']
+Code: ['N', 'o', ' ', '_', '_', 'i', 'n', 'i', 't', '_', '_', ' ', 'm', 'e', 't', 'h', 'o', 'd', ' ', 'f', 'o', 'u', 'n', 'd']
+Difference: {'beta_1', 'tol', 'learning_rate', 'shuffle', 'solver', 'verbose', 'm', 'u', 'e', 'max_iter', 'i', 'h', 'power_t', 'early_stopping', 'alpha', 'o', 'n', 'warm_start', 'max_fun', 'momentum', 'epsilon', 'hidden_layer_sizes', 'nesterovs_momentum', 'activation', 'learning_rate_init', 'N', 'n_iter_no_change', 'validation_fraction', 'batch_size', '_', ' ', 'f', 't', 'random_state', 'd', 'beta_2'}
+
+Before Filter: 1
+After Filter: 1
+Translating Class: BaseMultilayerPerceptron; Function: _fit_stochastic
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c27-0/BaseMultilayerPerceptron/memberfunc/_fit_stochastic/_fit_stochastic.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c27-0/BaseMultilayerPerceptron/memberfunc/_fit_stochastic/_fit_stochastic_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c27-0/BaseMultilayerPerceptron/memberfunc/_fit_stochastic/_fit_stochastic_trans.py --entry _fit_stochastic
+
+===== Processing folder: BaseMultilayerPerceptron =====
+[91m--- Solving memberfunc: c27-0/BaseMultilayerPerceptron/_fit_stochastic[0m
+Checking constraints in ["(solver = 'adam') -> (epsilon = 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c27-0/BaseMultilayerPerceptron/memberfunc/_fit_stochastic/_fit_stochastic_path.txt
+normal results: [False, False, False, False, False, False, False, False, True, False, True, False, True, False, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, False, False, False, False, False, False, False, False, False]
+All path files checked.

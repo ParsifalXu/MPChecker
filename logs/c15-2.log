@@ -1,0 +1,36 @@
+========== PROJECT: c15-2 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- get_auto_step_size
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: get_auto_step_size
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c15-2/get_auto_step_size/get_auto_step_size.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c15-2/get_auto_step_size/get_auto_step_size_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c15-2/get_auto_step_size/get_auto_step_size_trans.py --entry get_auto_step_size
+
+===== Processing folder: get_auto_step_size =====
+[91m--- Solving func: c15-2/get_auto_step_size[0m
+Checking constraints in ["(is_saga = 'False') -> (n_samples = None)"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c15-2/get_auto_step_size/get_auto_step_size_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (is_saga = 'False') -> (n_samples = None)
+  - Parameter Names: ['is_saga', 'n_samples']
+  - Parameters: [('is_saga', '=', 'False', ''), ('n_samples', '=', 'None', '')]
+  - Expression: And(is_saga == 0, n_samples == "None")
+  - Modified Parameter Names: ['is_saga', 'n_samples']
+  - Modified Parameters: [('is_saga', '=', 'False', ''), ('n_samples', '=', 'None', '')]
+  - Modified Expression: And(is_saga == 0, n_samples == "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.75
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, True, False, True, False]
+All path files checked.

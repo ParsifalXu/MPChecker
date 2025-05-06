@@ -241,78 +241,13 @@ class HistGradientBoostingRegressor(RegressorMixin, BaseHistGradientBoosting):
             random_state=random_state,
         )
 
-    def predict(self, X):
-        """Predict values for X.
-
-        Parameters
-        ----------
-        X : array-like, shape (n_samples, n_features)
-            The input samples.
-
-        Returns
-        -------
-        y : ndarray, shape (n_samples,)
-            The predicted values.
-        """
-        check_is_fitted(self)
-        # Return inverse link of raw predictions after converting
-        # shape (n_samples, 1) to (n_samples,)
-        return self._loss.inverse_link_function(self._raw_predict(X).ravel())
-
-    def staged_predict(self, X):
-        """Predict regression target for each iteration.
-
-        This method allows monitoring (i.e. determine error on testing set)
-        after each stage.
-
-        .. versionadded:: 0.24
-
-        Parameters
-        ----------
-        X : array-like of shape (n_samples, n_features)
-            The input samples.
-
-        Yields
-        -------
-        y : generator of ndarray of shape (n_samples,)
-            The predicted values of the input samples, for each iteration.
-        """
-        for raw_predictions in self._staged_raw_predict(X):
-            yield self._loss.inverse_link_function(raw_predictions.ravel())
-
     def _encode_y(self, y):
         # Just convert y to the expected dtype
         self.n_trees_per_iteration_ = 1
-        y = y.astype(Y_DTYPE, copy=False)
         if self.loss == "poisson":
             # Ensure y >= 0 and sum(y) > 0
-            if not (np.all(y >= 0) and np.sum(y) > 0):
+            if y < 0:
                 raise ValueError(
                     "loss='poisson' requires non-negative y and sum(y) > 0."
                 )
         return y
-
-    def _get_loss(self, sample_weight, n_threads):
-        # TODO: Remove in v1.2
-        if self.loss == "least_squares":
-            warnings.warn(
-                "The loss 'least_squares' was deprecated in v1.0 and will be "
-                "removed in version 1.2. Use 'squared_error' which is "
-                "equivalent.",
-                FutureWarning,
-            )
-            return _LOSSES["squared_error"](
-                sample_weight=sample_weight, n_threads=n_threads
-            )
-        elif self.loss == "least_absolute_deviation":
-            warnings.warn(
-                "The loss 'least_absolute_deviation' was deprecated in v1.0 "
-                " and will be removed in version 1.2. Use 'absolute_error' "
-                "which is equivalent.",
-                FutureWarning,
-            )
-            return _LOSSES["absolute_error"](
-                sample_weight=sample_weight, n_threads=n_threads
-            )
-
-        return _LOSSES[self.loss](sample_weight=sample_weight, n_threads=n_threads)

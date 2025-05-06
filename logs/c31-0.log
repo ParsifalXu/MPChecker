@@ -1,0 +1,36 @@
+========== PROJECT: c31-0 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- spectral_clustering
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: spectral_clustering
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c31-0/spectral_clustering/spectral_clustering.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c31-0/spectral_clustering/spectral_clustering_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c31-0/spectral_clustering/spectral_clustering_trans.py --entry spectral_clustering
+
+===== Processing folder: spectral_clustering =====
+[91m--- Solving func: c31-0/spectral_clustering[0m
+Checking constraints in ["(assign_labels = 'kmeans') -> (n_init != 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c31-0/spectral_clustering/spectral_clustering_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (assign_labels = 'kmeans') -> (n_init != 'None')
+  - Parameter Names: ['assign_labels', 'n_init']
+  - Parameters: [('assign_labels', '=', 'kmeans', ''), ('n_init', '!=', 'None', '')]
+  - Expression: And(assign_labels == "kmeans", n_init != "None")
+  - Modified Parameter Names: ['assign_labels', 'n_components']
+  - Modified Parameters: [('assign_labels', '=', 'kmeans', ''), ('n_components', '!=', 'None', '')]
+  - Modified Expression: And(assign_labels == "kmeans", n_components != "None")
+  - Logic: {0}^{1}
+  - Similarity: 0.83
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, False, False, False, False, True, False, True, False]
+All path files checked.

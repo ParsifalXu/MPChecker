@@ -1,0 +1,49 @@
+========== PROJECT: c14-2 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- MissingIndicator
+Processing memberfunc: transform
+Before Filter: 1
+After Filter: 1
+Translating Class: MissingIndicator; Function: transform
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c14-2/MissingIndicator/memberfunc/transform/transform.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c14-2/MissingIndicator/memberfunc/transform/transform_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c14-2/MissingIndicator/memberfunc/transform/transform_trans.py --entry transform
+
+===== Processing folder: MissingIndicator =====
+[91m--- Solving memberfunc: c14-2/MissingIndicator/transform[0m
+Checking constraints in ["(features = 'all') -> (error_on_new != 'False')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c14-2/MissingIndicator/memberfunc/transform/transform_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (features = 'all') -> (error_on_new != 'False')
+  - Parameter Names: ['features', 'error_on_new']
+  - Parameters: [('features', '=', 'all', ''), ('error_on_new', '!=', 'False', '')]
+  - Expression: And(features == "all", error_on_new != 0)
+  - Modified Parameter Names: ['features', 'error_on_new']
+  - Modified Parameters: [('features', '=', 'missing-only', ''), ('error_on_new', '!=', 'False', '')]
+  - Modified Expression: And(features == "missing-only", error_on_new != 0)
+  - Logic: {0}^{1}
+  - Similarity: 0.75
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, False, False, False, False, False, False, False, False]
+
+
+[91m[ BAD CONSTRAINT ][0m
+##################################################
+Library: c14-2
+Class: MissingIndicator
+Memberfunc: transform
+Constraint: (features = 'all') -> (error_on_new != 'False')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c14-2/MissingIndicator/memberfunc/transform/transform_path.txt
+##################################################
+
+
+BAD CONSTRAINT

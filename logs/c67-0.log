@@ -1,0 +1,23 @@
+========== PROJECT: c67-0 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- solve
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: solve
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c67-0/solve/solve.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c67-0/solve/solve_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c67-0/solve/solve_trans.py --entry solve
+
+===== Processing folder: solve =====
+[91m--- Solving func: c67-0/solve[0m
+Checking constraints in ["(assume_a = 'gen') -> (lower = 'ignore')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c67-0/solve/solve_path.txt
+normal results: [False, False, False, False, False, False, True, False, False, True, False, False, True, False, False, True, False, False, False, False, False, False, False, False, True, False, False, True, False, False, True, False, False, True, False, False, False, False, False, False, False, False, True, False, False, True, False, False, True, False, False, True, False, False, False, False, False, False, False, False, True, False, False, True, False, False, True, False, False, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+All path files checked.

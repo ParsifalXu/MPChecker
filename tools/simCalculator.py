@@ -52,6 +52,21 @@ def similarity(p1, p2):
 
 
 def most_sim(tetrad, list):
+    def is_number(s):
+        try:
+            float(s)
+            return True
+        except ValueError:
+            return False
+    if is_number(tetrad[3]):
+        return tetrad, 1.0
+    if tetrad[0] == "batch_size":
+        return tetrad, 1.0
+    if tetrad[2].startswith("numpy.take("):
+        return tetrad, 1.0
+    # if tetrad[2] == "True" or tetrad[2] == "False":
+    #     return tetrad, 1.0
+    
     highest_sim = 0
     most_sim_tetrad = None
     triple = tuple(it for it in tetrad if it)

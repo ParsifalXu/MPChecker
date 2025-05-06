@@ -15,7 +15,8 @@
             "sample_weight",
             "strategy"
         ],
-        "constraints": "(strategy = 'uniform') -> (sample_weight = 'None')"
+        "constraints": "(strategy = 'uniform') -> (sample_weight = 'None')",
+        "oracle": "True"
     },
     {
         "id": "c1-1",
@@ -33,7 +34,8 @@
             "sample_weight",
             "strategy"
         ],
-        "constraints": "(strategy = 'uniform') -> (sample_weight != 'None')"
+        "constraints": "(strategy = 'uniform') -> (sample_weight != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c1-2",
@@ -51,7 +53,8 @@
             "sample_weight",
             "strategy"
         ],
-        "constraints": "(strateegy = 'uniform') -> (sample_weight = 'None')"
+        "constraints": "(strateegy = 'uniform') -> (sample_weight = 'None')",
+        "oracle": "True"
     },
     {
         "id": "c2-0",
@@ -69,7 +72,8 @@
             "copy",
             "add_indicator"
         ],
-        "constraints": "(add_indicator = 'True') -> (copy = 'False')"
+        "constraints": "(add_indicator = 'True') -> (copy = 'False')",
+        "oracle": "True"
     },
     {
         "id": "c2-1",
@@ -87,7 +91,8 @@
             "copy",
             "add_indicator"
         ],
-        "constraints": "(add_indicatoror = 'True') -> (copy = 'False')"
+        "constraints": "(add_indicatoror = 'True') -> (copy = 'False')",
+        "oracle": "False"
     },
     {
         "id": "c2-2",
@@ -105,7 +110,8 @@
             "copy",
             "add_indicator"
         ],
-        "constraints": "(add_indicator = 'True') -> (copyyy = 'False')"
+        "constraints": "(add_indicator = 'True') -> (copyyy = 'False')",
+        "oracle": "False"
     },
     {
         "id": "c3-0",
@@ -123,7 +129,8 @@
             "with_std",
             "scale_"
         ],
-        "constraints": "(with_std = False) -> (scale_ = None)"
+        "constraints": "(with_std = False) -> (scale_ = None)",
+        "oracle": "True"
     },
     {
         "id": "c3-1",
@@ -141,7 +148,8 @@
             "with_std",
             "scale_"
         ],
-        "constraints": "(with_std = True) -> (scale_ = None)"
+        "constraints": "(with_std = True) -> (scale_ = None)",
+        "oracle": "False"
     },
     {
         "id": "c3-2",
@@ -159,7 +167,8 @@
             "with_std",
             "scale_"
         ],
-        "constraints": "(with_standard = False) -> (scale_ = None)"
+        "constraints": "(with_standard = False) -> (scale_ != None)",
+        "oracle": "False"
     },
     {
         "id": "c4-0",
@@ -177,7 +186,8 @@
             "with_mean",
             "mean_"
         ],
-        "constraints": "((with_mean = 'False') ^ (with_std = 'False')) -> (mean_ = 'None')"
+        "constraints": "((with_mean = 'False') ^ (with_std = 'False')) -> (mean_ = 'None')",
+        "oracle": "True"
     },
     {
         "id": "c4-1",
@@ -195,7 +205,8 @@
             "with_mean",
             "mean_"
         ],
-        "constraints": "((with_mean = 'True') ^ (with_std = 'False')) -> (mean_ = 'None')"
+        "constraints": "((with_mean = 'True') ^ (with_std = 'True')) -> (mean_ = 'None')",
+        "oracle": "False"
     },
     {
         "id": "c4-2",
@@ -213,7 +224,8 @@
             "with_mean",
             "mean_"
         ],
-        "constraints": "((with_mean = 'False') ^ (with_std = 'False')) -> (mean_ != 'None')"
+        "constraints": "((with_mean = 'False') ^ (with_std = 'False')) -> (mean_ != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c5-0",
@@ -231,7 +243,8 @@
             "direction",
             "tol"
         ],
-        "constraints": "(direction = 'backward') -> (tol < 0)"
+        "constraints": "(direction = 'backward') -> (tol < 0)",
+        "oracle": "True"
     },
     {
         "id": "c5-1",
@@ -249,7 +262,8 @@
             "direction",
             "tol"
         ],
-        "constraints": "(direction = 'forward') -> (tol < 0)"
+        "constraints": "(direction = 'forward') -> (tol < 0)",
+        "oracle": "False"
     },
     {
         "id": "c5-2",
@@ -267,7 +281,8 @@
             "direction",
             "tol"
         ],
-        "constraints": "(direction = 'backward') -> (tol > 0)"
+        "constraints": "(direction = 'forward') -> (tol != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c6-0",
@@ -285,7 +300,46 @@
             "n_features_to_select",
             "tol"
         ],
-        "constraints": "(n_features_to_select = 'auto') -> (tol != 'None')"
+        "constraints": "(n_features_to_select = 'auto') -> (tol != 'None')",
+        "oracle": "True"
+    },
+    {
+        "id": "c6-1",
+        "lib": "scikit-learn",
+        "sha": "8409b877fdf3212cd9ed65c7868202961a777a20",
+        "issue_sha": "8409b877fdf3212cd9ed65c7868202961a777a20",
+        "issue_type": "value",
+        "granularity": "class",
+        "filepath": "sklearn/feature_selection/_sequential.py",
+        "docfrom": "SequentialFeatureSelector",
+        "class": "SequentialFeatureSelector",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "n_features_to_select",
+            "tol"
+        ],
+        "constraints": "(n_features_to_select != 'auto') -> (tol != 'None')",
+        "oracle": "True"
+    },
+    {
+        "id": "c6-2",
+        "lib": "scikit-learn",
+        "sha": "8409b877fdf3212cd9ed65c7868202961a777a20",
+        "issue_sha": "8409b877fdf3212cd9ed65c7868202961a777a20",
+        "issue_type": "value",
+        "granularity": "class",
+        "filepath": "sklearn/feature_selection/_sequential.py",
+        "docfrom": "SequentialFeatureSelector",
+        "class": "SequentialFeatureSelector",
+        "func": "fit",
+        "exec_func": "fit",
+        "params": [
+            "n_features_to_select",
+            "tol"
+        ],
+        "constraints": "(n_features_to_select = 'auto') -> (tol != 'None')",
+        "oracle": "True"
     },
     {
         "id": "c7-0",
@@ -303,7 +357,8 @@
             "average",
             "multi_class"
         ],
-        "constraints": "(multi_class = 'ovo') -> (average = 'None')"
+        "constraints": "(multi_class = 'ovo') -> (average = 'None')",
+        "oracle": "False"
     },
     {
         "id": "c7-1",
@@ -321,7 +376,8 @@
             "average",
             "sample_weight"
         ],
-        "constraints": "(multi_class = 'ovo') -> (sample_weight != 'None')"
+        "constraints": "(multi_class = 'ovo') -> (sample_weight != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c7-2",
@@ -339,7 +395,8 @@
             "average",
             "multiple_class"
         ],
-        "constraints": "(multiple_class = 'ovo') -> (average = 'None')"
+        "constraints": "(multi_class = 'ovr') -> (average = 'None')",
+        "oracle": "False"
     },
     {
         "id": "c8-0",
@@ -357,7 +414,8 @@
             "average",
             "multi_class"
         ],
-        "constraints": "(multi_class = 'ovr') -> (average = 'micro')"
+        "constraints": "(multi_class = 'ovr') -> (average = 'micro')",
+        "oracle": "True"
     },
     {
         "id": "c8-1",
@@ -375,7 +433,8 @@
             "average",
             "multiple_class"
         ],
-        "constraints": "(multiple_class = 'ovr') -> (average = 'micro')"
+        "constraints": "(multi_class = 'ovo') -> (average = 'None')",
+        "oracle": "False"
     },
     {
         "id": "c8-2",
@@ -393,7 +452,8 @@
             "average",
             "multi_class"
         ],
-        "constraints": "(multi_class = 'ovo') -> (average = 'None')"
+        "constraints": "(multi_class = 'ovo') -> (sample_weight != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c9-0",
@@ -411,7 +471,8 @@
             "store_cv_values",
             "cv_values_"
         ],
-        "constraints": "(store_cv_values = 'True') -> (cv_values_ != 'None')"
+        "constraints": "(store_cv_values = 'True') -> (cv_values_ != 'None')",
+        "oracle": "True"
     },
     {
         "id": "c9-1",
@@ -429,7 +490,8 @@
             "store_cv_values",
             "cv_values_"
         ],
-        "constraints": "(store_cv_values = 'False') -> (cv_values_ != 'None')"
+        "constraints": "(store_cv_values = 'False') -> (cv_values_ != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c9-2",
@@ -447,7 +509,8 @@
             "store_cv_values",
             "cv_values_"
         ],
-        "constraints": "(store_cv_value = 'False') -> (cv_values_ = 'None')"
+        "constraints": "(store_cv_value = 'None') -> (cv_values_ != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c10-0",
@@ -465,7 +528,8 @@
             "oob_score",
             "bootstrap"
         ],
-        "constraints": "(bootstrap = 'True') -> (oob_score != 'None')"
+        "constraints": "(bootstrap = 'True') -> (oob_score != 'None')",
+        "oracle": "True"
     },
     {
         "id": "c10-1",
@@ -483,7 +547,8 @@
             "oob_score",
             "bootstrap"
         ],
-        "constraints": "(bootstrap = 'False') -> (oob_score != 'None')"
+        "constraints": "(bootstrap = 'False') -> (oob_score != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c10-2",
@@ -501,7 +566,8 @@
             "oob_score",
             "bootstrap"
         ],
-        "constraints": "(warm_start = 'True') -> (oob_score != 'None')"
+        "constraints": "(warm_start = 'True') -> (oob_score != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c11-0",
@@ -519,7 +585,8 @@
             "code_init",
             "dict_init"
         ],
-        "constraints": "(code_init != 'None') ^ (dict_init != 'None')"
+        "constraints": "(code_init != 'None') -> (dict_init != 'None')",
+        "oracle": "True"
     },
     {
         "id": "c11-1",
@@ -537,7 +604,8 @@
             "code_init",
             "dict_init"
         ],
-        "constraints": "(code_init = 'None') ^ (dict_init != 'None')"
+        "constraints": "(code_init = 'None') -> (dict_init != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c11-2",
@@ -555,7 +623,8 @@
             "code_init",
             "dict_init"
         ],
-        "constraints": "(code_init != 'None') ^ (dict_init = 'None')"
+        "constraints": "(code_init != 'None') -> (dict_init = 'None')",
+        "oracle": "True"
     },
     {
         "id": "c12-0",
@@ -573,7 +642,8 @@
             "scale_",
             "with_std"
         ],
-        "constraints": "(with_std = 'False') -> (scale_ = 'None')"
+        "constraints": "(with_std = 'False') -> (scale_ = 'None')",
+        "oracle": "True"
     },
     {
         "id": "c12-1",
@@ -591,7 +661,8 @@
             "scale_",
             "with_std"
         ],
-        "constraints": "(with_std = 'False') -> (scale_ = _handle_zeros_in_scale())"
+        "constraints": "(with_std = 'False') -> (scale_ = _handle_zeros_in_scale())",
+        "oracle": "False"
     },
     {
         "id": "c12-2",
@@ -609,7 +680,8 @@
             "scale_",
             "with_std"
         ],
-        "constraints": "(with_std = 'False') -> (scale_ != 'None')"
+        "constraints": "(with_std = 'False') -> (scale_ != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c13-0",
@@ -627,7 +699,8 @@
             "n_nonzero_coefs_",
             "tol"
         ],
-        "constraints": "((n_nonzero_coefs_ = 'None') ^ (tol = 'None')) -> (max(int(0.1 * n_features), 1))"
+        "constraints": "((n_nonzero_coefs_ = 'None') ^ (tol = 'None')) -> (max(int(0.1 * n_features), 1))",
+        "oracle": "True"
     },
     {
         "id": "c13-1",
@@ -645,7 +718,8 @@
             "n_nonzero_coefs_",
             "tol"
         ],
-        "constraints": "((n_nonzero_coefs_ != 'None') ^ (tol = 'None')) -> (max(int(0.1 * n_features), 1))"
+        "constraints": "((n_nonzero_coefs_ != 'None') ^ (tol = 'None')) -> (max(int(0.1 * n_features), 1))",
+        "oracle": "False"
     },
     {
         "id": "c13-2",
@@ -663,7 +737,8 @@
             "n_nonzero_coefs_",
             "tol"
         ],
-        "constraints": "((n_nonzero_coefs_ = 'None') ^ (tol = 'None')) -> (min(int(0.1 * n_features), 1))"
+        "constraints": "((n_nonzero_coefs_ = 'None') ^ (tol = 'None')) -> (n_nonzero_coefs_ = min(int(0.1 * n_features), 1)))",
+        "oracle": "False"
     },
     {
         "id": "c14-0",
@@ -681,7 +756,8 @@
             "error_on_new",
             "features"
         ],
-        "constraints": "(features = 'missing-only') -> (error_on_new != 'None')"
+        "constraints": "(features = 'missing-only') -> (error_on_new = 'False')",
+        "oracle": "True"
     },
     {
         "id": "c14-1",
@@ -699,7 +775,8 @@
             "error_on_new",
             "features"
         ],
-        "constraints": "(features = 'missing-only') -> (error_on_new = 'None')"
+        "constraints": "(features = 'missing-only') -> (error_on_new = 'True')",
+        "oracle": "False"
     },
     {
         "id": "c14-2",
@@ -717,7 +794,8 @@
             "error_on_new",
             "features"
         ],
-        "constraints": "(features = 'missing-only') -> (errornew != 'None')"
+        "constraints": "(features = 'all') -> (error_on_new != 'False')",
+        "oracle": "False"
     },
     {
         "id": "c15-0",
@@ -735,7 +813,8 @@
             "is_saga",
             "n_samples"
         ],
-        "constraints": "(is_saga = 'True') -> (n_samples = 'exist')"
+        "constraints": "(is_saga = 'True') -> (n_samples = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c15-1",
@@ -753,7 +832,8 @@
             "is_saga",
             "n_samples"
         ],
-        "constraints": "(is_saga = 'False') -> (n_samples = 'exist')"
+        "constraints": "(is_saga = 'False') -> (n_samples = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c15-2",
@@ -771,7 +851,8 @@
             "is_saga",
             "n_samples"
         ],
-        "constraints": "(is_saga = 'False') -> (n_samples = None)"
+        "constraints": "(is_saga = 'False') -> (n_samples = None)",
+        "oracle": "True"
     },
     {
         "id": "c16-0",
@@ -789,7 +870,8 @@
             "affinity",
             "n_jobs"
         ],
-        "constraints": "(affinity = 'nearest_neighbors') -> (n_jobs = 'exist')"
+        "constraints": "(affinity = 'nearest_neighbors') -> (n_jobs = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c16-1",
@@ -807,7 +889,8 @@
             "affinity",
             "n_jobs"
         ],
-        "constraints": "(affinity = 'nearest_neighbors') -> (n_jobs != 'exist')"
+        "constraints": "(affinity = 'nearest_neighbors' && affinity = 'precomputed_nearest_neighbors') -> (n_jobs != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c16-2",
@@ -825,7 +908,8 @@
             "affinity",
             "n_jobs"
         ],
-        "constraints": "(affinity = 'nearest_neighbors') -> (m_jobs = 'exist')"
+        "constraints": "(affinity = 'precomputed') -> (n_jobs = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c17-0",
@@ -843,7 +927,8 @@
             "affinity",
             "n_jobs"
         ],
-        "constraints": "(affinity = 'precomputed_nearest_neighbors') -> (n_jobs = 'exist')"
+        "constraints": "(affinity = 'precomputed_nearest_neighbors') -> (n_jobs = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c17-1",
@@ -861,7 +946,8 @@
             "affinity",
             "n_jobs"
         ],
-        "constraints": "(affinity = 'precomputed') -> (n_jobs = 'exist')"
+        "constraints": "(affinity = 'precomputed') -> (n_jobs = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c17-2",
@@ -879,7 +965,8 @@
             "affinity",
             "n_jobs"
         ],
-        "constraints": "(affinity = 'precomputed_nearest_neighbors') -> (m_jobs = 'exist')"
+        "constraints": "(affinity = 'precomputed_nearest_neighbors') -> (n_jobs != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c18-0",
@@ -897,7 +984,8 @@
             "criterion",
             "k_best"
         ],
-        "constraints": "(criterion = 'k_best') -> (k_best = 'exist')"
+        "constraints": "(criterion = 'k_best') -> (k_best = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c18-1",
@@ -915,7 +1003,8 @@
             "criterion",
             "k_best"
         ],
-        "constraints": "(criterion = 'k_best') -> (k_best != 'used')"
+        "constraints": "(criterion = 'k_best') -> (k_best != 'used')",
+        "oracle": "False"
     },
     {
         "id": "c18-2",
@@ -933,7 +1022,8 @@
             "criterion",
             "k_best"
         ],
-        "constraints": "(criterion = 'others') -> (k_best = 'exist')"
+        "constraints": "(criterion = 'others') -> (k_best = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c19-0",
@@ -945,13 +1035,14 @@
         "filepath": "sklearn/impute/_iterative.py",
         "docfrom": "IterativeImputer",
         "class": "IterativeImputer",
-        "func": "__init__",
-        "exec_func": "__init__",
+        "func": "_fit_indicator",
+        "exec_func": "_fit_indicator",
         "params": [
             "add_indicator",
             "indicator_"
         ],
-        "constraints": "(add_indicator = 'False') -> (indicator_ = 'None')"
+        "constraints": "(add_indicator = 'True') -> (indicator_ = 'None')",
+        "oracle": "False"
     },
     {
         "id": "c19-1",
@@ -963,13 +1054,14 @@
         "filepath": "sklearn/impute/_iterative.py",
         "docfrom": "IterativeImputer",
         "class": "IterativeImputer",
-        "func": "__init__",
-        "exec_func": "__init__",
+        "func": "_fit_indicator",
+        "exec_func": "_fit_indicator",
         "params": [
             "add_indicator",
             "indicator_"
         ],
-        "constraints": "(add_indicator = 'False') -> (indicator_ != 'None')"
+        "constraints": "(indicator = 'True') -> (indicator_ = 'None')",
+        "oracle": "False"
     },
     {
         "id": "c19-2",
@@ -981,13 +1073,14 @@
         "filepath": "sklearn/impute/_iterative.py",
         "docfrom": "IterativeImputer",
         "class": "IterativeImputer",
-        "func": "__init__",
-        "exec_func": "__init__",
+        "func": "_fit_indicator",
+        "exec_func": "_fit_indicator",
         "params": [
             "add_indicator",
             "indicator_"
         ],
-        "constraints": "(add_indicator = 'True') -> (indicator_ = 'None')"
+        "constraints": "(add_indicator = 'False') -> (indicator_ != 'used')",
+        "oracle": "False"
     },
     {
         "id": "c20-0",
@@ -1005,7 +1098,8 @@
             "sample_weight",
             "strategy"
         ],
-        "constraints": "(strategy = 'quantile') -> (sample_weight != 'None')"
+        "constraints": "(strategy = 'quantile') -> (sample_weight != 'None')",
+        "oracle": "True"
     },
     {
         "id": "c20-1",
@@ -1023,7 +1117,8 @@
             "sample_weight",
             "strategy"
         ],
-        "constraints": "(strategy = 'quantile') -> (sample_weight != 'None')"
+        "constraints": "(strategy = 'quantile') -> (sample_weight = 'None')",
+        "oracle": "False"
     },
     {
         "id": "c20-2",
@@ -1041,43 +1136,8 @@
             "sample_weight",
             "strategy"
         ],
-        "constraints": "(strategy = 'quantile') -> (sample_weight != 'None')"
-    },
-    {
-        "id": "c20-1",
-        "lib": "scikit-learn",
-        "sha": "131109b0037ec71e4a4f262b888e198d58e38f24",
-        "issue_sha": "395761a76397a560303f00d3db24a50a00ca11ed",
-        "issue_type": "logic",
-        "granularity": "class",
-        "filepath": "sklearn/preprocessing/_discretization.py",
-        "docfrom": "KBinsDiscretizer",
-        "class": "KBinsDiscretizer",
-        "func": "fit",
-        "exec_func": "fit",
-        "params": [
-            "sample_weight",
-            "strategy"
-        ],
-        "constraints": "(strategy = 'quantile') -> (sample != 'None')"
-    },
-    {
-        "id": "c20-2",
-        "lib": "scikit-learn",
-        "sha": "131109b0037ec71e4a4f262b888e198d58e38f24",
-        "issue_sha": "395761a76397a560303f00d3db24a50a00ca11ed",
-        "issue_type": "logic",
-        "granularity": "class",
-        "filepath": "sklearn/preprocessing/_discretization.py",
-        "docfrom": "KBinsDiscretizer",
-        "class": "KBinsDiscretizer",
-        "func": "fit",
-        "exec_func": "fit",
-        "params": [
-            "sample_weight",
-            "strategy"
-        ],
-        "constraints": "(strategies = 'quantile') -> (sample != 'None')"
+        "constraints": "(strategies = 'quantities') -> (sampleweights = 'None')",
+        "oracle": "False"
     },
     {
         "id": "c21-0",
@@ -1089,13 +1149,14 @@
         "filepath": "sklearn/impute/_base.py",
         "docfrom": "SimpleImputer",
         "class": "SimpleImputer",
-        "func": "fit",
-        "exec_func": "fit",
+        "func": "_sparse_fit",
+        "exec_func": "_sparse_fit",
         "params": [
             "fill_value",
             "strategy"
         ],
-        "constraints": "(strategy = 'constant') -> (fill_value = 'used')"
+        "constraints": "(strategy = 'constant') -> (fill_value != 'used')",
+        "oracle": "False"
     },
     {
         "id": "c21-1",
@@ -1107,13 +1168,14 @@
         "filepath": "sklearn/impute/_base.py",
         "docfrom": "SimpleImputer",
         "class": "SimpleImputer",
-        "func": "fit",
-        "exec_func": "fit",
+        "func": "_sparse_fit",
+        "exec_func": "_sparse_fit",
         "params": [
             "fill_value",
             "strategy"
         ],
-        "constraints": "(strategy = 'most_frequent') -> (fill_value = 'used')"
+        "constraints": "(strategy = 'most_frequent') -> (fill_value = 'used')",
+        "oracle": "False"
     },
     {
         "id": "c21-2",
@@ -1125,13 +1187,14 @@
         "filepath": "sklearn/impute/_base.py",
         "docfrom": "SimpleImputer",
         "class": "SimpleImputer",
-        "func": "fit",
-        "exec_func": "fit",
+        "func": "_sparse_fit",
+        "exec_func": "_sparse_fit",
         "params": [
             "fill_value",
             "strategy"
         ],
-        "constraints": "(strategy = 'constant') -> (fill_value != 'used')"
+        "constraints": "(strategy = 'constant') -> (fill_value != 'used')",
+        "oracle": "False"
     },
     {
         "id": "c22-0",
@@ -1149,7 +1212,8 @@
             "loss",
             "_encode_y"
         ],
-        "constraints": "(y >= 0) -> (loss = 'poisson')"
+        "constraints": "(y >= 0) -> (loss = 'poisson')",
+        "oracle": "True"
     },
     {
         "id": "c22-1",
@@ -1167,7 +1231,8 @@
             "loss",
             "_encode_y"
         ],
-        "constraints": "(y < 0) -> (loss = 'poisson')"
+        "constraints": "(y < 0) -> (loss = 'poisson')",
+        "oracle": "False"
     },
     {
         "id": "c22-2",
@@ -1185,7 +1250,8 @@
             "loss",
             "_encode_y"
         ],
-        "constraints": "(y >= 0) -> (loss = 'least_squares')"
+        "constraints": "(y <= 0) -> (loss = 'poisson')",
+        "oracle": "False"
     },
     {
         "id": "c23-0",
@@ -1203,7 +1269,8 @@
             "validation_fraction",
             "early_stpping"
         ],
-        "constraints": "(early_stpping = 'True') -> (validation_fraction = 'exist')"
+        "constraints": "(early_stopping = 'True') -> (validation_fraction = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c23-1",
@@ -1221,7 +1288,8 @@
             "validation_fraction",
             "early_stpping"
         ],
-        "constraints": "(early_stpping = 'False') -> (validation_fraction = 'exist')"
+        "constraints": "(early_stopping = 'False') -> (validation_fraction = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c23-2",
@@ -1239,7 +1307,8 @@
             "validation_fraction",
             "early_stpping"
         ],
-        "constraints": "(early_stpping = 'True') -> (validation_fraction != 'exist')"
+        "constraints": "(early_stopping = 'False') -> (validation_fraction != 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c24-0",
@@ -1257,7 +1326,8 @@
             "batch_size",
             "n_samples"
         ],
-        "constraints": "(batch_size = 'auto') -> batch_size=min(200, n_samples)"
+        "constraints": "(batch_size = 'auto') -> batch_size=min(200, n_samples)",
+        "oracle": "True"
     },
     {
         "id": "c24-1",
@@ -1275,7 +1345,8 @@
             "batch_size",
             "n_samples"
         ],
-        "constraints": "(batch_size = 'auto') -> batch_size=max(200, n_samples)"
+        "constraints": "(batch_size = 'auto') -> (batch_size = np.clip(self.batch_size, 1, n_samples)",
+        "oracle": "False"
     },
     {
         "id": "c24-2",
@@ -1293,7 +1364,8 @@
             "batch_size",
             "n_samples"
         ],
-        "constraints": "(batch_size != 'None') -> batch_size=min(200, n_samples)"
+        "constraints": "(batch_size != 'None') -> batch_size=min(200, n_samples)",
+        "oracle": "False"
     },
     {
         "id": "c25-0",
@@ -1311,7 +1383,8 @@
             "learning_rate",
             "solver"
         ],
-        "constraints": "(solver = 'sgd' || solver = 'adam') -> (learning_rate = 'exist')"
+        "constraints": "(solver = 'sgd' || solver = 'adam') -> (learning_rate = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c25-1",
@@ -1329,7 +1402,8 @@
             "learning_rate",
             "solver"
         ],
-        "constraints": "(solver = 'sgd' && solver = 'adam') -> (learning_rate = 'exist')"
+        "constraints": "(solver = 'sgd' && solver = 'adam') -> (learning_rate = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c25-2",
@@ -1347,7 +1421,8 @@
             "learning_rate",
             "solver"
         ],
-        "constraints": "(solver = 'sgd' || solver = 'adam') -> (learning_rate != 'exist')"
+        "constraints": "(solver = 'sgd' && solver = 'adam') -> (learning_rate != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c26-0",
@@ -1365,7 +1440,8 @@
             "beta_1",
             "solver"
         ],
-        "constraints": "(solver = 'adam') -> (beta_1 = 'exist')"
+        "constraints": "(solver = 'adam') -> (beta_1 = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c26-1",
@@ -1383,7 +1459,8 @@
             "beta_1",
             "solver"
         ],
-        "constraints": "(solver != 'adam') -> (beta_1 = 'exist')"
+        "constraints": "(solver != 'adam') -> (beta_1 = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c26-2",
@@ -1401,7 +1478,8 @@
             "beta_1",
             "solver"
         ],
-        "constraints": "(solver = 'adam') -> (alpha = 'exist')"
+        "constraints": "(solver = 'adam') -> (learning_rate = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c27-0",
@@ -1419,7 +1497,8 @@
             "epsilon",
             "solver"
         ],
-        "constraints": "(solver = 'adam') -> (epsilon = 'exist')"
+        "constraints": "(solver = 'adam') -> (epsilon = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c27-1",
@@ -1437,7 +1516,8 @@
             "alpha",
             "solver"
         ],
-        "constraints": "(solver = 'adam') -> (alpha = 'exist')"
+        "constraints": "(solver = 'adam') -> (learning_rate = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c27-2",
@@ -1455,7 +1535,8 @@
             "epsilon",
             "solver"
         ],
-        "constraints": "(solver = 'sgd') -> (epsilon = 'exist')"
+        "constraints": "(solver = 'sgd') -> (epsilon = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c28-0",
@@ -1467,13 +1548,14 @@
         "filepath": "sklearn/linear_model/_logistic.py",
         "docfrom": "LogisticRegression",
         "class": "NA",
-        "func": "NA",
+        "func": "_check_solver",
         "exec_func": "_check_solver",
         "params": [
             "solver",
             "penalty"
         ],
-        "constraints": "(solver = 'liblinear') -> (penalty != 'None')"
+        "constraints": "(solver = 'liblinear') -> (penalty != 'none')",
+        "oracle": "True"
     },
     {
         "id": "c28-1",
@@ -1485,13 +1567,14 @@
         "filepath": "sklearn/linear_model/_logistic.py",
         "docfrom": "LogisticRegression",
         "class": "NA",
-        "func": "NA",
+        "func": "_check_solver",
         "exec_func": "_check_solver",
         "params": [
             "solver",
             "penalty"
         ],
-        "constraints": "(solver = 'liblinear') -> (penalty = 'None')"
+        "constraints": "(solver = 'liblinear') -> (penalty = 'none')",
+        "oracle": "False"
     },
     {
         "id": "c28-2",
@@ -1503,13 +1586,14 @@
         "filepath": "sklearn/linear_model/_logistic.py",
         "docfrom": "LogisticRegression",
         "class": "NA",
-        "func": "NA",
+        "func": "_check_solver",
         "exec_func": "_check_solver",
         "params": [
             "solver",
             "penalty"
         ],
-        "constraints": "(solver != 'l2') -> (penalty = 'elasticnet')"
+        "constraints": "(solver != 'l2') -> (penalty = 'elasticnet')",
+        "oracle": "False"
     },
     {
         "id": "c29-0",
@@ -1521,13 +1605,14 @@
         "filepath": "sklearn/linear_model/_logistic.py",
         "docfrom": "LogisticRegression",
         "class": "NA",
-        "func": "NA",
+        "func": "_check_solver",
         "exec_func": "_check_solver",
         "params": [
             "solver",
             "penalty"
         ],
-        "constraints": "(solver = 'saga') -> (penalty = 'elasticnet')"
+        "constraints": "(solver = 'saga') -> (penalty = 'elasticnet')",
+        "oracle": "True"
     },
     {
         "id": "c29-1",
@@ -1539,13 +1624,14 @@
         "filepath": "sklearn/linear_model/_logistic.py",
         "docfrom": "LogisticRegression",
         "class": "NA",
-        "func": "NA",
+        "func": "_check_solver",
         "exec_func": "_check_solver",
         "params": [
             "solver",
             "penalty"
         ],
-        "constraints": "(solver != 'saga') -> (penalty = 'elasticnet')"
+        "constraints": "(solver != 'saga') -> (penalty = 'elasticnet')",
+        "oracle": "False"
     },
     {
         "id": "c29-2",
@@ -1557,13 +1643,14 @@
         "filepath": "sklearn/linear_model/_logistic.py",
         "docfrom": "LogisticRegression",
         "class": "NA",
-        "func": "NA",
+        "func": "_check_solver",
         "exec_func": "_check_solver",
         "params": [
             "solver",
             "penalty"
         ],
-        "constraints": "(solver = 'liblinear') -> (penalty = 'none')"
+        "constraints": "(solver = 'liblinear') -> (penalty = 'none')",
+        "oracle": "False"
     },
     {
         "id": "c30-0",
@@ -1575,13 +1662,14 @@
         "filepath": "sklearn/linear_model/_logistic.py",
         "docfrom": "_logistic_regression_path",
         "class": "NA",
-        "func": "NA",
+        "func": "_check_multi_class",
         "exec_func": "_check_multi_class",
         "params": [
             "solver",
             "multi_class"
         ],
-        "constraints": "(solver = 'liblinear') -> (multi_class != 'multinomial')"
+        "constraints": "(solver = 'liblinear') -> (multi_class != 'multinomial')",
+        "oracle": "True"
     },
     {
         "id": "c30-1",
@@ -1593,13 +1681,14 @@
         "filepath": "sklearn/linear_model/_logistic.py",
         "docfrom": "_logistic_regression_path",
         "class": "NA",
-        "func": "NA",
+        "func": "_check_multi_class",
         "exec_func": "_check_multi_class",
         "params": [
             "solver",
             "multi_class"
         ],
-        "constraints": "(solver = 'liblinear') -> (multi_class = 'multinomial')"
+        "constraints": "(solver = 'liblinear') -> (multi_class = 'multinomial')",
+        "oracle": "False"
     },
     {
         "id": "c30-2",
@@ -1611,13 +1700,14 @@
         "filepath": "sklearn/linear_model/_logistic.py",
         "docfrom": "_logistic_regression_path",
         "class": "NA",
-        "func": "NA",
+        "func": "_check_multi_class",
         "exec_func": "_check_multi_class",
         "params": [
             "solver",
             "multi_class"
         ],
-        "constraints": "(solver = 'librarylinear') -> (multi_class = 'auto')"
+        "constraints": "(solver = 'liblinear') -> (class = 'multi_nomial')",
+        "oracle": "False"
     },
     {
         "id": "c31-0",
@@ -1635,7 +1725,8 @@
             "assign_labels",
             "n_init"
         ],
-        "constraints": "(assign_labels = 'kmeans') -> (n_init != 'None')"
+        "constraints": "(assign_labels = 'kmeans') -> (n_init != 'None')",
+        "oracle": "True"
     },
     {
         "id": "c31-1",
@@ -1653,7 +1744,8 @@
             "assign_labels",
             "n_init"
         ],
-        "constraints": "(assign_labels = 'kmeans') -> (n_init = 'None')"
+        "constraints": "(assign_labels = 'kmeans') -> (n_init = 'None')",
+        "oracle": "False"
     },
     {
         "id": "c31-2",
@@ -1671,7 +1763,8 @@
             "assign_labels",
             "n_init"
         ],
-        "constraints": "(assigned_labels = 'discretize') -> (n_init != 'None')"
+        "constraints": "(assign_labels = 'discretize') -> (n_init = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c32-0",
@@ -1683,13 +1776,14 @@
         "filepath": "sklearn/decomposition/_factor_analysis.py",
         "docfrom": "FactorAnalysis",
         "class": "FactorAnalysis",
-        "func": "__init__",
-        "exec_func": "__init__",
+        "func": "fit",
+        "exec_func": "fit",
         "params": [
             "iterated_power",
             "svd_method"
         ],
-        "constraints": "(svd_method = 'randomized') -> (iterated_power != 'None')"
+        "constraints": "(svd_method = 'randomized') -> (iterated_power != 'None')",
+        "oracle": "True"
     },
     {
         "id": "c32-1",
@@ -1701,13 +1795,14 @@
         "filepath": "sklearn/decomposition/_factor_analysis.py",
         "docfrom": "FactorAnalysis",
         "class": "FactorAnalysis",
-        "func": "__init__",
-        "exec_func": "__init__",
+        "func": "fit",
+        "exec_func": "fit",
         "params": [
             "iterated_power",
             "svd_method"
         ],
-        "constraints": "(svd_method = 'lapack') -> (iterated_power != 'None')"
+        "constraints": "(svd_method = 'lapack') -> (iterated_power != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c32-2",
@@ -1719,13 +1814,14 @@
         "filepath": "sklearn/decomposition/_factor_analysis.py",
         "docfrom": "FactorAnalysis",
         "class": "FactorAnalysis",
-        "func": "__init__",
-        "exec_func": "__init__",
+        "func": "fit",
+        "exec_func": "fit",
         "params": [
             "iterated_power",
             "svd_method"
         ],
-        "constraints": "(svd_method = 'randomized') -> (iter_power = 'None')"
+        "constraints": "(svd_method = 'randomized') -> (iterated_power = 'None')",
+        "oracle": "False"
     },
     {
         "id": "c33-0",
@@ -1743,7 +1839,8 @@
             "token_pattern",
             "analyzer"
         ],
-        "constraints": "(analyzer = 'word') ^ (token_pattern != 'None')"
+        "constraints": "(analyzer = 'word') -> (token_pattern != 'None')",
+        "oracle": "True"
     },
     {
         "id": "c33-1",
@@ -1761,7 +1858,8 @@
             "token_pattern",
             "analyzer"
         ],
-        "constraints": "(analyzer = 'char') ^ (token_pattern != 'None')"
+        "constraints": "(analyzer != 'word') -> (token_pattern != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c33-2",
@@ -1776,10 +1874,11 @@
         "func": "_warn_for_unused_params",
         "exec_func": "_warn_for_unused_params",
         "params": [
-            "token_pattern",
+            "tokenizer",
             "analyzer"
         ],
-        "constraints": "(analyzer = 'char_wb') ^ (tokens_pattern != 'None')"
+        "constraints": "(analyzer != 'word') -> (tokenizer != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c34-0",
@@ -1797,7 +1896,8 @@
             "penalty",
             "loss"
         ],
-        "constraints": "!((panelty = 'l1') ^ (loss = 'hinge'))"
+        "constraints": "(penalty = 'l1') -> (loss = 'hinge')",
+        "oracle": "False"
     },
     {
         "id": "c34-1",
@@ -1815,7 +1915,8 @@
             "penalty",
             "loss"
         ],
-        "constraints": "!((panelty = 'l1') ^ (loss = 'hinge'))"
+        "constraints": "(penalty != 'l1') -> (loss = 'hinge')",
+        "oracle": "True"
     },
     {
         "id": "c34-2",
@@ -1833,7 +1934,8 @@
             "penalty",
             "loss"
         ],
-        "constraints": "!((panelty = 'l1') ^ (loss = 'hinge'))"
+        "constraints": "(penalty != 'l1') -> (loss != 'hinge')",
+        "oracle": "True"
     },
     {
         "id": "c35-0",
@@ -1851,7 +1953,8 @@
             "multi_class",
             "loss"
         ],
-        "constraints": "(multi_class = 'crammer_singer') -> ((loss = 'ignore') ^ (penalty = 'ignore') ^ (dual = 'ignore'))"
+        "constraints": "(multi_class = 'crammer_singer') -> ((loss = 'ignore') ^ (penalty = 'ignore') ^ (dual = 'ignore'))",
+        "oracle": "True"
     },
     {
         "id": "c35-1",
@@ -1869,7 +1972,8 @@
             "multi_class",
             "loss"
         ],
-        "constraints": "(multi_class = 'crammer_singer') -> ((loss = 'exist') ^ (penalty = 'exist') ^ (dual = 'exist'))"
+        "constraints": "(multi_class = 'crammer_singer') -> ((loss = 'exist') ^ (penalty = 'exist') ^ (dual = 'exist'))",
+        "oracle": "False"
     },
     {
         "id": "c35-2",
@@ -1887,7 +1991,8 @@
             "multi_class",
             "loss"
         ],
-        "constraints": "(multi_class = 'crammer_singer') -> ((loss = 'ignore'))"
+        "constraints": "(multi_class = 'crammer_singer') -> ((loss = 'ignore'))",
+        "oracle": "True"
     },
     {
         "id": "c36-0",
@@ -1905,7 +2010,8 @@
             "max_iter",
             "algorithm"
         ],
-        "constraints": "(algorithm = 'lasso_cd') -> (max_iter = 'exist')"
+        "constraints": "(algorithm = 'lasso_cd') -> (max_iter = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c36-1",
@@ -1923,7 +2029,8 @@
             "max_iter",
             "algorithm"
         ],
-        "constraints": "(algorithm = 'lasso_cd') -> (max_iter = 'ignore')"
+        "constraints": "(algorithm = 'lasso_cd') -> (max_iter = 'ignore')",
+        "oracle": "False"
     },
     {
         "id": "c36-2",
@@ -1941,7 +2048,8 @@
             "max_iter",
             "algorithm"
         ],
-        "constraints": "(algorithm = 'lar') -> (max_iter = 'exist')"
+        "constraints": "(algorithm = 'lar') -> (max_iter = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c37-0",
@@ -1959,7 +2067,8 @@
             "max_iter",
             "algorithm"
         ],
-        "constraints": "(algorithm = 'lasso_lars') -> (max_iter = 'exist')"
+        "constraints": "(algorithm = 'lasso_lars') -> (max_iter = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c37-1",
@@ -1977,7 +2086,8 @@
             "max_iter",
             "algorithm"
         ],
-        "constraints": "(algorithm = 'lasso_lars') -> (max_iter = 'ignore')"
+        "constraints": "(algorithm = 'lasso_lars') -> (max_iter = 'ignore')",
+        "oracle": "False"
     },
     {
         "id": "c37-2",
@@ -1995,7 +2105,8 @@
             "max_iter",
             "algorithm"
         ],
-        "constraints": "(algorithm = 'threshold') -> (max_iter = 'exist')"
+        "constraints": "(algorithm = 'threshold') -> (max_iter = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c38-0",
@@ -2013,7 +2124,8 @@
             "max_iter",
             "init"
         ],
-        "constraints": "(algorithm = 'lasso_cd') -> (init != 'None')"
+        "constraints": "(algorithm = 'lasso_cd') -> (init != 'None')",
+        "oracle": "True"
     },
     {
         "id": "c38-1",
@@ -2031,7 +2143,8 @@
             "max_iter",
             "init"
         ],
-        "constraints": "(algorithm = 'lasso_cd') -> (init != 'None')"
+        "constraints": "(algorithm = 'lasso_cd') -> (init = 'None')",
+        "oracle": "True"
     },
     {
         "id": "c38-2",
@@ -2049,7 +2162,8 @@
             "max_iter",
             "init"
         ],
-        "constraints": "(algorithm = 'lasso_cd') -> (init != 'None')"
+        "constraints": "(algorithm = 'lasso_lars') -> (init != 'None')",
+        "oracle": "True"
     },
     {
         "id": "c39-0",
@@ -2065,9 +2179,10 @@
         "exec_func": "sparse_encode",
         "params": [
             "gram",
-            "method"
+            "algorithm"
         ],
-        "constraints": "(method = 'threshold') -> (gram = 'None')"
+        "constraints": "(method != 'threshold') -> (gram = 'None')",
+        "oracle": "False"
     },
     {
         "id": "c39-1",
@@ -2083,9 +2198,10 @@
         "exec_func": "sparse_encode",
         "params": [
             "gram",
-            "method"
+            "algorithm"
         ],
-        "constraints": "(method = 'threshold') -> (gram = 'None')"
+        "constraints": "(algorithm = 'threshold') -> (gram = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c39-2",
@@ -2101,9 +2217,10 @@
         "exec_func": "sparse_encode",
         "params": [
             "gram",
-            "method"
+            "algorithm"
         ],
-        "constraints": "(method = 'threshold') -> (gram = 'None')"
+        "constraints": "(algorithm != 'threshold') -> (gram = 'None')",
+        "oracle": "False"
     },
     {
         "id": "c40-0",
@@ -2121,7 +2238,8 @@
             "n_nonzero_coefs",
             "algorithm"
         ],
-        "constraints": "(algorithm = 'omp') -> (n_nonzero_coefs = 'exist')"
+        "constraints": "(algorithm = 'omp') -> (n_nonzero_coefs = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c40-1",
@@ -2139,7 +2257,8 @@
             "n_nonzero_coefs",
             "algorithm"
         ],
-        "constraints": "(algorithm = 'omp') -> (n_nonzero_coefs != 'exist')"
+        "constraints": "(algorithm = 'omp') -> (n_nonzero_coefs != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c40-2",
@@ -2157,7 +2276,8 @@
             "n_nonzero_coefs",
             "algorithm"
         ],
-        "constraints": "(algorithm = 'lasso_lars') -> (n_nonzero_coefs = 'exist')"
+        "constraints": "(algorithm = 'lars') -> (n_nonzero_coefs != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c41-0",
@@ -2175,7 +2295,8 @@
             "n_nonzero_coefs",
             "algorithm"
         ],
-        "constraints": "(algorithm = 'lars') -> (n_nonzero_coefs = 'exist')"
+        "constraints": "(algorithm = 'lars') -> (n_nonzero_coefs = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c41-1",
@@ -2193,7 +2314,8 @@
             "n_nonzero_coefs",
             "algorithm"
         ],
-        "constraints": "(algorithm = 'larsso_lars') -> (n_nonzero_coefs = 'exist')"
+        "constraints": "(algorithm = 'lars') -> (n_nonzero_coefs != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c41-2",
@@ -2211,7 +2333,8 @@
             "n_nonzero_coefs",
             "algorithm"
         ],
-        "constraints": "(n_nonzero_coefs = 'lars') -> (algorithm = 'exist')"
+        "constraints": "(algorithm = 'omp') -> (n_nonzero_coefs = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c42-0",
@@ -2229,7 +2352,8 @@
             "gamma",
             "kernel"
         ],
-        "constraints": "!(kernel = 'rbf' || kernel = 'poly' || kernel = 'sigmoid') -> (gamma = 'ignore')"
+        "constraints": "!(kernel = 'rbf' || kernel = 'poly' || kernel = 'sigmoid') -> (gamma = 'ignore')",
+        "oracle": "True"
     },
     {
         "id": "c42-1",
@@ -2247,7 +2371,8 @@
             "gamma",
             "kernel"
         ],
-        "constraints": "!(kernel = 'rbf' || kernel = 'poly' || kernel = 'sigmoid') -> (gamma = 5)"
+        "constraints": "!(kernel = 'rbf' || kernel = 'poly' || kernel = 'sigmoid') -> (gamma = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c42-2",
@@ -2265,7 +2390,8 @@
             "gamma",
             "kernel"
         ],
-        "constraints": "(kernel = 'rbf' || kernel = 'poly' || kernel = 'sigmoid') -> (gamma = 'ignore')"
+        "constraints": "(kernel = 'rbf' || kernel = 'poly' || kernel = 'sigmoid') -> (gamma = 'ignore')",
+        "oracle": "False"
     },
     {
         "id": "c43-0",
@@ -2283,7 +2409,8 @@
             "degree",
             "kernel"
         ],
-        "constraints": "(kernel = 'poly') -> (degree = 'exist')"
+        "constraints": "(kernel = 'poly') -> (degree = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c43-1",
@@ -2301,7 +2428,8 @@
             "degree",
             "kernel"
         ],
-        "constraints": "(kernel = 'poly') -> (degree = 'exist')"
+        "constraints": "(kernel = 'polynomial') -> (degree != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c43-2",
@@ -2319,7 +2447,8 @@
             "degree",
             "kernel"
         ],
-        "constraints": "(kernel = 'poly') -> (degree = 'exist')"
+        "constraints": "(kernel = 'poly') -> (gamma = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c44-0",
@@ -2337,7 +2466,8 @@
             "cov_init",
             "emp_cov"
         ],
-        "constraints": "(cov_init = 'None') -> (emp_cov = 'exist')"
+        "constraints": "(cov_init = 'None') -> (emp_cov = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c44-1",
@@ -2355,7 +2485,8 @@
             "cov_init",
             "emp_cov"
         ],
-        "constraints": "(cov_init = 'None') -> (emp_cov = 'exist')"
+        "constraints": "(cov_init != 'None') -> (emp_cov != 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c44-2",
@@ -2373,7 +2504,8 @@
             "cov_init",
             "emp_cov"
         ],
-        "constraints": "(cov_init = 'None') -> (emp_cov != 'exist')"
+        "constraints": "(cov_init = 'None') -> (emp_cov != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c45-0",
@@ -2391,7 +2523,8 @@
             "cov_init",
             "emp_cov"
         ],
-        "constraints": "(mode = 'cd') -> (enet_tol = 'exist')"
+        "constraints": "(mode = 'cd') -> (enet_tol = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c45-1",
@@ -2409,7 +2542,8 @@
             "cov_init",
             "emp_cov"
         ],
-        "constraints": "(mode = 'cd') -> (enet_tol != 'exist')"
+        "constraints": "(mode = 'cd') -> (enet_tol != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c45-2",
@@ -2427,7 +2561,8 @@
             "cov_init",
             "emp_cov"
         ],
-        "constraints": "(mode = 'cd') -> (enet_tol = 'exist')"
+        "constraints": "(mode != 'cd') -> (enet_tol != 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c46-0",
@@ -2445,7 +2580,8 @@
             "max_iter",
             "eigen_solver"
         ],
-        "constraints": "(eigen_solver = 'dense') -> (max_iter != 'exist')"
+        "constraints": "(eigen_solver = 'dense') -> (max_iter != 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c46-1",
@@ -2463,7 +2599,8 @@
             "max_iter",
             "eigen_solver"
         ],
-        "constraints": "(eigen_solver = 'dense') -> (max_iter != 'exist')"
+        "constraints": "(eigen_solver = 'dense') -> (max_iter = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c46-2",
@@ -2481,7 +2618,8 @@
             "max_iter",
             "eigen_solver"
         ],
-        "constraints": "(eigen_solver = 'dense') -> (max_iter != 'exist')"
+        "constraints": "(eigen_solver = 'arpack') -> (max_iter = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c47-0",
@@ -2499,7 +2637,8 @@
             "tol",
             "eigen_solver"
         ],
-        "constraints": "(eigen_solver = 'dense') -> (tol != 'exist')"
+        "constraints": "(eigen_solver = 'dense') -> (tol != 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c47-1",
@@ -2517,7 +2656,8 @@
             "tol",
             "eigen_solver"
         ],
-        "constraints": "(eigen_solver = 'arpack') -> (tol != 'exist')"
+        "constraints": "(eigen_solver = 'arpack') -> (tol != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c47-2",
@@ -2535,7 +2675,8 @@
             "tol",
             "eigen_solver"
         ],
-        "constraints": "(eigen_solver = 'dense') -> (tol = 'exist')"
+        "constraints": "(eigen_solver = 'dense') -> (tol = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c48-0",
@@ -2553,7 +2694,8 @@
             "modified_tol",
             "method"
         ],
-        "constraints": "(method = 'modified') -> (modified_tol != 'exist')"
+        "constraints": "(method = 'modified') -> (modified_tol = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c48-1",
@@ -2571,7 +2713,8 @@
             "modified_tol",
             "method"
         ],
-        "constraints": "(method = 'modified') -> (modified_tol != 'exist')"
+        "constraints": "(method = 'modified') -> (modified_tol != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c48-2",
@@ -2589,7 +2732,8 @@
             "modified_tol",
             "method"
         ],
-        "constraints": "(method = 'modified') -> (modified_tol != 'exist')"
+        "constraints": "(method = 'ltsa') -> (modified_tol != 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c49-0",
@@ -2607,7 +2751,8 @@
             "hessian_tol",
             "method"
         ],
-        "constraints": "(method = 'hessian') -> (hessian_tol != 'exist')"
+        "constraints": "(method = 'hessian') -> (hessian_tol = 'used')",
+        "oracle": "True"
     },
     {
         "id": "c49-1",
@@ -2625,7 +2770,8 @@
             "hessian_tol",
             "method"
         ],
-        "constraints": "(method = 'hessian') -> (hessian_tol != 'exist')"
+        "constraints": "(method = 'hessian') -> (hessian_tol != 'used')",
+        "oracle": "False"
     },
     {
         "id": "c49-2",
@@ -2643,7 +2789,8 @@
             "hessian_tol",
             "method"
         ],
-        "constraints": "(method = 'hessian') -> (hessian_tol = 'exist')"
+        "constraints": "(method = 'hessian') -> (hessian_tol != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c50-0",
@@ -2661,7 +2808,8 @@
             "random_state",
             "svd_solver"
         ],
-        "constraints": "(svd_solver = 'arpack') -> (random_state = 'exist')"
+        "constraints": "(svd_solver = 'arpack' || svd_solver = 'randomized') -> (random_state = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c50-1",
@@ -2679,7 +2827,8 @@
             "random_state",
             "svd_solver"
         ],
-        "constraints": "(svd_solver = 'others') -> (random_state = 'exist')"
+        "constraints": "(svd_solver = 'arpack' && svd_solver = 'randomized') -> (random_state != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c50-2",
@@ -2697,7 +2846,8 @@
             "random_state",
             "svd_solver"
         ],
-        "constraints": "(svd_solver = 'arpack') -> (random_state != 'exist')"
+        "constraints": "(svd_solver = 'arpack') -> (random_state = 'used')",
+        "oracle": "True"
     },
     {
         "id": "c51-0",
@@ -2715,7 +2865,8 @@
             "eval_gradient",
             "theta"
         ],
-        "constraints": "(eval_gradient = 'True') -> (theta != 'None')"
+        "constraints": "(eval_gradient = 'True') -> (theta != 'None')",
+        "oracle": "True"
     },
     {
         "id": "c51-1",
@@ -2733,7 +2884,8 @@
             "eval_gradient",
             "theta"
         ],
-        "constraints": "(eval_gradient = 'True') -> (theta != 'exist')"
+        "constraints": "(eval_gradient = 'True') -> (theta != 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c51-2",
@@ -2751,7 +2903,8 @@
             "eval_gradient",
             "theta"
         ],
-        "constraints": "(eval_gradient_try = 'True') -> (theta != 'None')"
+        "constraints": "(eval_gradient = 'True') -> (theta = 'None')",
+        "oracle": "False"
     },
     {
         "id": "c52-0",
@@ -2769,7 +2922,8 @@
             "shuffle",
             "random_state"
         ],
-        "constraints": "(shuffle = 'True') -> (random_state = 'exist')"
+        "constraints": "(shuffle = 'True') -> (random_state = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c52-1",
@@ -2787,7 +2941,8 @@
             "shuffle",
             "random_state"
         ],
-        "constraints": "(shuffle = 'True') -> (random_state = 'exist')"
+        "constraints": "(shuffle = 'True') -> (random_state != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c52-2",
@@ -2805,7 +2960,8 @@
             "shuffle",
             "random_state"
         ],
-        "constraints": "(shuffle = 'True') -> (random_state = 'exist')"
+        "constraints": "(shuffle = 'False') -> (random_state = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c53-0",
@@ -2823,7 +2979,8 @@
             "penalty",
             "l1_ratio"
         ],
-        "constraints": "(penalty = 'elasticnet') -> (l1_ratio = 'exist')"
+        "constraints": "(penalty = 'elasticnet') -> (l1_ratio = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c53-1",
@@ -2841,7 +2998,8 @@
             "penalty",
             "l1_ratio"
         ],
-        "constraints": "(penalty = 'l2') -> (l1_ratio != 'None')"
+        "constraints": "(penalty = 'elasticnet') -> (l1_ratio = 1.5)",
+        "oracle": "False"
     },
     {
         "id": "c53-2",
@@ -2859,7 +3017,8 @@
             "penalty",
             "l1_ratio"
         ],
-        "constraints": "(penalty = 'elasticnet') -> (l1_ratio = 0.5)"
+        "constraints": "(penalty = 'elasticnet') -> (l1_ratio = 0.5)",
+        "oracle": "True"
     },
     {
         "id": "c54-0",
@@ -2870,14 +3029,15 @@
         "granularity": "class",
         "filepath": "sklearn/linear_model/logistic.py",
         "docfrom": "LogisticRegression",
-        "class": "LogisticRegression",
-        "func": "fit",
+        "class": "NA",
+        "func": "_check_solver_option",
         "exec_func": "_check_solver_option",
         "params": [
             "penalty",
             "solver"
         ],
-        "constraints": "(solver = 'newton-cg') -> (penalty = 'l2')"
+        "constraints": "(solver = 'newton-cg') -> (penalty = 'l2')",
+        "oracle": "True"
     },
     {
         "id": "c54-1",
@@ -2888,14 +3048,15 @@
         "granularity": "class",
         "filepath": "sklearn/linear_model/logistic.py",
         "docfrom": "LogisticRegression",
-        "class": "LogisticRegression",
-        "func": "fit",
+        "class": "NA",
+        "func": "_check_solver_option",
         "exec_func": "_check_solver_option",
         "params": [
             "penalty",
             "solver"
         ],
-        "constraints": "(solver = 'newton-cg') -> (penalty != 'l2')"
+        "constraints": "(solver = 'newton-cg') -> (penalty != 'l2')",
+        "oracle": "False"
     },
     {
         "id": "c54-2",
@@ -2906,14 +3067,15 @@
         "granularity": "class",
         "filepath": "sklearn/linear_model/logistic.py",
         "docfrom": "LogisticRegression",
-        "class": "LogisticRegression",
-        "func": "fit",
+        "class": "NA",
+        "func": "_check_solver_option",
         "exec_func": "_check_solver_option",
         "params": [
             "penalty",
             "solver"
         ],
-        "constraints": "((solver = 'newton-cg') ^ (multi_class = 'multinomial')) -> (penalty != 'l2')"
+        "constraints": "((solver = 'newton-cg') ^ (multi_class = 'multinomial')) -> (penalty != 'l2')",
+        "oracle": "False"
     },
     {
         "id": "c55-0",
@@ -2924,14 +3086,15 @@
         "granularity": "class",
         "filepath": "sklearn/linear_model/logistic.py",
         "docfrom": "LogisticRegression",
-        "class": "LogisticRegression",
-        "func": "fit",
+        "class": "NA",
+        "func": "_check_solver_option",
         "exec_func": "_check_solver_option",
         "params": [
             "penalty",
             "solver"
         ],
-        "constraints": "(solver = 'sag') -> (penalty = 'l2')"
+        "constraints": "(solver = 'sag') -> (penalty = 'l2')",
+        "oracle": "True"
     },
     {
         "id": "c55-1",
@@ -2942,14 +3105,15 @@
         "granularity": "class",
         "filepath": "sklearn/linear_model/logistic.py",
         "docfrom": "LogisticRegression",
-        "class": "LogisticRegression",
-        "func": "fit",
+        "class": "NA",
+        "func": "_check_solver_option",
         "exec_func": "_check_solver_option",
         "params": [
             "penalty",
             "solver"
         ],
-        "constraints": "(multi_class = 'sag') -> (penalty = 'l2')"
+        "constraints": "(solver = 'sag') -> (penalty != 'l2')",
+        "oracle": "False"
     },
     {
         "id": "c55-2",
@@ -2960,14 +3124,15 @@
         "granularity": "class",
         "filepath": "sklearn/linear_model/logistic.py",
         "docfrom": "LogisticRegression",
-        "class": "LogisticRegression",
-        "func": "fit",
+        "class": "NA",
+        "func": "_check_solver_option",
         "exec_func": "_check_solver_option",
         "params": [
             "penalty",
             "solver"
         ],
-        "constraints": "((solver = 'sag') ^ (solver != 'liblinear')) -> (penalty != 'l2')"
+        "constraints": "((solver = 'sag') ^ (solver != 'liblinear')) -> (penalty != 'l2')",
+        "oracle": "False"
     },
     {
         "id": "c56-0",
@@ -2978,14 +3143,15 @@
         "granularity": "class",
         "filepath": "sklearn/linear_model/logistic.py",
         "docfrom": "LogisticRegression",
-        "class": "LogisticRegression",
-        "func": "fit",
+        "class": "NA",
+        "func": "_check_solver_option",
         "exec_func": "_check_solver_option",
         "params": [
             "penalty",
             "solver"
         ],
-        "constraints": "(solver = 'lbfgs') -> (penalty = 'l2')"
+        "constraints": "(solver = 'lbfgs') -> (penalty = 'l2')",
+        "oracle": "True"
     },
     {
         "id": "c56-1",
@@ -2996,14 +3162,15 @@
         "granularity": "class",
         "filepath": "sklearn/linear_model/logistic.py",
         "docfrom": "LogisticRegression",
-        "class": "LogisticRegression",
-        "func": "fit",
+        "class": "NA",
+        "func": "_check_solver_option",
         "exec_func": "_check_solver_option",
         "params": [
             "penalty",
             "solver"
         ],
-        "constraints": "(solver = 'lbfgsoft') -> (penalty = 'l2')"
+        "constraints": "(solver = 'lbfgs') -> (penalty != 'l2')",
+        "oracle": "False"
     },
     {
         "id": "c56-2",
@@ -3014,14 +3181,15 @@
         "granularity": "class",
         "filepath": "sklearn/linear_model/logistic.py",
         "docfrom": "LogisticRegression",
-        "class": "LogisticRegression",
-        "func": "fit",
+        "class": "NA",
+        "func": "_check_solver_option",
         "exec_func": "_check_solver_option",
         "params": [
             "penalty",
             "solver"
         ],
-        "constraints": "(solver != 'liblinear') -> (penalty != 'l2')"
+        "constraints": "(solver != 'liblinear') -> (penalty != 'l2')",
+        "oracle": "False"
     },
     {
         "id": "c57-0",
@@ -3039,7 +3207,8 @@
             "distance_threshold",
             "n_clusters"
         ],
-        "constraints": "(distance_threshold != 'None') -> (n_clusters = 'None')"
+        "constraints": "(distance_threshold != 'None') -> (n_clusters = 'None')",
+        "oracle": "True"
     },
     {
         "id": "c57-1",
@@ -3057,7 +3226,8 @@
             "distance_threshold",
             "n_clusters"
         ],
-        "constraints": "(distance_threshold = 'None') -> (n_clusters = 'None')"
+        "constraints": "(distance_threshold = 'None') -> (n_clusters = 'None')",
+        "oracle": "False"
     },
     {
         "id": "c57-2",
@@ -3075,7 +3245,8 @@
             "distance_threshold",
             "n_clusters"
         ],
-        "constraints": "(distance_threshold != 'None') -> (n_clusters != 'None')"
+        "constraints": "(distance_threshold != 'None') -> (n_clusters != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c58-0",
@@ -3093,7 +3264,8 @@
             "linkage",
             "affinity"
         ],
-        "constraints": "(linkage = 'ward') -> (affinity = 'euclidean')"
+        "constraints": "(linkage = 'ward') -> (affinity = 'euclidean')",
+        "oracle": "True"
     },
     {
         "id": "c58-1",
@@ -3111,7 +3283,8 @@
             "linkage",
             "affinity"
         ],
-        "constraints": "(linkage = 'ward') -> (affinity != 'euclidean')"
+        "constraints": "(linkage = 'ward') -> (affinity != 'euclidean')",
+        "oracle": "False"
     },
     {
         "id": "c58-2",
@@ -3129,7 +3302,8 @@
             "linkage",
             "affinity"
         ],
-        "constraints": "(linkage = 'ward') -> (n_cluster != None && n_cluster <= 0)"
+        "constraints": "(linkage = 'ward') -> (n_clusters != None && n_cluster <= 0)",
+        "oracle": "False"
     },
     {
         "id": "c59-0",
@@ -3147,7 +3321,8 @@
             "distance_threshold",
             "compute_full_tree"
         ],
-        "constraints": "(distance_threshold != 'None') -> (compute_full_tree = 'True')"
+        "constraints": "(distance_threshold != 'None') -> (compute_full_tree = 'True')",
+        "oracle": "True"
     },
     {
         "id": "c59-1",
@@ -3165,7 +3340,8 @@
             "distance_threshold",
             "compute_full_tree"
         ],
-        "constraints": "(distance_threshold != 'None') -> (compute_full_tree = 'False')"
+        "constraints": "(distance_threshold != 'None') -> (compute_full_tree = 'False')",
+        "oracle": "False"
     },
     {
         "id": "c59-2",
@@ -3183,7 +3359,8 @@
             "distance_threshold",
             "compute_full_tree"
         ],
-        "constraints": "(distance_tree_builder != 'None') -> (compute_full_tree = 'True')"
+        "constraints": "(distance_threshold = 'None') -> (compute_full_tree = 'True')",
+        "oracle": "False"
     },
     {
         "id": "c60-0",
@@ -3201,7 +3378,8 @@
             "subsample",
             "oob_improvement_"
         ],
-        "constraints": "(subsample < 1) -> (oob_improvement_ = 'exist')"
+        "constraints": "(subsample < 1) -> (oob_improvement_ = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c60-1",
@@ -3219,7 +3397,8 @@
             "subsample",
             "oob_improvement_"
         ],
-        "constraints": "(subsample < 1) -> (oob_improvement_ != 'exist')"
+        "constraints": "(subsample < 1) -> (oob_improvement_ != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c60-2",
@@ -3237,7 +3416,8 @@
             "subsample",
             "oob_improvement_"
         ],
-        "constraints": "(subsample > 1) -> (oob_improvement_ = 'exist')"
+        "constraints": "(subsample > 1) -> (oob_improvement_ = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c61-0",
@@ -3255,7 +3435,8 @@
             "whiten",
             "mean_"
         ],
-        "constraints": "(whiten = 'True') -> (mean_ != 'exist')"
+        "constraints": "(whiten = 'True') -> (mean_ != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c61-1",
@@ -3273,7 +3454,8 @@
             "whiten",
             "mean_"
         ],
-        "constraints": "(whitenlight = 'True') -> (mean_ = 'exist')"
+        "constraints": "(whiten = 'True') -> (mean_ = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c61-2",
@@ -3291,7 +3473,8 @@
             "whiten",
             "mean_"
         ],
-        "constraints": "(whiten = 'True') -> (mean_anything = 'exist')"
+        "constraints": "(whiten = 'False') -> (mean_ = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c62-0",
@@ -3309,7 +3492,8 @@
             "whiten",
             "whitening_"
         ],
-        "constraints": "(whiten = 'True') -> (whitening_ = 'exist')"
+        "constraints": "(whiten = 'True') -> (whitening_ = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c62-1",
@@ -3327,7 +3511,8 @@
             "whiten",
             "whitening_"
         ],
-        "constraints": "(whitenxxx = 'False') -> (whitening_ = 'exist')"
+        "constraints": "(whiten = 'False') -> (whitening_ = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c62-2",
@@ -3345,7 +3530,8 @@
             "whiten",
             "whitening_"
         ],
-        "constraints": "(whiten = 'True') -> (whitening_ != 'exist')"
+        "constraints": "(whiten = 'True') -> (whitening_ != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c63-0",
@@ -3363,7 +3549,8 @@
             "cluster_method",
             "eps"
         ],
-        "constraints": "(cluster_method = 'dbscan') -> (eps = 'exist')"
+        "constraints": "(cluster_method = 'dbscan') -> (eps = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c63-1",
@@ -3381,7 +3568,8 @@
             "cluster_method",
             "eps"
         ],
-        "constraints": "(cluster_method = 'dbscan') -> (eps != 'exist')"
+        "constraints": "(cluster_method != 'dbscan') -> (eps = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c63-2",
@@ -3399,7 +3587,8 @@
             "cluster_method",
             "eps"
         ],
-        "constraints": "(cluster_method != 'dbscan') -> (epss = 'exist')"
+        "constraints": "(cluster_method = 'xi') -> (eps = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c64-0",
@@ -3411,13 +3600,14 @@
         "filepath": "numpy/fft/_pocketfft.py",
         "docfrom": "fft2",
         "class": "NA",
-        "func": "fft2",
+        "func": "_cook_nd_args",
         "exec_func": "_cook_nd_args",
         "params": [
             "axes",
             "s"
         ],
-        "constraints": "(s != 'None') -> (axes != 'None')"
+        "constraints": "(s != 'None') -> (axes != 'None')",
+        "oracle": "True"
     },
     {
         "id": "c64-1",
@@ -3429,13 +3619,14 @@
         "filepath": "numpy/fft/_pocketfft.py",
         "docfrom": "fft2",
         "class": "NA",
-        "func": "fft2",
+        "func": "_cook_nd_args",
         "exec_func": "_cook_nd_args",
         "params": [
             "axes",
             "s"
         ],
-        "constraints": "(shapeless = 'False') -> (axes = 'None')"
+        "constraints": "(shapeless = 'False') -> (axes = 'None')",
+        "oracle": "False"
     },
     {
         "id": "c64-2",
@@ -3447,13 +3638,14 @@
         "filepath": "numpy/fft/_pocketfft.py",
         "docfrom": "fft2",
         "class": "NA",
-        "func": "fft2",
+        "func": "_cook_nd_args",
         "exec_func": "_cook_nd_args",
         "params": [
             "axes",
             "s"
         ],
-        "constraints": "(s != 'None') -> (axes != 'None')"
+        "constraints": "(s = 'None') -> (axes = 'None')",
+        "oracle": "True"
     },
     {
         "id": "c65-0",
@@ -3471,7 +3663,8 @@
             "kind",
             "s"
         ],
-        "constraints": "(kind != 'table') -> (assume_unique = 'no effect')"
+        "constraints": "(kind = 'table') -> (assume_unique = 'no effect')",
+        "oracle": "True"
     },
     {
         "id": "c65-1",
@@ -3489,7 +3682,8 @@
             "kind",
             "s"
         ],
-        "constraints": "(kind != 'table') -> (assume_unique = 'no effect')"
+        "constraints": "(kind = 'table') -> (assume_unique = 'have an effect')",
+        "oracle": "False"
     },
     {
         "id": "c65-2",
@@ -3507,7 +3701,8 @@
             "kind",
             "s"
         ],
-        "constraints": "(kind != 'table') -> (assume_unique = 'no effect')"
+        "constraints": "(kind != 'table') -> (assume_unique = 'no effect')",
+        "oracle": "True"
     },
     {
         "id": "c66-0",
@@ -3525,7 +3720,8 @@
             "orthogonalize",
             "norm"
         ],
-        "constraints": "(norm = 'ortho') -> (orthogonalize = 'True')"
+        "constraints": "((shape = 'None') ^ (axes != 'None')) -> (shape = numpy.take(x.shape, axes, axis=0))",
+        "oracle": "True"
     },
     {
         "id": "c66-1",
@@ -3543,7 +3739,8 @@
             "orthogonalize",
             "norm"
         ],
-        "constraints": "(norm = 'ortho') -> (orthogonalize = 'True')"
+        "constraints": "((shape = 'None') ^ (axes = 'None')) -> (shape = numpy.take(x.shape, axes, axis=0))",
+        "oracle": "False"
     },
     {
         "id": "c66-2",
@@ -3561,7 +3758,8 @@
             "orthogonalize",
             "norm"
         ],
-        "constraints": "(norm = 'ortho') -> (orthogonalize = 'True')"
+        "constraints": "((shape != 'None') ^ (axes = 'None')) -> (shape = numpy.take(x.shape, axes, axis=0))",
+        "oracle": "False"
     },
     {
         "id": "c67-0",
@@ -3579,7 +3777,8 @@
             "orthogonalize",
             "norm"
         ],
-        "constraints": "(assume_a = 'gen') -> (lower = 'ignore')"
+        "constraints": "(assume_a = 'gen') -> (lower = 'ignore')",
+        "oracle": "True"
     },
     {
         "id": "c67-1",
@@ -3597,7 +3796,8 @@
             "orthogonalize",
             "norm"
         ],
-        "constraints": "(assume_a != 'gen') -> (lower = 'ignore')"
+        "constraints": "(assume_a != 'gen') -> (lower = 'ignore')",
+        "oracle": "False"
     },
     {
         "id": "c67-2",
@@ -3615,7 +3815,8 @@
             "orthogonalize",
             "norm"
         ],
-        "constraints": "(assume_a = 'gen') -> (lower = 'exist')"
+        "constraints": "(assume_a = 'gen') -> (lower = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c68-0",
@@ -3633,7 +3834,8 @@
             "engine",
             "seed"
         ],
-        "constraints": "(engine = 'None') -> (seed = 'exist')"
+        "constraints": "(engine = 'None') -> (seed = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c68-1",
@@ -3651,7 +3853,8 @@
             "engine",
             "seed"
         ],
-        "constraints": "(engine != 'None') -> (seed = 'exist')"
+        "constraints": "(engine != 'None') -> (seed = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c68-2",
@@ -3669,7 +3872,8 @@
             "engine",
             "seed"
         ],
-        "constraints": "(engine = 'None') -> (seed != 'exist')"
+        "constraints": "(engine = 'None') -> (seed != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c69-0",
@@ -3688,7 +3892,8 @@
             "fit",
             "rvalue"
         ],
-        "constraints": "((plot != 'None') ^ (fit = 'True')) -> (rvalue = 'True')"
+        "constraints": "((plot != 'None') ^ (fit = 'True')) -> (rvalue = 'True')",
+        "oracle": "True"
     },
     {
         "id": "c69-1",
@@ -3707,7 +3912,8 @@
             "fit",
             "rvalue"
         ],
-        "constraints": "((plot != 'None') ^ (fit = 'True')) -> (rvalue = 'True')"
+        "constraints": "((plot != 'None') ^ (fit = 'True')) -> (rvalue = 'False')",
+        "oracle": "True"
     },
     {
         "id": "c69-2",
@@ -3726,7 +3932,8 @@
             "fit",
             "rvalue"
         ],
-        "constraints": "((plot != 'None') ^ (fit = 'True')) -> (rvalue = 'True')"
+        "constraints": "((plot = 'None') ^ (fit = 'True')) -> (rvalue = 'True')",
+        "oracle": "False"
     },
     {
         "id": "c70-0",
@@ -3738,13 +3945,14 @@
         "filepath": "pandas/core/reshape/pivot.py",
         "docfrom": "pivot_table",
         "class": "NA",
-        "func": "pivot_table",
+        "func": "__internal_pivot_table",
         "exec_func": "__internal_pivot_table",
         "params": [
             "margins",
             "aggfunc"
         ],
-        "constraints": "(margins = 'True') -> (aggfunc = 'exist')"
+        "constraints": "(margins = 'True') -> (aggfunc = 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c70-1",
@@ -3756,13 +3964,14 @@
         "filepath": "pandas/core/reshape/pivot.py",
         "docfrom": "pivot_table",
         "class": "NA",
-        "func": "pivot_table",
+        "func": "__internal_pivot_table",
         "exec_func": "__internal_pivot_table",
         "params": [
             "margins",
             "aggfunc"
         ],
-        "constraints": "(dropna != 'True') -> (aggfuncs = 'exist')"
+        "constraints": "(margins = 'True') -> (aggfunc != 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c70-2",
@@ -3774,13 +3983,14 @@
         "filepath": "pandas/core/reshape/pivot.py",
         "docfrom": "pivot_table",
         "class": "NA",
-        "func": "pivot_table",
+        "func": "__internal_pivot_table",
         "exec_func": "__internal_pivot_table",
         "params": [
             "margins",
             "aggfunc"
         ],
-        "constraints": "(margins != 'True') -> (aggfunc = 'exist')"
+        "constraints": "(margins != 'True') -> (aggfunc = 'exist')",
+        "oracle": "False"
     },
     {
         "id": "c71-0",
@@ -3798,7 +4008,8 @@
             "orient",
             "columns"
         ],
-        "constraints": "(orient = 'index') -> (columns = 'exist')"
+        "constraints": "((orient = 'columns') || (orient = 'tight')) -> (columns != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c71-1",
@@ -3816,7 +4027,8 @@
             "orient",
             "columns"
         ],
-        "constraints": "(orient = 'index') -> (columns != 'exist')"
+        "constraints": "(orient = 'index') -> (columns != 'exist')",
+        "oracle": "True"
     },
     {
         "id": "c71-2",
@@ -3834,7 +4046,8 @@
             "orient",
             "columns"
         ],
-        "constraints": "(orient != 'index') -> (columns != 'None')"
+        "constraints": "(orient != 'index') -> (columns != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c72-0",
@@ -3852,7 +4065,8 @@
             "orient",
             "columns"
         ],
-        "constraints": "!((orient = 'tight' || orient = 'columns') -> (columns != 'None'))"
+        "constraints": "(orient = 'tight' || orient = 'columns') -> (columns != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c72-1",
@@ -3870,7 +4084,8 @@
             "orient",
             "columns"
         ],
-        "constraints": "!((orient = 'index' || orient = 'columns' || orient = 'index') -> (columns != 'None'))"
+        "constraints": "(orient = 'tight' || orient = 'columns' || orient = 'index') -> (columns != 'None')",
+        "oracle": "False"
     },
     {
         "id": "c72-2",
@@ -3888,6 +4103,7 @@
             "orient",
             "columns"
         ],
-        "constraints": "!((oriented = 'tight' || oriented = 'columns') -> (columns != 'None'))"
+        "constraints": "(oriented != 'tight' && oriented != 'columns') -> (columns != 'None')",
+        "oracle": "True"
     }
 ]

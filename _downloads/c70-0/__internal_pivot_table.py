@@ -182,51 +182,6 @@ def __internal_pivot_table(
     foo large  2.000000   5  4.500000    4
         small  2.333333   6  4.333333    2
     """
-    keys = index + columns
-
-    values_passed = values is not None
-    if values_passed:
-        if is_list_like(values):
-            values_multi = True
-            values = list(values)
-        else:
-            values_multi = False
-            values = [values]
-
-        # GH14938 Make sure value labels are in data
-        for i in values:
-            if i not in data:
-                raise KeyError(i)
-
-        to_filter = []
-        for x in keys + values:
-            if isinstance(x, Grouper):
-                x = x.key
-            try:
-                if x in data:
-                    to_filter.append(x)
-            except TypeError:
-                pass
-        if len(to_filter) < len(data.columns):
-            data = data[to_filter]
-
-    else:
-        values = data.columns
-        for key in keys:
-            try:
-                values = values.drop(key)
-            except (TypeError, ValueError, KeyError):
-                pass
-        values = list(values)
-
-    grouped = data.groupby(keys, observed=observed, sort=sort, dropna=dropna)
-    agged = grouped.agg(aggfunc, **kwargs)
-
-    if dropna and isinstance(agged, ABCDataFrame) and len(agged.columns):
-        agged = agged.dropna(how="all")
-
-    table = agged
-
     # GH17038, this check should only happen if index is defined (not None)
     if table.index.nlevels > 1 and index:
         # Related GH #17123
@@ -258,16 +213,10 @@ def __internal_pivot_table(
     if sort is True and isinstance(table, ABCDataFrame):
         table = table.sort_index(axis=1)
 
-    if fill_value is not None:
-        table = table.fillna(fill_value)
-        if aggfunc is len and not observed and lib.is_integer(fill_value):
-            # TODO: can we avoid this?  this used to be handled by
-            #  downcast="infer" in fillna
-            table = table.astype(np.int64)
-
     if margins:
         if dropna:
             data = data[data.notna().all(axis=1)]
+        aggfunc = "existence_flag"
         table = _add_margins(
             table,
             data,

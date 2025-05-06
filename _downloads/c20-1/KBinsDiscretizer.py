@@ -66,7 +66,7 @@ class KBinsDiscretizer(TransformerMixin, BaseEstimator):
 
         .. versionadded:: 1.1
 
-    sample : ndarray of shape (n_samples,)
+    sample_weight : ndarray of shape (n_samples,)
             Contains weight values to be associated with each sample.
             Only possible when `strategy` is set to `"quantile"`.
 
@@ -230,9 +230,6 @@ class KBinsDiscretizer(TransformerMixin, BaseEstimator):
         n_features = X.shape[1]
         n_bins = self._validate_n_bins(n_features)
 
-        if sample_weight is not None:
-            sample_weight = _check_sample_weight(sample_weight, X, dtype=X.dtype)
-
         bin_edges = np.zeros(n_features, dtype=object)
         for jj in range(n_features):
             column = X[:, jj]
@@ -252,7 +249,7 @@ class KBinsDiscretizer(TransformerMixin, BaseEstimator):
             elif self.strategy == "quantile":
                 quantiles = np.linspace(0, 100, n_bins[jj] + 1)
                 if sample_weight is None:
-                    bin_edges[jj] = np.asarray(np.percentile(column, quantiles))
+                    raise ValueError("Only possible when `strategy` is set to quantile")
                 else:
                     bin_edges[jj] = np.asarray(
                         [
@@ -304,133 +301,3 @@ class KBinsDiscretizer(TransformerMixin, BaseEstimator):
             self._encoder.fit(np.zeros((1, len(self.n_bins_))))
 
         return self
-
-    def _validate_n_bins(self, n_features):
-        """Returns n_bins_, the number of bins per feature."""
-        orig_bins = self.n_bins
-        if isinstance(orig_bins, Integral):
-            return np.full(n_features, orig_bins, dtype=int)
-
-        n_bins = check_array(orig_bins, dtype=int, copy=True, ensure_2d=False)
-
-        if n_bins.ndim > 1 or n_bins.shape[0] != n_features:
-            raise ValueError("n_bins must be a scalar or array of shape (n_features,).")
-
-        bad_nbins_value = (n_bins < 2) | (n_bins != orig_bins)
-
-        violating_indices = np.where(bad_nbins_value)[0]
-        if violating_indices.shape[0] > 0:
-            indices = ", ".join(str(i) for i in violating_indices)
-            raise ValueError(
-                "{} received an invalid number "
-                "of bins at indices {}. Number of bins "
-                "must be at least 2, and must be an int.".format(
-                    KBinsDiscretizer.__name__, indices
-                )
-            )
-        return n_bins
-
-    def transform(self, X):
-        """
-        Discretize the data.
-
-        Parameters
-        ----------
-        X : array-like of shape (n_samples, n_features)
-            Data to be discretized.
-
-        Returns
-        -------
-        Xt : {ndarray, sparse matrix}, dtype={np.float32, np.float64}
-            Data in the binned space. Will be a sparse matrix if
-            `self.encode='onehot'` and ndarray otherwise.
-        """
-        check_is_fitted(self)
-
-        # check input and attribute dtypes
-        dtype = (np.float64, np.float32) if self.dtype is None else self.dtype
-        Xt = self._validate_data(X, copy=True, dtype=dtype, reset=False)
-
-        bin_edges = self.bin_edges_
-        for jj in range(Xt.shape[1]):
-            Xt[:, jj] = np.searchsorted(bin_edges[jj][1:-1], Xt[:, jj], side="right")
-
-        if self.encode == "ordinal":
-            return Xt
-
-        dtype_init = None
-        if "onehot" in self.encode:
-            dtype_init = self._encoder.dtype
-            self._encoder.dtype = Xt.dtype
-        try:
-            Xt_enc = self._encoder.transform(Xt)
-        finally:
-            # revert the initial dtype to avoid modifying self.
-            self._encoder.dtype = dtype_init
-        return Xt_enc
-
-    def inverse_transform(self, Xt):
-        """
-        Transform discretized data back to original feature space.
-
-        Note that this function does not regenerate the original data
-        due to discretization rounding.
-
-        Parameters
-        ----------
-        Xt : array-like of shape (n_samples, n_features)
-            Transformed data in the binned space.
-
-        Returns
-        -------
-        Xinv : ndarray, dtype={np.float32, np.float64}
-            Data in the original feature space.
-        """
-        check_is_fitted(self)
-
-        if "onehot" in self.encode:
-            Xt = self._encoder.inverse_transform(Xt)
-
-        Xinv = check_array(Xt, copy=True, dtype=(np.float64, np.float32))
-        n_features = self.n_bins_.shape[0]
-        if Xinv.shape[1] != n_features:
-            raise ValueError(
-                "Incorrect number of features. Expecting {}, received {}.".format(
-                    n_features, Xinv.shape[1]
-                )
-            )
-
-        for jj in range(n_features):
-            bin_edges = self.bin_edges_[jj]
-            bin_centers = (bin_edges[1:] + bin_edges[:-1]) * 0.5
-            Xinv[:, jj] = bin_centers[(Xinv[:, jj]).astype(np.int64)]
-
-        return Xinv
-
-    def get_feature_names_out(self, input_features=None):
-        """Get output feature names.
-
-        Parameters
-        ----------
-        input_features : array-like of str or None, default=None
-            Input features.
-
-            - If `input_features` is `None`, then `feature_names_in_` is
-              used as feature names in. If `feature_names_in_` is not defined,
-              then the following input feature names are generated:
-              `["x0", "x1", ..., "x(n_features_in_ - 1)"]`.
-            - If `input_features` is an array-like, then `input_features` must
-              match `feature_names_in_` if `feature_names_in_` is defined.
-
-        Returns
-        -------
-        feature_names_out : ndarray of str objects
-            Transformed feature names.
-        """
-        check_is_fitted(self, "n_features_in_")
-        input_features = _check_feature_names_in(self, input_features)
-        if hasattr(self, "_encoder"):
-            return self._encoder.get_feature_names_out(input_features)
-
-        # ordinal encoding
-        return input_features

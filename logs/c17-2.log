@@ -1,0 +1,44 @@
+========== PROJECT: c17-2 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 2
+INSIDE FUNCTION WITH DOCSTRING: 2
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- SpectralClustering
+Processing memberfunc: fit_predict
+Processing memberfunc: fit
+Before Filter: 1
+After Filter: 1
+Translating Class: SpectralClustering; Function: fit_predict
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c17-2/SpectralClustering/memberfunc/fit_predict/fit_predict.py
+Translating Class: SpectralClustering; Function: fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c17-2/SpectralClustering/memberfunc/fit/fit.py
+total call times: 2
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c17-2/SpectralClustering/memberfunc/fit_predict/fit_predict_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c17-2/SpectralClustering/memberfunc/fit_predict/fit_predict_trans.py --entry fit_predict
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c17-2/SpectralClustering/memberfunc/fit/fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c17-2/SpectralClustering/memberfunc/fit/fit_trans.py --entry fit
+
+===== Processing folder: SpectralClustering =====
+[91m--- Solving memberfunc: c17-2/SpectralClustering/fit_predict[0m
+Checking constraints in ["(affinity = 'precomputed_nearest_neighbors') -> (n_jobs != 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c17-2/SpectralClustering/memberfunc/fit_predict/fit_predict_path.txt
+[91m--- Solving memberfunc: c17-2/SpectralClustering/fit[0m
+Checking constraints in ["(affinity = 'precomputed_nearest_neighbors') -> (n_jobs != 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c17-2/SpectralClustering/memberfunc/fit/fit_path.txt
+normal results: [False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+
+
+[91m[ BAD CONSTRAINT WITH FUZZY ][0m
+##################################################
+Library: c17-2
+Class: SpectralClustering
+Memberfunc: fit
+Constraint: (affinity = 'precomputed_nearest_neighbors') -> (n_jobs != 'exist')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c17-2/SpectralClustering/memberfunc/fit/fit_path.txt
+##################################################
+
+
+BAD CONSTRAINT

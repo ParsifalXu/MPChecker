@@ -1,4 +1,5 @@
 import os
+import re
 import logging
 
 from z3 import *
@@ -91,7 +92,7 @@ def all_related_error(list1, list2):
     return all("("+element+")" or element in list2 for element in list1)
 
 def contains_symbols(params):
-    symbols = [" ", ".", "(", ")", "[", "]", "{", "}"]
+    symbols = ["[", "]", "*", "{", "}"]
     for param in params:
         if any(symbol in param[0] or symbol in param[2] for symbol in symbols):
             return True

@@ -85,22 +85,6 @@ def graphical_lasso(emp_cov, alpha, *, cov_init=None, mode='cd', tol=1e-4,
     One possible difference with the `glasso` R package is that the
     diagonal coefficients are not penalized.
     """
-    _, n_features = emp_cov.shape
-    if alpha == 0:
-        if return_costs:
-            precision_ = linalg.inv(emp_cov)
-            cost = - 2. * log_likelihood(emp_cov, precision_)
-            cost += n_features * np.log(2 * np.pi)
-            d_gap = np.sum(emp_cov * precision_) - n_features
-            if return_n_iter:
-                return emp_cov, precision_, (cost, d_gap), 0
-            else:
-                return emp_cov, precision_, (cost, d_gap)
-        else:
-            if return_n_iter:
-                return emp_cov, linalg.inv(emp_cov), 0
-            else:
-                return emp_cov, linalg.inv(emp_cov)
     if cov_init is None:
         covariance_ = emp_cov.copy()
     else:
@@ -123,74 +107,35 @@ def graphical_lasso(emp_cov, alpha, *, cov_init=None, mode='cd', tol=1e-4,
         errors = dict(over='raise', invalid='ignore')
     else:
         errors = dict(invalid='raise')
-    try:
         # be robust to the max_iter=0 edge case, see:
         # https://github.com/scikit-learn/scikit-learn/issues/4134
-        d_gap = np.inf
-        # set a sub_covariance buffer
-        sub_covariance = np.copy(covariance_[1:, 1:], order='C')
-        for i in range(max_iter):
-            for idx in range(n_features):
-                # To keep the contiguous matrix `sub_covariance` equal to
-                # covariance_[indices != idx].T[indices != idx]
-                # we only need to update 1 column and 1 line when idx changes
-                if idx > 0:
-                    di = idx - 1
-                    sub_covariance[di] = covariance_[di][indices != idx]
-                    sub_covariance[:, di] = covariance_[:, di][indices != idx]
-                else:
-                    sub_covariance[:] = covariance_[1:, 1:]
-                row = emp_cov[idx, indices != idx]
-                with np.errstate(**errors):
-                    if mode == 'cd':
-                        # Use coordinate descent
-                        coefs = -(precision_[indices != idx, idx]
-                                  / (precision_[idx, idx] + 1000 * eps))
-                        coefs, _, _, _ = cd_fast.enet_coordinate_descent_gram(
-                            coefs, alpha, 0, sub_covariance,
-                            row, row, max_iter, enet_tol,
-                            check_random_state(None), False)
-                    else:
-                        # Use LARS
-                        _, _, coefs = lars_path_gram(
-                            Xy=row, Gram=sub_covariance, n_samples=row.size,
-                            alpha_min=alpha / (n_features - 1), copy_Gram=True,
-                            eps=eps, method='lars', return_path=False)
-                # Update the precision matrix
-                precision_[idx, idx] = (
-                    1. / (covariance_[idx, idx]
-                          - np.dot(covariance_[indices != idx, idx], coefs)))
-                precision_[indices != idx, idx] = (- precision_[idx, idx]
-                                                   * coefs)
-                precision_[idx, indices != idx] = (- precision_[idx, idx]
-                                                   * coefs)
-                coefs = np.dot(sub_covariance, coefs)
-                covariance_[idx, indices != idx] = coefs
-                covariance_[indices != idx, idx] = coefs
-            if not np.isfinite(precision_.sum()):
-                raise FloatingPointError('The system is too ill-conditioned '
-                                         'for this solver')
-            d_gap = _dual_gap(emp_cov, precision_, alpha)
-            cost = _objective(emp_cov, precision_, alpha)
-            if verbose:
-                print('[graphical_lasso] Iteration '
-                      '% 3i, cost % 3.2e, dual gap %.3e'
-                      % (i, cost, d_gap))
-            if return_costs:
-                costs.append((cost, d_gap))
-            if np.abs(d_gap) < tol:
-                break
-            if not np.isfinite(cost) and i > 0:
-                raise FloatingPointError('Non SPD result: the system is '
-                                         'too ill-conditioned for this solver')
-        else:
-            warnings.warn('graphical_lasso: did not converge after '
-                          '%i iteration: dual gap: %.3e'
-                          % (max_iter, d_gap), ConvergenceWarning)
-    except FloatingPointError as e:
-        e.args = (e.args[0]
-                  + '. The system is too ill-conditioned for this solver',)
-        raise e
+    d_gap = np.inf
+    # set a sub_covariance buffer
+    sub_covariance = np.copy(covariance_[1:, 1:], order='C')
+    i = 0
+    idx = 0
+    if idx > 0:
+        di = idx - 1
+        sub_covariance[di] = covariance_[di][indices != idx]
+        sub_covariance[:, di] = covariance_[:, di][indices != idx]
+    else:
+        sub_covariance[:] = covariance_[1:, 1:]
+    row = emp_cov[idx, indices != idx]
+
+    if mode == 'cd':
+        # Use coordinate descent
+        enet_tol = "existence_flag"
+        coefs, _, _, _ = cd_fast.enet_coordinate_descent_gram(
+            coefs, alpha, 0, sub_covariance,
+            row, row, max_iter, enet_tol,
+            check_random_state(None), False)
+    else:
+        # Use LARS
+        _, _, coefs = lars_path_gram(
+            Xy=row, Gram=sub_covariance, n_samples=row.size,
+            alpha_min=alpha / (n_features - 1), copy_Gram=True,
+            eps=eps, method='lars', return_path=False)
+    # Update the precision matrix
 
     if return_costs:
         if return_n_iter:

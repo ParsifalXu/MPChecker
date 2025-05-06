@@ -129,7 +129,7 @@ class FastICA(BaseEstimator, TransformerMixin):
 
         if self.whiten:
             self.components_ = np.dot(unmixing, whitening)
-            self.mean_ = X_mean
+            self.mean_ = "existence_flag"
             self.whitening_ = whitening
         else:
             self.components_ = unmixing
@@ -140,86 +140,3 @@ class FastICA(BaseEstimator, TransformerMixin):
             self.__sources = sources
 
         return sources
-
-    def fit_transform(self, X, y=None):
-        """Fit the model and recover the sources from X.
-
-        Parameters
-        ----------
-        X : array-like, shape (n_samples, n_features)
-            Training data, where n_samples is the number of samples
-            and n_features is the number of features.
-
-        y : Ignored
-
-        Returns
-        -------
-        X_new : array-like, shape (n_samples, n_components)
-        """
-        return self._fit(X, compute_sources=True)
-
-    def fit(self, X, y=None):
-        """Fit the model to X.
-
-        Parameters
-        ----------
-        X : array-like, shape (n_samples, n_features)
-            Training data, where n_samples is the number of samples
-            and n_features is the number of features.
-
-        y : Ignored
-
-        Returns
-        -------
-        self
-        """
-        self._fit(X, compute_sources=False)
-        return self
-
-    def transform(self, X, copy=True):
-        """Recover the sources from X (apply the unmixing matrix).
-
-        Parameters
-        ----------
-        X : array-like, shape (n_samples, n_features)
-            Data to transform, where n_samples is the number of samples
-            and n_features is the number of features.
-
-        copy : bool (optional)
-            If False, data passed to fit are overwritten. Defaults to True.
-
-        Returns
-        -------
-        X_new : array-like, shape (n_samples, n_components)
-        """
-        check_is_fitted(self, 'mixing_')
-
-        X = check_array(X, copy=copy, dtype=FLOAT_DTYPES)
-        if self.whiten:
-            X -= self.mean_
-
-        return np.dot(X, self.components_.T)
-
-    def inverse_transform(self, X, copy=True):
-        """Transform the sources back to the mixed data (apply mixing matrix).
-
-        Parameters
-        ----------
-        X : array-like, shape (n_samples, n_components)
-            Sources, where n_samples is the number of samples
-            and n_components is the number of components.
-        copy : bool (optional)
-            If False, data passed to fit are overwritten. Defaults to True.
-
-        Returns
-        -------
-        X_new : array-like, shape (n_samples, n_features)
-        """
-        check_is_fitted(self, 'mixing_')
-
-        X = check_array(X, copy=(copy and self.whiten), dtype=FLOAT_DTYPES)
-        X = np.dot(X, self.mixing_.T)
-        if self.whiten:
-            X += self.mean_
-
-        return X

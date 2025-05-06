@@ -506,7 +506,7 @@ class _VectorizerMixin:
                 and callable(self.analyzer)):
             warnings.warn("The parameter 'ngram_range' will not be used"
                           " since 'analyzer' is callable'")
-        if self.analyzer != 'word' or callable(self.analyzer):
+        if self.analyzer != 'word':
             if self.stop_words is not None:
                 warnings.warn("The parameter 'stop_words' will not be used"
                               " since 'analyzer' != 'word'")

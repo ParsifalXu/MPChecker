@@ -1,0 +1,48 @@
+========== PROJECT: c7-2 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- _multiclass_roc_auc_score
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: _multiclass_roc_auc_score
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c7-2/_multiclass_roc_auc_score/_multiclass_roc_auc_score.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c7-2/_multiclass_roc_auc_score/_multiclass_roc_auc_score_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c7-2/_multiclass_roc_auc_score/_multiclass_roc_auc_score_trans.py --entry _multiclass_roc_auc_score
+
+===== Processing folder: _multiclass_roc_auc_score =====
+[91m--- Solving func: c7-2/_multiclass_roc_auc_score[0m
+Checking constraints in ["(multi_class = 'ovr') -> (average = 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c7-2/_multiclass_roc_auc_score/_multiclass_roc_auc_score_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (multi_class = 'ovr') -> (average = 'None')
+  - Parameter Names: ['multi_class', 'average']
+  - Parameters: [('multi_class', '=', 'ovr', ''), ('average', '=', 'None', '')]
+  - Expression: And(multi_class == "ovr", average == "None")
+  - Modified Parameter Names: ['multi_class', 'average']
+  - Modified Parameters: [('multi_class', '=', 'ovr', ''), ('average', '=', 'None', '')]
+  - Modified Expression: And(multi_class == "ovr", average == "None")
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+
+
+[91m[ BAD CONSTRAINT WITH ERROR ][0m
+##################################################
+Type: Raise Error
+path: (call_np_allclose != 0) -> (multi_class = 'ovr') -> (average_in_list = 0) -> (multi_class_in_list = 0) -> (average = 'None') -> (multi_class != 'ovo') -> (multi_class = 'ovr') -> '(multi_class)_(average)_(multi_class)_ERROR_END'
+Library: c7-2
+Function: _multiclass_roc_auc_score
+Constraint: (multi_class = 'ovr') -> (average = 'None')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c7-2/_multiclass_roc_auc_score/_multiclass_roc_auc_score_path.txt
+##################################################
+
+
+BAD CONSTRAINT

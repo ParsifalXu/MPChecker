@@ -1,0 +1,32 @@
+========== PROJECT: c35-2 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 2
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- LinearSVC
+Processing memberfunc: fit
+Processing memberfunc: _more_tags
+Before Filter: 1
+After Filter: 1
+Translating Class: LinearSVC; Function: fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c35-2/LinearSVC/memberfunc/fit/fit.py
+Translating Class: LinearSVC; Function: _more_tags
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c35-2/LinearSVC/memberfunc/_more_tags/_more_tags.py
+total call times: 2
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c35-2/LinearSVC/memberfunc/fit/fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c35-2/LinearSVC/memberfunc/fit/fit_trans.py --entry fit
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c35-2/LinearSVC/memberfunc/_more_tags/_more_tags_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c35-2/LinearSVC/memberfunc/_more_tags/_more_tags_trans.py --entry _more_tags
+
+===== Processing folder: LinearSVC =====
+[91m--- Solving memberfunc: c35-2/LinearSVC/fit[0m
+Checking constraints in ["(multi_class = 'crammer_singer') -> ((loss = 'ignore'))"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c35-2/LinearSVC/memberfunc/fit/fit_path.txt
+normal results: [True, True, True, False]
+[91m--- Solving memberfunc: c35-2/LinearSVC/_more_tags[0m
+Checking constraints in ["(multi_class = 'crammer_singer') -> ((loss = 'ignore'))"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c35-2/LinearSVC/memberfunc/_more_tags/_more_tags_path.txt
+All path files checked.

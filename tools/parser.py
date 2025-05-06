@@ -1,6 +1,21 @@
 import re
 from z3 import *
 
+def is_number(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
+def contains_function_calls(constraint):
+    pattern = r'\b\w+\s*=\s*(?:\w+\.)?\w+\s*\('
+    matches = re.findall(pattern, constraint)
+    if matches:
+        return True
+    else:
+        return False
+
 def cons2z3(constraint):
     constraint = constraint.strip()
 
@@ -11,8 +26,18 @@ def cons2z3(constraint):
         return re.sub(pattern, remove_quotes, input_str)
 
     constraint = ensure_no_quotes_around_literals(constraint).replace("None", "'None'").replace("False", "'False'").replace("True", "'True'")
-    pattern = re.compile(r"(\w+)\s*(=|!=|<=|>=|<|>)\s*(?:'(\w+)'|(\w+))")
+
+    if contains_function_calls(constraint):
+        pattern = re.compile(r"(\w+)\s*(=|!=|<=|>=|<|>)\s*('([^']*)'|-?\d+(?:\.\d+)?|\w+\([^()]*?(?:\([^()]*?\)[^()]*?)*\)|\w+)")
+    else:
+        pattern = re.compile(r"(\w+)\s*(=|!=|<=|>=|<|>)\s*(?:'([^']*)'|(-?\d+(?:\.\d+)?|\w+))")
+
+    # pattern = re.compile(r"(\w+)\s*(=|!=|<=|>=|<|>)\s*('([^']*)'|-?\d+(?:\.\d+)?|\w+\([^()]*?(?:\([^()]*?\)[^()]*?)*\)|\w+)")
     matches = pattern.findall(constraint)
+    if "numpy.take" in constraint:
+        matches.pop(0)
+        matches.pop(0)
+        matches.append(("shape", "=", "numpy.take(x.shape, axes, axis0))", ""))
 
     if len(matches) == 1:
         return [matches[0][0]], matches, tetrad2z3expr(matches[0]), "{}"
@@ -29,8 +54,23 @@ def cons2z3(constraint):
             idx += 1
         return ''.join(text)
     
-    lexpr = remove_closest_right_parenthesis(pattern.sub("{}", constraint).replace(" ","").replace("!(", "["))
-    logic_expr = lexpr.replace("({})", "{}").replace("->", "^").replace("||", "|").replace("&&", "^")
+    lexpr = remove_closest_right_parenthesis(pattern.sub("{}", constraint).replace(" ","").replace("!(", "[")) 
+    logic_expr_bc = lexpr.replace("({})", "{}").replace("->", "^").replace("||", "|").replace("&&", "^")
+
+    def has_digit_or_alpha(s):
+        for char in s:
+            if char.isdigit() or char.isalpha():
+                return True
+        return False
+
+    exprarr = logic_expr_bc.split('^')
+    new_exprarr = []
+    for i in range(len(exprarr)):
+        exprarr[i] = exprarr[i].strip()
+        if not has_digit_or_alpha(exprarr[i]):
+            new_exprarr.append(exprarr[i])
+
+    logic_expr = "^".join(new_exprarr)
 
     def add_index(s):
         idx = 0
@@ -53,9 +93,9 @@ def cons2z3(constraint):
         "<=": ">="
     }
     for match in matches:
-        if match[0].isnumeric():
+        if is_number(match[0]):
             params.append((match[3], opposite_table[match[1]], '',match[0]))
-        elif match[3] != '' and not match[3].isnumeric():
+        elif match[3] != '' and not is_number(match[3]):
             params.append((match[0], match[1], match[3], ''))
         else:
             params.append(match)
@@ -91,6 +131,25 @@ def trans2expr(expr, params):
                     return i
         return -1
 
+    def find_matching_square_paren(s, left_index):
+        if s[left_index] != '[':
+            return -1
+
+        stack = []
+        n = len(s)
+
+        for i in range(left_index, n):
+            if s[i] == '[':
+                stack.append(i)
+            elif s[i] == ']':
+                stack.pop()
+                if not stack:
+                    return i
+        return -1
+
+
+
+
     exs = []
     ops = []
     i = 0
@@ -104,7 +163,10 @@ def trans2expr(expr, params):
             i = k + 1
         elif expr[i] == "[":
             ops.append(expr[i])
-            i += 1
+            ks = find_matching_square_paren(expr, i)
+            returned = trans2expr(expr[i+1:ks], params)
+            exs.append(returned)
+            i = ks
         elif expr[i] == "^":
             ops.append(expr[i])
             i += 1
@@ -138,6 +200,7 @@ def trans2expr(expr, params):
 
 
 def path2z3(path):
+    # path = path.replace(" ", "").replace("='EXIST_FLAG'", "!='None'")
     path = path.replace(" ", "")
     condition_path = path[:path.rfind("->")]
     last_str = path[path.rfind("->")+2:]
@@ -163,6 +226,8 @@ def find_contents_in_parentheses(s):
     return matches
 
 def tetrad2z3expr(tetrad):
+    if tetrad[0].startswith("call_") or tetrad[0].startswith("list_") or tetrad[0].startswith("dict_"):
+        return BoolVal(True)
     op = tetrad[1]
     if op == "=":
         return tetrad2Expr(tetrad).equal()

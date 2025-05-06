@@ -1,0 +1,55 @@
+========== PROJECT: c20-1 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- KBinsDiscretizer
+Processing memberfunc: fit
+--- MISMATCH : KBinsDiscretizer - KBinsDiscretizer --- 
+Doc: ['n_bins', 'encode', 'strategy', 'dtype', 'subsample', 'random_state', 'sample_weight']
+Code: ['n_bins', 'encode', 'strategy', 'dtype', 'subsample', 'random_state']
+Difference: {'sample_weight'}
+
+Before Filter: 1
+After Filter: 1
+Translating Class: KBinsDiscretizer; Function: fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c20-1/KBinsDiscretizer/memberfunc/fit/fit.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c20-1/KBinsDiscretizer/memberfunc/fit/fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c20-1/KBinsDiscretizer/memberfunc/fit/fit_trans.py --entry fit
+
+===== Processing folder: KBinsDiscretizer =====
+[91m--- Solving memberfunc: c20-1/KBinsDiscretizer/fit[0m
+Checking constraints in ["(strategy = 'quantile') -> (sample_weight = 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c20-1/KBinsDiscretizer/memberfunc/fit/fit_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (strategy = 'quantile') -> (sample_weight = 'None')
+  - Parameter Names: ['strategy', 'sample_weight']
+  - Parameters: [('strategy', '=', 'quantile', ''), ('sample_weight', '=', 'None', '')]
+  - Expression: And(strategy == "quantile", sample_weight == "None")
+  - Modified Parameter Names: ['strategy', 'sample_weight']
+  - Modified Parameters: [('strategy', '=', 'quantile', ''), ('sample_weight', '=', 'None', '')]
+  - Modified Expression: And(strategy == "quantile", sample_weight == "None")
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+
+
+[91m[ BAD CONSTRAINT WITH ERROR ][0m
+##################################################
+Type: Raise Error
+path: (dtype_in_list != 0) -> (sample_weight = 'None') -> (subsample != 'None') -> (subsample < n_samples) -> (loop1 = 1) -> (col_min != col_max) -> (strategy != 'uniform') -> (strategy = 'quantile') -> (sample_weight = 'None') -> '(subsample)_(n_samplessubsample)_(loop1)_(strategy)_(strategy)_(sample_weight)_ERROR_END'
+Library: c20-1
+Class: KBinsDiscretizer
+Memberfunc: fit
+Constraint: (strategy = 'quantile') -> (sample_weight = 'None')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c20-1/KBinsDiscretizer/memberfunc/fit/fit_path.txt
+##################################################
+
+
+BAD CONSTRAINT

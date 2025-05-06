@@ -1,0 +1,36 @@
+========== PROJECT: c38-1 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- _sparse_encode
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: _sparse_encode
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c38-1/_sparse_encode/_sparse_encode.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c38-1/_sparse_encode/_sparse_encode_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c38-1/_sparse_encode/_sparse_encode_trans.py --entry _sparse_encode
+
+===== Processing folder: _sparse_encode =====
+[91m--- Solving func: c38-1/_sparse_encode[0m
+Checking constraints in ["(algorithm = 'lasso_cd') -> (init = 'None')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c38-1/_sparse_encode/_sparse_encode_path.txt
+
+~~~~~~~~~~
+[93m[Constraint #1][0m: (algorithm = 'lasso_cd') -> (init = 'None')
+  - Parameter Names: ['algorithm', 'init']
+  - Parameters: [('algorithm', '=', 'lasso_cd', ''), ('init', '=', 'None', '')]
+  - Expression: And(algorithm == "lasso_cd", init == "None")
+  - Modified Parameter Names: ['algorithm', 'init']
+  - Modified Parameters: [('algorithm', '=', 'lasso_cd', ''), ('init', '=', 'None', '')]
+  - Modified Expression: And(algorithm == "lasso_cd", init == "None")
+  - Logic: {0}^{1}
+  - Similarity: 1.0
+~~~~~~~~~~
+Starting to solve the constraint===>>>
+normal results: [False, False, False, False, False, False, False, False, False, False, True, True, False, False, False, False, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, True, True, False, False, False, False, True, True, False, False, False, False, False]
+All path files checked.

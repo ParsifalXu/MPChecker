@@ -224,6 +224,10 @@ class LinearSVC(LinearClassifierMixin,
             self.class_weight, self.penalty, self.dual, self.verbose,
             self.max_iter, self.tol, self.random_state, self.multi_class,
             self.loss, sample_weight=sample_weight)
+        
+        if self.penalty == "l1" and self.loss == "hinge":
+            raise ValueError("The combination of penalty='l1' and "
+                             "loss='hinge' is not supported.")
 
         if self.multi_class == "crammer_singer" and len(self.classes_) == 2:
             self.coef_ = (self.coef_[1] - self.coef_[0]).reshape(1, -1)

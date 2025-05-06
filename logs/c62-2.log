@@ -1,0 +1,68 @@
+========== PROJECT: c62-2 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 5
+INSIDE FUNCTION WITH DOCSTRING: 5
+INDEPENDENT FUNCTION: 0
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- FastICA
+Processing memberfunc: fit_transform
+Processing memberfunc: inverse_transform
+Processing memberfunc: fit
+Processing memberfunc: transform
+Processing memberfunc: _fit
+Before Filter: 1
+After Filter: 1
+Translating Class: FastICA; Function: fit_transform
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/fit_transform/fit_transform.py
+Translating Class: FastICA; Function: inverse_transform
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/inverse_transform/inverse_transform.py
+Translating Class: FastICA; Function: fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/fit/fit.py
+Translating Class: FastICA; Function: transform
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/transform/transform.py
+Translating Class: FastICA; Function: _fit
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/_fit/_fit.py
+total call times: 5
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/fit_transform/fit_transform_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/fit_transform/fit_transform_trans.py --entry fit_transform
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/inverse_transform/inverse_transform_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/inverse_transform/inverse_transform_trans.py --entry inverse_transform
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/fit/fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/fit/fit_trans.py --entry fit
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/transform/transform_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/transform/transform_trans.py --entry transform
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/_fit/_fit_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/_fit/_fit_trans.py --entry _fit
+
+===== Processing folder: FastICA =====
+[91m--- Solving memberfunc: c62-2/FastICA/fit_transform[0m
+Checking constraints in ["(whiten = 'True') -> (whitening_ != 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/fit_transform/fit_transform_path.txt
+[91m--- Solving memberfunc: c62-2/FastICA/inverse_transform[0m
+Checking constraints in ["(whiten = 'True') -> (whitening_ != 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/inverse_transform/inverse_transform_path.txt
+[91m--- Solving memberfunc: c62-2/FastICA/fit[0m
+Checking constraints in ["(whiten = 'True') -> (whitening_ != 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/fit/fit_path.txt
+[91m--- Solving memberfunc: c62-2/FastICA/transform[0m
+Checking constraints in ["(whiten = 'True') -> (whitening_ != 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/transform/transform_path.txt
+[91m--- Solving memberfunc: c62-2/FastICA/_fit[0m
+Checking constraints in ["(whiten = 'True') -> (whitening_ != 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/_fit/_fit_path.txt
+normal results: [False, False, False, False, False, False, False, False]
+
+
+[91m[ BAD CONSTRAINT WITH FUZZY ][0m
+##################################################
+Library: c62-2
+Class: FastICA
+Memberfunc: _fit
+Constraint: (whiten = 'True') -> (whitening_ != 'exist')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c62-2/FastICA/memberfunc/_fit/_fit_path.txt
+##################################################
+
+
+BAD CONSTRAINT

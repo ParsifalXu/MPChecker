@@ -1,0 +1,29 @@
+========== PROJECT: c71-1 ==========
+CLASS: 1
+CLASS_WITH_DOCSTRING: 1
+INSIDE FUNCTION: 1
+INSIDE FUNCTION WITH DOCSTRING: 1
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 0
+=============== END ===============
+Processing ----- DataFrame
+Processing memberfunc: from_dict
+--- MISMATCH : DataFrame - DataFrame --- 
+Doc: ['data', 'index', 'columns', 'dtype', 'copy']
+Code: ['N', 'o', ' ', '_', '_', 'i', 'n', 'i', 't', '_', '_', ' ', 'm', 'e', 't', 'h', 'o', 'd', ' ', 'f', 'o', 'u', 'n', 'd']
+Difference: {'columns', 'i', ' ', 'data', '_', 'e', 'h', 'dtype', 'o', 'u', 'm', 'n', 'index', 't', 'copy', 'N', 'f', 'd'}
+
+Before Filter: 1
+After Filter: 1
+Translating Class: DataFrame; Function: from_dict
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c71-1/DataFrame/memberfunc/from_dict/from_dict.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c71-1/DataFrame/memberfunc/from_dict/from_dict_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c71-1/DataFrame/memberfunc/from_dict/from_dict_trans.py --entry from_dict
+
+===== Processing folder: DataFrame =====
+[91m--- Solving memberfunc: c71-1/DataFrame/from_dict[0m
+Checking constraints in ["(orient = 'index') -> (columns != 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c71-1/DataFrame/memberfunc/from_dict/from_dict_path.txt
+normal results: [True, True, True, False, False, False, False, False]
+All path files checked.

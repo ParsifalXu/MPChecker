@@ -1,0 +1,34 @@
+========== PROJECT: c46-1 ==========
+CLASS: 0
+CLASS_WITH_DOCSTRING: 0
+INSIDE FUNCTION: 0
+INSIDE FUNCTION WITH DOCSTRING: 0
+INDEPENDENT FUNCTION: 1
+INDEPENDENT FUNCTION WITH DOCSTRING: 1
+=============== END ===============
+Processing ----- null_space
+Before Filter: 1
+After Filter: 1
+Translating Independent Function: null_space
+func: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c46-1/null_space/null_space.py
+total call times: 1
+path: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c46-1/null_space/null_space_path.txt
+python3 /Users/esther/Desktop/projects/MPChecker-Results/tools/../tools/PyExSMT/main.py --path /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c46-1/null_space/null_space_trans.py --entry null_space
+
+===== Processing folder: null_space =====
+[91m--- Solving func: c46-1/null_space[0m
+Checking constraints in ["(eigen_solver = 'dense') -> (max_iter = 'exist')"]
+Reading path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c46-1/null_space/null_space_path.txt
+normal results: [False, False, False, False, False, False, False, False]
+
+
+[91m[ BAD CONSTRAINT WITH FUZZY ][0m
+##################################################
+Library: c46-1
+Function: null_space
+Constraint: (eigen_solver = 'dense') -> (max_iter = 'exist')
+path file: /Users/esther/Desktop/projects/MPChecker-Results/tools/../info/c46-1/null_space/null_space_path.txt
+##################################################
+
+
+BAD CONSTRAINT

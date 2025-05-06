@@ -239,7 +239,7 @@ To make it easier for you to check the results, we set a simple command line to 
 ```sh
 python3 main.py --runallexp
 ```
-We also provide you a single line of command to run all experiments. After the run is complete, you will see the following summary: Inconsistent indicates the number of correctly detected inconsistencies, False Positive indicates the number of incorrectly detected results, and False Negative indicates missed positives. A [results.xlsx](./results.xlsx) will be generated to facilitate your thorough review.
+We also provide you a single line of command to run all experiments. After the run is complete, you will see the following summary: Inconsistent indicates the number of correctly detected inconsistencies, False Positive indicates the number of incorrectly detected results, and False Negative indicates missed positives. A [result.xlsx](./result.xlsx) will be generated to facilitate your thorough review.
 ```
 ===>>> Result: ===>>>
 Total: 216

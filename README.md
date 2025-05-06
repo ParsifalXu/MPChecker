@@ -29,6 +29,7 @@ cd mpchecker
 sudo apt install graphviz graphviz-dep
 pip install -r requirements.txt
 ```
+Use `libgraphviz-dev` instead of `traphviz-dep` on Ubuntu 20.04 LTS system with apt.
 <!-- sudo docker build -t mpchecker -->
 <!-- Time estimation: xxx minutes (on modern hardware with good network condition)
 
@@ -64,7 +65,8 @@ python3 main.py --process     [lib]   # use AI to process documentation
 python3 main.py --put         [lib]   # put the result files processed by LLM into the corresponding path
 python3 main.py --solve       [lib]   # detect bad constraints
 python3 main.py --runall      [lib]   # run all operations
-python3 main.py --runallexp   [lib]   # run experiment cases in one command line
+python3 main.py --runoneexp   [lib]   # run one experiment cases in one command line
+python3 main.py --runallexp   [lib]   # run all experiment cases in one command line
 ```
 
 We provide the dataset mentioned in the paper, each of them are collected from real-world popular data science projects. You can find relevant information in the [benchmark.json](./benchmark.json) (Find Latest version on the Github Repository, [MPChecker-Benchmark](https://github.com/ParsifalXu/MPChecker-Benchmark), it is better to download the latest version.). All the corresponding code can be found in the the directory [./_downloads](./_downloads). The sub-directories starting with `c*-` are the same as `id` in the [benchmark.json](./benchmark.json).
@@ -231,13 +233,27 @@ path file: /Users/esther/Desktop/projects/pydoccon-reconstruct/tools/../info/c1-
 
 ### One-click automatic end-to-end experiment running
 ```sh
-python3 main.py --runallexp c1-1
+python3 main.py --runoneexp c1-1
 ```
 To make it easier for you to check the results, we set a simple command line to execute all the above mentioned commands with one click.
+```sh
+python3 main.py --runallexp
+```
+We also provide you a single line of command to run all experiments. After the run is complete, you will see the following summary: Inconsistent indicates the number of correctly detected inconsistencies, False Positive indicates the number of incorrectly detected results, and False Negative indicates missed positives. A [results.xlsx](./results.xlsx) will be generated to facilitate your thorough review.
+```
+===>>> Result: ===>>>
+Total: 216
+Consistent: 88
+Inconsistent: 117
+False Positive: 2
+False Negative: 9
+time: 4.482917070388794
+End of Symbolic Execution
+```
 
 ## 4. Paper Results Interpretation
 ### RQ1: Accuracy of MPChecker in extracting constraints from documentation.
-We provide experimental records of multi-parameter constraints extraction with large language models, including attempts at CoT (Chain-of-Thoughts) and zero-shot/few-shot learning. Three csv files ([rq1-mpchecker.csv](./rq1-res/rq1-mpchecker.csv), [rq1-wo chain of thought.csv](./rq1-res/rq1-wo%20chain%20of%20thought.csv), [rq1-zeroshot.csv](./rq1-res/rq1-zeroshot.csv)) can be found in [rq1-res](./rq1-res/).
+We provide experimental records of multi-parameter constraints extraction with large language models, including attempts at CoT (Chain-of-Thoughts) and zero-shot/few-shot learning. Three csv files ([rq1-mpchecker.csv](./records/rq1-res/rq1-mpchecker.csv), [rq1-wo chain of thought.csv](./records/rq1-res/rq1-wo%20chain%20of%20thought.csv), [rq1-zeroshot.csv](./records/rq1-res/rq1-zeroshot.csv)) can be found in [records/rq1-res](./records/rq1-res/).
 
 | Method                            | Equivalent (# of correct extraction) | Non-Equivalent (# of incorrect extraction) | Non-Equivalent (# of missing constraints) | Accuracy |
 |----------------------------------|--------------------------------------|--------------------------------------------|--------------------------------------------|----------|
@@ -247,7 +263,7 @@ We provide experimental records of multi-parameter constraints extraction with l
 
 
 ### RQ2: Effectiveness of MPChecker in detecting errors.
-We collect a dataset from real-world documentation paired with corresponding code, and manually verify the correctness of each constraint. You can simply use abovementioned `--runallexp` command to run all experiments and check the result in `benchmark.json`.
+We collect a dataset from real-world documentation paired with corresponding code, and manually verify the correctness of each constraint. You can simply use abovementioned `--runallexp` command to run all experiments and check the result in `benchmark.json`. We have added `oracle` as the groundtruth at the end of each case for user's check. Two tables([groundtruth.xlsx](records/rq2-res/groundtruth.xlsx), [rq2-exp-res.xlsx](records/rq2-res/rq2-exp-res.xlsx)) are provided in [rq2-res](./records/rq2-res/).
 
 ### RQ3: Effectiveness of MPChecker in detecting unknown inconsistency issues.
 We reported 14 multi-parameters inconsistencies detected by MPChecker to

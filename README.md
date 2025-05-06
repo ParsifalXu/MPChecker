@@ -24,7 +24,7 @@ conda activate mpchecker
 ### Installation
 Clone this repository and install dependencies
 ```sh
-git clone xxx
+git clone https://github.com/ParsifalXu/MPChecker.git
 cd mpchecker
 sudo apt install graphviz graphviz-dep
 pip install -r requirements.txt

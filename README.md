@@ -1,6 +1,6 @@
 # MPChecker: Multi-Parameter API Documentation Error Checker
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15348167.svg)](https://doi.org/10.5281/zenodo.15348167)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15202267.svg)](https://doi.org/10.5281/zenodo.15202267)
 
 The latest version of this repository can be found at: https://github.com/ParsifalXu/MPChecker
 

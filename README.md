@@ -253,6 +253,8 @@ End of Symbolic Execution
 
 ## 4. Paper Results Interpretation
 ### RQ1: Accuracy of MPChecker in extracting constraints from documentation.
+The experimental results in RQ1 can be reproduced by configuring the OpenAI API key in `processor.py` and sequentially running the relevant command-line instructions for constraint extraction (you may need to execute the `--download`, `--extract`, `--find`, `--match`, `--filter`, `--process` commands). Please note that model outputs may vary, so we have preserved our original records in the rq1 folder for your reference.
+
 We provide experimental records of multi-parameter constraints extraction with large language models, including attempts at CoT (Chain-of-Thoughts) and zero-shot/few-shot learning. Three csv files ([rq1-mpchecker.csv](./records/rq1-res/rq1-mpchecker.csv), [rq1-wo chain of thought.csv](./records/rq1-res/rq1-wo%20chain%20of%20thought.csv), [rq1-zeroshot.csv](./records/rq1-res/rq1-zeroshot.csv)) can be found in [records/rq1-res](./records/rq1-res/).
 
 | Method                            | Equivalent (# of correct extraction) | Non-Equivalent (# of incorrect extraction) | Non-Equivalent (# of missing constraints) | Accuracy |
@@ -266,6 +268,8 @@ We provide experimental records of multi-parameter constraints extraction with l
 We collect a dataset from real-world documentation paired with corresponding code, and manually verify the correctness of each constraint. You can simply use abovementioned `--runallexp` command to run all experiments and check the result in `benchmark.json`. We have added `oracle` as the groundtruth at the end of each case for user's check. Two tables([groundtruth.xlsx](records/rq2-res/groundtruth.xlsx), [rq2-exp-res.xlsx](records/rq2-res/rq2-exp-res.xlsx)) are provided in [rq2-res](./records/rq2-res/).
 
 ### RQ3: Effectiveness of MPChecker in detecting unknown inconsistency issues.
+The results of RQ3 are derived from directly running our tool on libraries and then submitting issues after manual verification. You can detect the inconsistency constraints within these libraries (details in [./tools/macros.py](./tools/macros.py)) by sequentially executing `--runall` command or all the command-line steps from `--download` to `--solve` (`--download`, `--extract`, `--find`, `--match`, `--filter`, `--trans`, `--symex`, `--process`, `--put`, `--solve`). It is important to note that our tool operates on the latest version of the libraries. The inconsistency issue reported in RQ3 has already been confirmed and fixed by the developers. Therefore, to reproduce those issues, you need to check out a previous version of the affected library. As we mentioned in our paper, a further limitation arises from the unmature Python symbolic execution tools, which may not yet robustly handle all the latest language features. Addressing these challenges will require continued engineering efforts to broaden the applicability of our tool.
+
 We reported 14 multi-parameters inconsistencies detected by MPChecker to
 library developers, who have already confirmed 11 inconsistencies by the time of submission (confirmation rate = 78.6%). All issue linkes are listed below. You can inspect them on github.
 

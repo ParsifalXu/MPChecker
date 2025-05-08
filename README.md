@@ -247,7 +247,7 @@ Consistent: 88
 Inconsistent: 117
 False Positive: 2
 False Negative: 9
-time: 4.482917070388794
+time: 623.482917070388794
 End of Symbolic Execution
 ```
 
@@ -265,7 +265,13 @@ We provide experimental records of multi-parameter constraints extraction with l
 
 
 ### RQ2: Effectiveness of MPChecker in detecting errors.
-We collect a dataset from real-world documentation paired with corresponding code, and manually verify the correctness of each constraint. You can simply use abovementioned `--runallexp` command to run all experiments and check the result in `benchmark.json`. We have added `oracle` as the groundtruth at the end of each case for user's check. Two tables([groundtruth.xlsx](records/rq2-res/groundtruth.xlsx), [rq2-exp-res.xlsx](records/rq2-res/rq2-exp-res.xlsx)) are provided in [rq2-res](./records/rq2-res/).
+We constructed a documentation constraint dataset consisting of 72 real-world constraints extracted from widely-used data science libraries. Each constraint is assigned an identifier in the format `c{x}-0`, where x ranges from 1 to 72. For each original constraint, we created two mutated versions, labeled as `c{x}-1` and `c{x}-2`, resulting in a total of 216 constraints. You can simply use abovementioned `--runallexp` command to run all experiments and check the result in `benchmark.json`. We have added `oracle` as the groundtruth at the end of each case for user's check. Two tables([groundtruth.xlsx](records/rq2-res/groundtruth.xlsx), [rq2-exp-res.xlsx](records/rq2-res/rq2-exp-res.xlsx)) are provided in [rq2-res](./records/rq2-res/).
+
+In the `benchmark.json` file, the `oracle` field indicates whether a given constraint is consistent (`True`) or inconsistent (`False`) with the actual code logic. Each row in `result.xlsx` corresponds to one original constraint and its two mutated variants.
+
+If a constraint is consistent with the code and our tool identifies it as correct, it is marked as `TRUE`; if the tool mistakenly flags it as inconsistent, it is considered a `False Positive`. Conversely, if a constraint is inconsistent and our tool correctly detects the inconsistency, it is marked as `FALSE`; if the tool fails to detect the inconsistency, it is considered a `False Negative`. In summary, when our tool's output matches the  `oracle` label, we record the result accordingly. When there is a mismatch, we annotate the case as `FP` or `FN` accordingly. The dataset contains 90 consistent constraints and 126 inconsistent constraints. A total of 119 inconsistencies were detected, among which two were false positives. As a result, 117 inconsistencies were correctly identified, yielding a precision of 92.8% (117 out of 126).
+
+
 
 ### RQ3: Effectiveness of MPChecker in detecting unknown inconsistency issues.
 The results of RQ3 are derived from directly running our tool on libraries and then submitting issues after manual verification. You can detect the inconsistency constraints within these libraries (details in [./tools/macros.py](./tools/macros.py)) by sequentially executing `--runall` command or all the command-line steps from `--download` to `--solve` (`--download`, `--extract`, `--find`, `--match`, `--filter`, `--trans`, `--symex`, `--process`, `--put`, `--solve`). It is important to note that our tool operates on the latest version of the libraries. The inconsistency issue reported in RQ3 has already been confirmed and fixed by the developers. Therefore, to reproduce those issues, you need to check out a previous version of the affected library. As we mentioned in our paper, a further limitation arises from the unmature Python symbolic execution tools, which may not yet robustly handle all the latest language features. Addressing these challenges will require continued engineering efforts to broaden the applicability of our tool.

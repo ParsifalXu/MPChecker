@@ -292,3 +292,15 @@ library developers, who have already confirmed 11 inconsistencies by the time of
 |statsmodels                            | https://github.com/statsmodels/statsmodels/issues/9304    |
 |dask                                   | https://github.com/dask/dask/issues/11336                 |
 |keras                                  | https://github.com/keras-team/keras/issues/20141          |
+
+# Reference
+If you would like to use CompCheck in your research, please cite our paper.
+```
+@inproceedings{Xu2025IMP,
+  author = {Xu, Xiufeng and Xie, Fuman and Zhu, Chenguang and Bai, Guangdong and Khurshid, Sarfraz and Li, Yi},
+  booktitle = {Proceedings of the 34th ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)},
+  month = jun,
+  title = {Identifying Multi-Parameter Constraint Errors in {Python} Data Science Library {API} Documentations},
+  year = {2025}
+}
+```

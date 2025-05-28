@@ -6,7 +6,7 @@ The latest version of this repository can be found at: https://github.com/Parsif
 
 MPChecker is a tool for detecting multi-parameter constraint inconsistencies between documentation and the corresponding code for Python data science libraries.
 
-This repository provides a docker to replicate evaluation done in the [ISSTA 2025 paper](https://liyiweb.com/files/Xu2025IMP.pdf)
+This repository provides detailed procedures and records for replicating evaluation done in the [ISSTA 2025 paper](https://liyiweb.com/files/Xu2025IMP.pdf)
 
 ## 1. Prerequisites and Experimental Environment Construction
 + Linux OS (tested on Ubuntu/22.04.5)

@@ -293,6 +293,11 @@ library developers, who have already confirmed 11 inconsistencies by the time of
 |dask                                   | https://github.com/dask/dask/issues/11336                 |
 |keras                                  | https://github.com/keras-team/keras/issues/20141          |
 
+False Positives:
+1. https://github.com/dask/dask/issues/11339
+2. https://github.com/scikit-learn/scikit-learn/issues/28472
+3. https://github.com/scikit-learn/scikit-learn/issues/28474
+
 # Reference
 If you would like to use CompCheck in your research, please cite our paper.
 ```
